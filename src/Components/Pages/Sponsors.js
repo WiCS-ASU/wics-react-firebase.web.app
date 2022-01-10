@@ -1,7 +1,16 @@
-function Sponsors(){
-    return(
-        <h1>This is the Sponsors Page</h1>
-    );
+import { Container } from "react-bootstrap";
+import Sponsorships from "../UI/Cards/Sponsorships";
+function Sponsors() {
+  return (
+    <Container>
+      <h1>Sponsors</h1>
+      <h3>Lorem ipsum sit dolore</h3>
+
+    
+
+<Sponsorships />
+    </Container>
+  );
 }
 
 export default Sponsors;

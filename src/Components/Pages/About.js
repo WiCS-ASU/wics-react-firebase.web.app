@@ -1,4 +1,5 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
+import WWD from "../UI/Cards/WWD";
 import Scene from "../UI/Humaaans/Scene.svg";
 
 function About() {
@@ -39,12 +40,33 @@ function About() {
           </Col>
         </Row>
 
-        <h3 className="text-center m-4">Lorem Ipsum Dolor</h3>
+        <h3 className="text-center m-4">What we do</h3>
 
         <Row className="mt-5">
-          <Col> </Col>
-          <Col></Col>
-          <Col></Col>
+          <Col>
+            <WWD
+              title="Mentorships"
+              description="Some quick example text to build on the card title and make up the bulk of the card's content.
+
+          "
+            />
+          </Col>
+          <Col>
+            <WWD
+              title="Socials"
+              description="Some quick example text to build on the card title and make up the bulk of the card's content.
+
+           "
+            />
+          </Col>
+          <Col>
+            <WWD
+              title="Tech Talks"
+              description="Some quick example text to build on the card title and make up the bulk of the card's content.
+
+           "
+            />
+          </Col>
         </Row>
       </Container>
     </div>
