@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import { Link, animateScroll as scroll} from "react-scroll";
 
 function PrivacyPolicy() {
   return (
@@ -72,28 +73,121 @@ function PrivacyPolicy() {
                   <strong> TABLE OF CONTENTS </strong>
                 </p>
                 <ol className="table-chapters">
-                  <li> WHAT INFORMATION DO WE COLLECT?</li>
-                  <li> HOW DO WE USE YOUR INFORMATION? </li>
-                  <li> WILL YOUR INFORMATION BE SHARED WITH ANYONE? </li>
-                  <li> WHO WILL YOUR INFORMATION BE SHARED WITH? </li>
-                  <li> HOW LONG DO WE KEEP YOUR INFORMATION? </li>
-                  <li> WHAT ARE YOUR PRIVACY RIGHTS? </li>
-                  <li> CONTROLS FOR DO-NOT-TRACK FEATURES </li>
                   <li>
-                    {" "}
-                    DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?{" "}
+                  <Link
+                  activeClass="active"
+                  to="art1"
+                  spy={true}
+                  smooth={true}
+                  offset = {-25}
+                  duration= {500}
+                  >WHAT INFORMATION DO WE COLLECT?</Link>
                   </li>
-                  <li> DO WE MAKE UPDATES TO THIS NOTICE? </li>
-                  <li> HOW CAN YOU CONTACT US ABOUT THIS NOTICE? </li>
                   <li>
-                    {" "}
-                    HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT
-                    FROM YOU?{" "}
+                  <Link
+                  activeClass="active"
+                  to="art2"
+                  spy={true}
+                  smooth={true}
+                  offset = {-25}
+                  duration= {500}
+                  >HOW DO WE USE YOUR INFORMATION?</Link>
+                  </li>
+                  <li>
+                  <Link
+                  activeClass="active"
+                  to="art3"
+                  spy={true}
+                  smooth={true}
+                  offset = {-25}
+                  duration= {500}
+                  >WILL YOUR INFORMATION BE SHARED WITH ANYONE?</Link>
+                  </li>
+                  <li>
+                  <Link
+                  activeClass="active"
+                  to="art4"
+                  spy={true}
+                  smooth={true}
+                  offset = {-25}
+                  duration= {500}
+                  >WHO WILL YOUR INFORMATION BE SHARED WITH? </Link>
+                  </li>
+                  <li>
+                  <Link
+                  activeClass="active"
+                  to="art5"
+                  spy={true}
+                  smooth={true}
+                  offset = {-25}
+                  duration= {500}
+                  >HOW LONG DO WE KEEP YOUR INFORMATION?</Link>
+                  </li>
+                  <li>
+                  <Link
+                  activeClass="active"
+                  to="art6"
+                  spy={true}
+                  smooth={true}
+                  offset = {-25}
+                  duration= {500}
+                  >WHAT ARE YOUR PRIVACY RIGHTS?</Link>
+                  </li>
+                  <li>
+                  <Link
+                  activeClass="active"
+                  to="art7"
+                  spy={true}
+                  smooth={true}
+                  offset = {-25}
+                  duration= {500}
+                  >CONTROLS FOR DO-NOT-TRACK FEATURES</Link>
+                  </li>
+                  <li>
+                  <Link
+                  activeClass="active"
+                  to="art8"
+                  spy={true}
+                  smooth={true}
+                  offset = {-25}
+                  duration= {500}
+                  >DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</Link>
+                  </li>
+                  <li>
+                  <Link
+                  activeClass="active"
+                  to="art9"
+                  spy={true}
+                  smooth={true}
+                  offset = {-25}
+                  duration= {500}
+                  >DO WE MAKE UPDATES TO THIS NOTICE?</Link>
+                  </li>
+                  <li>
+                  <Link
+                  activeClass="active"
+                  to="art10"
+                  spy={true}
+                  smooth={true}
+                  offset = {-25}
+                  duration= {500}
+                  >HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</Link>
+                  </li>
+                  <li>
+                  <Link
+                  activeClass="active"
+                  to="art11"
+                  spy={true}
+                  smooth={true}
+                  offset = {-25}
+                  duration= {500}
+                  >HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT
+                    FROM YOU?</Link>
                   </li>
                 </ol>
               </article>
               <hr />
-              <article>
+              <article id="art1">
                 <h3> 1. WHAT INFORMATION DO WE COLLECT?</h3>
                 <h4> Personal information you disclose to us.</h4>
                 <p>
@@ -175,7 +269,7 @@ function PrivacyPolicy() {
                 <hr />
               </article>
               <article>
-                <h3> 2. HOW DO USE YOUR INFORMATION? </h3>
+                <h3 id="art2"> 2. HOW DO USE YOUR INFORMATION? </h3>
                 <p>
                   {" "}
                   <em>
@@ -299,7 +393,7 @@ function PrivacyPolicy() {
               </article>
               <hr />
               <article>
-                <h3>3. WILL YOUR INFORMATION BE SHARED WITH ANYONE?</h3>
+                <h3 id="art3">3. WILL YOUR INFORMATION BE SHARED WITH ANYONE?</h3>
                 <p>
                   <em>
                     In Short: We only share information with your consent, to
@@ -378,7 +472,7 @@ function PrivacyPolicy() {
               </article>
               <hr />
               <article>
-                <h3> 4. WHO WILL YOUR INFORMATION BE SHARED WITH?</h3>
+                <h3 id="art4"> 4. WHO WILL YOUR INFORMATION BE SHARED WITH?</h3>
                 <p>
                   <em>
                     In Short: We only share information with the following third
@@ -401,7 +495,7 @@ function PrivacyPolicy() {
               </article>
               <hr />
               <article>
-                <h3>5. HOW LONG DO WE KEEP YOUR INFORMATION?</h3>
+                <h3 id="art5">5. HOW LONG DO WE KEEP YOUR INFORMATION?</h3>
                 <p>
                   <em>
                     {" "}
@@ -432,7 +526,7 @@ function PrivacyPolicy() {
               </article>
               <hr />
               <article>
-                <h3>6. WHAT ARE YOUR PRIVACY RIGHTS?</h3>
+                <h3 id="art6">6. WHAT ARE YOUR PRIVACY RIGHTS?</h3>
                 <p>
                   <em>
                     In Short: You may review, change, or terminate your account
@@ -459,7 +553,7 @@ function PrivacyPolicy() {
               </article>
               <hr />
               <article>
-                <h3>7. CONTROLS FOR DO-NOT-TRACK FEATURES</h3>
+                <h3 id="art7">7. CONTROLS FOR DO-NOT-TRACK FEATURES</h3>
                 <p>
                   {" "}
                   Most web browsers and some mobile operating systems and mobile
@@ -478,7 +572,7 @@ function PrivacyPolicy() {
               </article>
               <hr />
               <article>
-                <h3>
+                <h3 id="art8">
                   8. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?
                 </h3>
                 <p>
@@ -518,7 +612,7 @@ function PrivacyPolicy() {
               </article>
               <hr />
               <article>
-                <h3>9. DO WE MAKE UPDATES TO THIS NOTICE?</h3>
+                <h3 id="art9">9. DO WE MAKE UPDATES TO THIS NOTICE?</h3>
                 <p>
                   <em>
                     In Short: Yes, we will update this notice as necessary to
@@ -540,7 +634,7 @@ function PrivacyPolicy() {
               </article>
               <hr />
               <article>
-                <h3>10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h3>
+                <h3 id="art10">10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h3>
                 <p>
                   {" "}
                   If you have questions or comments about this notice, you may
@@ -550,7 +644,7 @@ function PrivacyPolicy() {
               </article>
               <hr />
               <article>
-                <h3>
+                <h3 id="art11">
                   11. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT
                   FROM YOU?
                 </h3>

@@ -56,8 +56,10 @@ function OurTeam() {
         <TeamMembers
           officer={<img src={Emilia} alt="woman" fluid />}
           name="Emilia Ferreyra"
-          title="President"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          title="WiCS Programming Comptetition and Professional Development Director"
+          description="Throughout my academic career at ASU, I have worked as a Research Assistant for three different on-campus research studies, as a Fulton Ambassador, as an Undergraduate Teaching Assistant and Grader for CSE340, and a Software Engineering Intern for Garmin and New Relic. I currently have a full-time job at New Relic lined up for me at New Relic after I graduate in May 2022. 
+My hobbies include whatever I'm currently hyperfixated on. These include baking, running, reading, badminton, and embroidery. I also spend way too much time on TikTok. 
+"
         />
 
         <TeamMembers

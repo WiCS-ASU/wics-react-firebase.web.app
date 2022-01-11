@@ -6,6 +6,7 @@ import { AiFillTwitterCircle } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
 import { FaSyncAlt } from "react-icons/fa";
 
+
 function FooterComp() {
   return (
     <div>

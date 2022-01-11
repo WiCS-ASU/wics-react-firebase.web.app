@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  
+  .name.card-title.h5 {
+    font-size: 3rem;
+    padding-top: 2rem;
+  }
+  
+  .title {
+    color: #8c8c00;
+    padding-top: 20px;
+  }
+  
+  .description {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  
+  .link {
+    color: #8c8c00;
+    text-decoration: none;
+    margin-left: 0%;
+  }
+  
+  .headers {
+    text-align: center;
+  }
+  
+  .table-of-contents {
+    font-size: 2rem;
+  }
+  
+
+  
