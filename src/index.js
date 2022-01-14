@@ -4,7 +4,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './custom.scss';
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 // Import the functions you need from the SDKs you need
