@@ -25,7 +25,7 @@ body {
   
   .description {
     margin-top: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 3%;
   }
   
   .link {
@@ -42,8 +42,14 @@ body {
     font-size: 2rem;
   }
 
+<<<<<<< Updated upstream
   .table-chapters {
     text-decoration: underline;
+=======
+  .SponsorCard {
+    margin-top: 5%;
+    margin-bottom: 5%;
+>>>>>>> Stashed changes
   }
   
 

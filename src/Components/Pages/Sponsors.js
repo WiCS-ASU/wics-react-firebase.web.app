@@ -15,6 +15,7 @@ function Sponsors() {
   };
 
   return (
+<<<<<<< Updated upstream
 
       
     <Carousel
@@ -39,6 +40,74 @@ function Sponsors() {
       
       
     </Carousel>
+=======
+    <Container>
+      <h1>Sponsors</h1>
+      <h3>Lorem ipsum sit dolore</h3>
+<Row>
+  <h2 className="text-center">Gold Tier</h2>
+  <Col md={6} s={1} > 
+  <Sponsorships 
+    title="Intel" 
+  />
+  </Col>
+  <Col md={6} s={1} > 
+  <Sponsorships
+    title="Blue Yonder"
+  />
+  </Col>
+</Row>
+<h2 className="text-center">Silver Tier</h2>
+<Row>
+  <Col md={6} s={1}>
+  <Sponsorships
+  title="Octo"
+  />
+  <Sponsorships 
+  title="Amazon"
+  />
+  <Sponsorships 
+  title="Paradox"
+  />
+  <Sponsorships 
+  title="USAA"
+  />
+  <Sponsorships 
+  title="Workiva"
+  />
+  </Col>
+  <Col md={6} s={1}>
+  <Sponsorships 
+  title="Goldman Sachs"
+  />
+  <Sponsorships 
+  title="Fox"
+  />
+  <Sponsorships 
+  title="State Farm"
+  />
+  <Sponsorships 
+  title="General Dynamics Mission Systems"
+  />
+  </Col>
+</Row>
+<h2 className="text-center">Bronze Tier</h2>
+<Row>
+  <Col md={6} s={1}>
+    <Sponsorships
+    title="Carvana"
+    />
+    <Sponsorships
+    title="Edward Jones"
+    />
+    </Col>
+  <Col md={6} s={1}>
+    <Sponsorships
+    title="GoDaddy"
+    />
+  </Col>
+</Row>
+>>>>>>> Stashed changes
     
 
 
