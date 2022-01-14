@@ -5,9 +5,10 @@ import { Card, Row, Col } from "react-bootstrap";
 
 function TeamMember(props) {
   return (
+    <div className="row align-items-center">
     <Card border="light" className="bg-light">
       <Card.Body>
-        <Row>
+        <Row className="align-items-center">
           <Col className="d-none d-md-block text-center"> {props.officer} </Col>
           <Col>
             <Card.Title className="name">{props.name}</Card.Title>
@@ -20,6 +21,7 @@ function TeamMember(props) {
         </Row>
       </Card.Body>
     </Card>
+    </div>
   );
 }
 
