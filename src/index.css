@@ -41,6 +41,20 @@ body {
   .table-of-contents {
     font-size: 2rem;
   }
+
+  .table-chapters {
+    text-decoration: underline;
+  }
   
 
-  
+  .goldTier {
+    color:#8c8c00;
+  }
+
+  .silverTier {
+    color: #92A9BD;
+  }
+
+  .bronzeTier {
+    color: #9D5C0D;
+  }

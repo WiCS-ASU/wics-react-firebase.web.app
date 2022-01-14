@@ -77,8 +77,8 @@ function PrivacyPolicy() {
                   <Link
                   activeClass="active"
                   to="art1"
-                  spy={true}
-                  smooth={true}
+                  spy={false}
+                  smooth={false}
                   offset = {-25}
                   duration= {500}
                   >WHAT INFORMATION DO WE COLLECT?</Link>
@@ -87,8 +87,8 @@ function PrivacyPolicy() {
                   <Link
                   activeClass="active"
                   to="art2"
-                  spy={true}
-                  smooth={true}
+                  spy={false}
+                  smooth={false}
                   offset = {-25}
                   duration= {500}
                   >HOW DO WE USE YOUR INFORMATION?</Link>
@@ -97,8 +97,8 @@ function PrivacyPolicy() {
                   <Link
                   activeClass="active"
                   to="art3"
-                  spy={true}
-                  smooth={true}
+                  spy={false}
+                  smooth={false}
                   offset = {-25}
                   duration= {500}
                   >WILL YOUR INFORMATION BE SHARED WITH ANYONE?</Link>
@@ -107,8 +107,8 @@ function PrivacyPolicy() {
                   <Link
                   activeClass="active"
                   to="art4"
-                  spy={true}
-                  smooth={true}
+                  spy={false}
+                  smooth={false}
                   offset = {-25}
                   duration= {500}
                   >WHO WILL YOUR INFORMATION BE SHARED WITH? </Link>
@@ -117,8 +117,8 @@ function PrivacyPolicy() {
                   <Link
                   activeClass="active"
                   to="art5"
-                  spy={true}
-                  smooth={true}
+                  spy={false}
+                  smooth={false}
                   offset = {-25}
                   duration= {500}
                   >HOW LONG DO WE KEEP YOUR INFORMATION?</Link>
@@ -127,8 +127,8 @@ function PrivacyPolicy() {
                   <Link
                   activeClass="active"
                   to="art6"
-                  spy={true}
-                  smooth={true}
+                  spy={false}
+                  smooth={false}
                   offset = {-25}
                   duration= {500}
                   >WHAT ARE YOUR PRIVACY RIGHTS?</Link>
@@ -137,8 +137,8 @@ function PrivacyPolicy() {
                   <Link
                   activeClass="active"
                   to="art7"
-                  spy={true}
-                  smooth={true}
+                  spy={false}
+                  smooth={false}
                   offset = {-25}
                   duration= {500}
                   >CONTROLS FOR DO-NOT-TRACK FEATURES</Link>
@@ -147,8 +147,8 @@ function PrivacyPolicy() {
                   <Link
                   activeClass="active"
                   to="art8"
-                  spy={true}
-                  smooth={true}
+                  spy={false}
+                  smooth={false}
                   offset = {-25}
                   duration= {500}
                   >DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</Link>
@@ -157,8 +157,8 @@ function PrivacyPolicy() {
                   <Link
                   activeClass="active"
                   to="art9"
-                  spy={true}
-                  smooth={true}
+                  spy={false}
+                  smooth={false}
                   offset = {-25}
                   duration= {500}
                   >DO WE MAKE UPDATES TO THIS NOTICE?</Link>
@@ -167,8 +167,8 @@ function PrivacyPolicy() {
                   <Link
                   activeClass="active"
                   to="art10"
-                  spy={true}
-                  smooth={true}
+                  spy={false}
+                  smooth={false}
                   offset = {-25}
                   duration= {500}
                   >HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</Link>
@@ -177,8 +177,8 @@ function PrivacyPolicy() {
                   <Link
                   activeClass="active"
                   to="art11"
-                  spy={true}
-                  smooth={true}
+                  spy={false}
+                  smooth={false}
                   offset = {-25}
                   duration= {500}
                   >HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT

@@ -42,7 +42,7 @@ function About() {
 
         <h3 className="text-center m-4">What we do</h3>
 
-        <Row className="mt-5">
+        <Row className="mt-5 pb-5">
           <Col>
             <WWD
               title="Mentorships"

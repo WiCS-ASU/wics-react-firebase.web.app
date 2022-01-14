@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Container, Modal, Form, Col, Row } from "react-bootstrap";
-import { db } from "C:/Users/aawel/Documents/GitHub/wics-react-firebase.web.app/src/index.js";
+import { db } from "C:/Users/kgirl/Documents/GitHub/wics-react-firebase.web.app/src/index.js";
 
 import { collection, addDoc } from "firebase/firestore";
 import { useState } from "react";

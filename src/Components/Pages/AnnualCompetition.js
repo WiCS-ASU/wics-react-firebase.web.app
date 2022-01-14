@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 
 function AnnualCompetition() {
   return (
-    <div className="bg-light">
+    <div className="bg-light pb-5">
       <Container>
         <div className="text-center">
           <h1 className=" display-3 p-3">
