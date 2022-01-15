@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container,Nav, Navbar,NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import wics from "../UI/Branding/WicsAssets/wics.png";
 
  
 
@@ -11,7 +10,7 @@ function NavbarComp(){
     return(
         <Navbar collapseOnSelect expand="lg" bg="light">
             <Container>
-            <Navbar.Brand as={Link} to="/"> <img className='img-fluid' src={wics} alt="Logo"/> </Navbar.Brand>
+            <Navbar.Brand as={Link} to="/" className='wics-logo text-primary'> WiCS </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="mx-auto p-1">

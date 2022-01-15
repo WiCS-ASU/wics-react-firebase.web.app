@@ -31,7 +31,7 @@ function About() {
             </div>
           </Col>
 
-          <Col>
+          <Col className="d-none d-md-block">
             <img
               src={Scene}
               className="img-fluid"
@@ -43,15 +43,15 @@ function About() {
         <h3 className="text-center m-4">What we do</h3>
 
         <Row className="mt-5 pb-5">
-          <Col>
+          <Col xs={12} md={4} className="my-3">
             <WWD
               title="Mentorships"
               description="Some quick example text to build on the card title and make up the bulk of the card's content.
 
           "
             />
-          </Col>
-          <Col>
+          </Col >
+          <Col xs={12} md={4} className="my-3">
             <WWD
               title="Socials"
               description="Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -59,7 +59,7 @@ function About() {
            "
             />
           </Col>
-          <Col>
+          <Col xs={12} md={4} className="my-3">
             <WWD
               title="Tech Talks"
               description="Some quick example text to build on the card title and make up the bulk of the card's content.

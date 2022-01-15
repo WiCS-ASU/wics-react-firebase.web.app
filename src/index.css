@@ -12,6 +12,9 @@ body {
       monospace;
   }
   
+  .wics-logo{
+    font-family: 'Twinkle Star', cursive;
+  }
   
   .name.card-title.h5 {
     font-size: 3rem;

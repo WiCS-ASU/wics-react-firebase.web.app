@@ -16,7 +16,7 @@ function OurTeam() {
   return (
     <div className="bg-light pt-5">
       <Container>
-          <h1 className="text-center mb-5 pb-5">Our Team</h1>
+        <h1 className="text-center mb-5 pb-5">Our Team</h1>
         <TeamMembers
           officer={<img src={Sanjana} alt="woman" />}
           name="Sanjana Shah"
@@ -26,14 +26,14 @@ function OurTeam() {
         />
 
         <TeamMembers
-        officer={<img src={Sruthi} alt="woman" fluid />}
+          officer={<img src={Sruthi} alt="woman" fluid />}
           name="Sruthi Sathyamoorthy"
           title="VP of Industry Affairs"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         />
 
         <TeamMembers
-        officer={<img src={Shaira} alt="woman" fluid />}
+          officer={<img src={Shaira} alt="woman" fluid />}
           name="Shaira Alam"
           title="VP of Internal Affairs"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -58,8 +58,8 @@ function OurTeam() {
           name="Emilia Ferreyra"
           title="WiCS Programming Comptetition and Professional Development Director"
           description="Throughout my academic career at ASU, I have worked as a Research Assistant for three different on-campus research studies, as a Fulton Ambassador, as an Undergraduate Teaching Assistant and Grader for CSE340, and a Software Engineering Intern for Garmin and New Relic. I currently have a full-time job at New Relic lined up for me at New Relic after I graduate in May 2022. 
-My hobbies include whatever I'm currently hyperfixated on. These include baking, running, reading, badminton, and embroidery. I also spend way too much time on TikTok. 
-"
+          My hobbies include whatever I'm currently hyperfixated on. These include baking, running, reading, badminton, and embroidery. I also spend way too much time on TikTok." 
+
         />
 
         <TeamMembers
@@ -79,15 +79,14 @@ My hobbies include whatever I'm currently hyperfixated on. These include baking,
         <hr />
         <h1 className="headers mt-5"> Web Team</h1>
         <TeamMembers
-        officer={<img src={Ariana} alt="woman" fluid />}
+          officer={<img src={Ariana} alt="woman" fluid />}
           name="Ariana Wells"
           title="Web Developer"
           description="Description"
         />
 
-
         <TeamMembers
-        officer={<img src={Karen} alt="woman" fluid />}
+          officer={<img src={Karen} alt="woman" fluid />}
           name="Karen Garcia"
           title="Web Developer"
           description="My name is Karen and I am a freshman at ASU, majoring in Computer Science. I'm currently inclined to specializing in web development, specifically front-end web design. I've used Java, HTML, JSX, and React in my previous projects. I like to crochet and bake on the side."

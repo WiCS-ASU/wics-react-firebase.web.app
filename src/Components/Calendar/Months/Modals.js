@@ -1,19 +1,19 @@
 import React from "react";
 import { Button, Container, Modal, Form, Col, Row } from "react-bootstrap";
-import { db } from "C:/Users/kgirl/Documents/GitHub/wics-react-firebase.web.app/src/index.js";
+import { db } from "C:/Users/aawel/Documents/GitHub/wics-react-firebase.web.app/src/index.js";
 
 import { collection, addDoc } from "firebase/firestore";
 import { useState } from "react";
 
 function Modals(props) {
-  const usersCollectionRef = collection(db, "users");
+  const usersCollectionRef = collection(db, "events");
   const [newFirstName, setNewFirstName] = useState("");
   const [newLastName, setNewLastName] = useState("");
   const [newEmail, setNewEmail] = useState("");
-  const [newASURITE, setNewASURITE] = useState("");
+  const [newASURITE, setNewASURITE] = useState(0);
   const [newMajor, setNewMajor] = useState("");
-  const [newGradYear, setNewGradYear] = useState("");
-  
+  const [newGradYear, setNewGradYear] = useState(0);
+
   const createUser = async () => {
     await addDoc(usersCollectionRef, {
       firstName: newFirstName,
@@ -23,6 +23,18 @@ function Modals(props) {
       ASURITE: newASURITE,
       gradYear: newGradYear,
     });
+  };
+
+  //form validation code here
+
+  const [validated, setValidated] = useState(false);
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    setValidated(true);
   };
 
   return (
@@ -42,28 +54,36 @@ function Modals(props) {
       </Modal.Header>
       <Modal.Body closeButton>
         <Container>
-          <Form>
+          <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>First Name</Form.Label>
                 <Form.Control
+                  required
                   onChange={(event) => {
                     setNewFirstName(event.target.value);
                   }}
                   type="text"
                   placeholder="Enter your First Name"
                 />
+                <Form.Control.Feedback type="invalid">
+                  Please enter your first name
+                </Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>Last Name</Form.Label>
                 <Form.Control
+                  required
                   onChange={(event) => {
                     setNewLastName(event.target.value);
                   }}
                   type="text"
                   placeholder="Enter your Last Name"
                 />
+                <Form.Control.Feedback type="invalid">
+                  Please enter your last name
+                </Form.Control.Feedback>
               </Form.Group>
             </Row>
 
@@ -71,12 +91,16 @@ function Modals(props) {
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
+                  required
                   onChange={(event) => {
                     setNewEmail(event.target.value);
                   }}
                   type="email"
                   placeholder="Enter your email address"
                 />
+                <Form.Control.Feedback type="invalid">
+                  Please enter a valid email address
+                </Form.Control.Feedback>
               </Form.Group>
             </Row>
 
@@ -130,8 +154,11 @@ function Modals(props) {
 
             <Form.Group className="mb-3" id="formGridCheckbox">
               <Form.Check
+                required
                 type="checkbox"
                 label="Creating an account means you're ok with our Terms of Service and Privacy Policy"
+                feedback="You must agree before submitting"
+                feedbackType="invalid"
               />
             </Form.Group>
 
