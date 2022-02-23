@@ -1,6 +1,10 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import WWD from "../UI/Cards/WWD";
 import Scene from "../UI/Humaaans/Scene.svg";
+import mentorships from "../UI/Humaaans/mentorships.svg";
+import techTalks from "../UI/Humaaans/techTalks.svg";
+import social from "../UI/Humaaans/social.svg";
+
 
 function About() {
   return (
@@ -24,9 +28,8 @@ function About() {
           <Col className="d-flex align-items-center">
             <div>
               <p className="align-middle">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Velit egestas dui id ornare arcu. Volutpat lacus laoree
+                Women in Computer Science is a student-led organization at Arizona State University, which aims
+                to support female and other minority students in technology.
               </p>
             </div>
           </Col>
@@ -46,25 +49,23 @@ function About() {
           <Col xs={12} md={4} className="my-3">
             <WWD
               title="Mentorships"
-              description="Some quick example text to build on the card title and make up the bulk of the card's content.
-
-          "
+              description="Our Mentors offer safe spaces for underclassmen to come together and discuss any issues they are facing, offering suport along the way."
+              image={mentorships}
+          
             />
           </Col >
           <Col xs={12} md={4} className="my-3">
             <WWD
               title="Socials"
-              description="Some quick example text to build on the card title and make up the bulk of the card's content.
-
-           "
+              description="In our socials, you'll have fun while building relationships with other students on campus."
+              image={social}
             />
           </Col>
           <Col xs={12} md={4} className="my-3">
             <WWD
               title="Tech Talks"
-              description="Some quick example text to build on the card title and make up the bulk of the card's content.
-
-           "
+              description="Our Tech Talks offer informative sessions to help students understand important concepts in computer science. "
+              image={techTalks}
             />
           </Col>
         </Row>
