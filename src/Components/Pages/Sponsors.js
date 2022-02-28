@@ -6,7 +6,6 @@ import GoldTier from "../Sponsor Tiers/GoldTier";
 import SilverTier from "../Sponsor Tiers/SilverTier";
 import BronzeTier from "../Sponsor Tiers/BronzeTier";
 
-
 function Sponsors() {
   const [index, setIndex] = useState(0);
 
@@ -15,33 +14,27 @@ function Sponsors() {
   };
 
   return (
+    <div className="vh-100 bg-light">
+      <Carousel
+        variant="dark"
+        activeIndex={index}
+        onSelect={handleSelect}
+        interval={null}
+        indicators={null}
+      >
+        <Carousel.Item>
+          <GoldTier />
+        </Carousel.Item>
 
-      
-    <Carousel
-      variant="dark"
-      activeIndex={index}
-      onSelect={handleSelect}
-      interval={null}
-      indicators={null}
-    >
-      <Carousel.Item>
-        <GoldTier />
-      </Carousel.Item>
+        <Carousel.Item>
+          <SilverTier />
+        </Carousel.Item>
 
-      <Carousel.Item>
-        <SilverTier />
-      </Carousel.Item>
-
-      <Carousel.Item>
-        <BronzeTier />
-      </Carousel.Item>
-
-      
-      
-    </Carousel>
-    
-
-
+        <Carousel.Item>
+          <BronzeTier />
+        </Carousel.Item>
+      </Carousel>
+    </div>
   );
 }
 

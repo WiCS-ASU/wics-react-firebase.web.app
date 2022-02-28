@@ -22,6 +22,9 @@ function Events() {
   };
 
   return (
+    <div className="vh-100 bg-light">
+
+    
     <Carousel
       variant="dark"
       activeIndex={index}
@@ -79,6 +82,7 @@ function Events() {
       
       
     </Carousel>
+    </div>
   );
 }
 

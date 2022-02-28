@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container,Nav, Navbar,NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import WiCSOption from "../UI/Branding/Logos/WiCSOption.svg";
 
  
 
@@ -10,7 +11,7 @@ function NavbarComp(){
     return(
         <Navbar collapseOnSelect expand="lg" bg="light">
             <Container>
-            <Navbar.Brand as={Link} to="/" className='wics-logo text-primary'> WiCS </Navbar.Brand>
+            <Navbar.Brand as={Link} to="/" className='mx-0'> <img src={WiCSOption} alt="woman" width="100" /> </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="mx-auto p-1">

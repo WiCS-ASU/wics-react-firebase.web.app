@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import ContactCard from "../UI/Cards/ContactCard";
 import { BsMailbox } from "react-icons/bs";
@@ -28,8 +28,19 @@ function ContactUs() {
       );
     e.target.reset();
   };
+  //form validation code below
+  const [validated, setValidated] = useState(false);
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    setValidated(true);
+  };
+
   return (
-    <div className="bg-light ">
+    <div className="bg-light vh-100">
       <Container className="pb-5">
         <div className="text-center">
           <h1 className="pt-5">Contact Us</h1>
@@ -40,7 +51,6 @@ function ContactUs() {
         <Card className="border-0">
           <Card.Body>
             <Row>
-              
               <Col className="d-none d-md-block">
                 <Card.Title>Contact Information</Card.Title>
                 <Card.Text>
@@ -51,40 +61,60 @@ function ContactUs() {
                 <ContactCard icon={<BsGeoAlt />} text="699 S Mill Ave" />
               </Col>
               <Col>
-                <Form ref={form} onSubmit={sendEmail}>
+
+                <Form
+                  noValidate
+                  validated={validated}
+                  ref={form}
+                  onSubmit={ handleSubmit, sendEmail }
+                >
                   <Row className="mb-3">
                     <div className="col-sm-12 col-md-6 col-lg-6">
                       <Form.Group as={Col} controlId="formGridName">
                         <Form.Label>Name</Form.Label>
                         <Form.Control
+                          required
                           type="text"
                           placeholder="Enter your name"
                           name="from_name"
                         />
+                        <Form.Control.Feedback type="invalid">
+                          Please enter your name
+                        </Form.Control.Feedback>
                       </Form.Group>
                     </div>
                     <div className="col-sm-12 col-md-6 col-lg-6">
                       <Form.Group as={Col} controlId="formGridEmail">
                         <Form.Label>Email</Form.Label>
                         <Form.Control
+                          required
                           type="email"
                           placeholder="Enter email"
                           name="user_email"
                         />
+                        <Form.Control.Feedback type="invalid">
+                          Email address required
+                        </Form.Control.Feedback>
                       </Form.Group>
                     </div>
                   </Row>
 
-                  <div class="form-group" className="mb-3">
-                    <label for="Textarea">Your Message</label>
-                    <textarea
-                      class="form-control"
-                      id="Textarea"
-                      rows="3"
+                  <Form.Group
+                    className="mb-3"
+                    controlId="exampleForm.ControlTextarea1"
+                  >
+                    <Form.Label>Your message</Form.Label>
+                    <Form.Control
+                      as="textarea"
+                      required
                       placeholder="Enter your message"
                       name="message"
-                    ></textarea>
-                  </div>
+                      rows={3}
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      Message required
+                    </Form.Control.Feedback>
+                  </Form.Group>
 
                   <Button variant="primary" type="submit">
                     Send Message
@@ -94,9 +124,7 @@ function ContactUs() {
             </Row>
           </Card.Body>
         </Card>
-        <div className="vh-25">
-
-        </div>
+        <div className="vh-25"></div>
       </Container>
     </div>
   );
