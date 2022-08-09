@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import NavbarComp from "./Components/Navigation/NavbarComp";
-import FooterComp from "./Components/Navigation/FooterComp";
-import About from "./Components/Pages/About";
-import Events from "./Components/Pages/Events";
-import AnnualCompetition from "./Components/Pages/AnnualCompetition";
-import ContactUs from "./Components/Pages/ContactUs";
-import OurTeam from "./Components/Pages/OurTeam";
-import PrivacyPolicy from "./Components/Pages/PrivacyPolicy";
-import Sponsors from "./Components/Pages/Sponsors";
+import NavbarComp from "./Navigation/NavbarComp";
+import FooterComp from "./Navigation/FooterComp";
+import About from "./Pages/About";
+import Events from "./Pages/Events";
+import AnnualCompetition from "./Pages/AnnualCompetition";
+import ContactUs from "./Pages/ContactUs";
+import OurTeam from "./Pages/OurTeam";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import Sponsors from "./Pages/Sponsors";
 
 
 function App() {

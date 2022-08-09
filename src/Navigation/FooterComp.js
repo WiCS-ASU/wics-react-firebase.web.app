@@ -26,7 +26,7 @@ function FooterComp() {
 
           <Nav.Item className="me-auto">
             <Nav.Link href="https://www.linkedin.com/in/ariana-wells-08a57a206/">
-              <i class="bi bi-linkedin text-white"></i>
+              <i className="bi bi-linkedin text-white"></i>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item className="">

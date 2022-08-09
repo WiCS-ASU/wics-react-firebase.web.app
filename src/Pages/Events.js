@@ -1,7 +1,7 @@
 import { Carousel } from "react-bootstrap";
 import { useState } from "react";
 
-import EventsList from "../Calendar/Months/EventsList";
+import EventsList from "../Calendar/EventsList";
 
 function Events() {
   const [index, setIndex] = useState(0);
@@ -12,6 +12,7 @@ function Events() {
 
   return (
     <div className="vh-100 bg-light">
+      {/** Add some sort of thing on top? */}
       <EventsList/>
     </div>
   );
