@@ -85,6 +85,7 @@ a {
   flex-flow: center wrap;
   align-items: center;
   justify-content: center;
+  overflow:hidden
 }
 
 .event-card {
