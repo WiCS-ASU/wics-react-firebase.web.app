@@ -12,7 +12,7 @@ function AnnualCompetition() {
           <p className="text-center">Saturday, March 19, 2022</p>
           <p className="text-center">
             {" "}
-            <strong> Registration is now open! </strong>{" "}
+            <strong> Registration now closed! </strong>{" "}
           </p>
 
           <main>
@@ -20,7 +20,8 @@ function AnnualCompetition() {
               <article>
                 <h3>Application</h3>
                 <p>
-                  Apply  <a href="https://docs.google.com/forms/d/e/1FAIpQLScq6uEnPNvnRhiFY31xSnRq2ppszd1UCURwKID_6sStC-TbKw/viewform">here</a> for the competition! Please note that the $15
+                  Apply  <a href="https://docs.google.com/forms/d/e/1FAIpQLScq6uEnPNvnRhiFY31xSnRq2ppszd1UCURwKID_6sStC-TbKw/viewform">here</a> 
+                  for the competition! Please note that the $15
                   deposit to our PayPal must be made before you are officially
                   registered. You will get the deposit returned to you after the
                   competition. If you are a no-show to the competition, you will

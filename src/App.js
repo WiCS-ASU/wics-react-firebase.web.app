@@ -16,8 +16,7 @@ function App() {
       <Router>
         <NavbarComp />
         <Routes>
-          
-        <Route path="/" element={ <About/> } />
+          <Route path="/" element={ <About/> } />
           <Route path="/events-calendar" element={ <Events/> } />
           <Route path="/annual-competition" element={ <AnnualCompetition/> } />
           <Route path="/contact-us" element={ <ContactUs/> } />

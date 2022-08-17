@@ -6,12 +6,14 @@ import { AiFillTwitterCircle } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
 import { FaSyncAlt } from "react-icons/fa";
 
+// lets redo this section probably
+
 
 function FooterComp() {
   return (
-    <div>
-      <Container fluid className="bg-dark text-white ">
-        <Nav className="d-flex">
+    <Container fluid className="bg-dark text-white ">
+      <div className="footer-container">
+        <Nav className="footer-nav">
           <Nav.Item>
             <Nav.Link className="text-white" as={Link} to="/contact-us">
               Contact Us
@@ -64,8 +66,8 @@ function FooterComp() {
             </Nav.Link>
           </Nav.Item>
         </Nav>
-      </Container>
-    </div>
+      </div>
+    </Container>
   );
 }
 export default FooterComp;

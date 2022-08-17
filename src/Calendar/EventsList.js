@@ -1,62 +1,30 @@
 import { Container, Row, Col } from "react-bootstrap";
-import Cards from "./Cards"
+import Cards from "./Cards";
 
 // Change this to the main calendar page
 
-function January(){
-    return(
-        <div className="bg-light"> 
-            <Container>
-                
-                <h1 className="text-center p-4">January</h1>
-                
-                <Row>
-                    <Col xs={12} md={4} className="my-3">
-                        
-                        <Cards 
-                            date = "November 25, 2021 (Insert date of event) "
-                            title = "Insert title of event"
-                            description = "Enter description of event and all necessary information"
-                        />
-                    </Col>
-                    <Col xs={12} md={4} className="my-3">
-                        <Cards 
-                            date = "November 25, 2021 (Insert date of event)"
-                            title = "Insert title of event"
-                            description = "Enter description of event and all necessary information"
-                        />
-                    </Col>
-                    <Col xs={12} md={4} className="my-3">
-                        <Cards 
-                            date = "November 25, 2021 (Insert date of event)"
-                            title = "Insert title of event"
-                            description = "Enter description of event and all necessary information"
-                        />
-                    </Col>
-                </Row>
-                
-                <Row>
-                    <Col xs={12} md={4} className="my-3">
-                        
-                        <Cards 
-                            date = "November 25, 2021 (Insert date of event) "
-                            title = "Insert title of event"
-                            description = "Enter description of event and all necessary information"
-                        />
-                    </Col>
-                    <Col xs={12} md={4} className="my-3">
-                        <Cards 
-                            date = "November 25, 2021 (Insert date of event)"
-                            title = "Insert title of event"
-                            description = "Enter description of event and all necessary information"
-                        />
-                    </Col>
-                   
-                </Row>
-                
-            </Container>
+function EventsList() {
+  return (
+    <div className="bg-light">
+      <Container className="events-list-container">
+        <h1 className="text-center p-4">Upcoming Events</h1>
+        <div className="events-list">
+          <Cards
+            title=""
+            img="./images/Welcome_Week_22/4.png"
+            button="Learn More!"
+            link="https://asuevents.asu.edu/content/passport-asu-hayden-library?eventDate=2022-08-17"
+          />
+          <Cards
+            title=""
+            img="./images/GBM.png"
+            button="RSVP"
+            link="https://forms.gle/TJdJ3Q5Uy3XJKHj98"
+          />
         </div>
-    );
+      </Container>
+    </div>
+  );
 }
 
-export default January;
+export default EventsList;

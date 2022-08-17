@@ -1,9 +1,10 @@
 import React from "react";
 import { Button, Container, Modal, Form, Col, Row } from "react-bootstrap";
-import { db } from "./firebase-config.js"; // TODO Fix this
-
+import { db } from "../firebase-config.js";
 import { collection, addDoc } from "firebase/firestore";
 import { useState } from "react";
+
+// edit this to make it a google forms pop up
 
 function Modals(props) {
   const usersCollectionRef = collection(db, "events");

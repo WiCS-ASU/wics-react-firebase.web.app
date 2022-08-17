@@ -4,7 +4,7 @@ import Scene from "../UI/Humaaans/Scene.svg";
 import mentorships from "../UI/Humaaans/mentorships.svg";
 import techTalks from "../UI/Humaaans/techTalks.svg";
 import social from "../UI/Humaaans/social.svg";
-
+import SeasonalDisplay from "../SeasonalDisplay/SeasonalDisplay.js";
 
 function About() {
   return (
@@ -12,6 +12,7 @@ function About() {
       <Container>
         <div className="text-center pb-5">
           <h1 className=" display-1 p-3">Women in Computer Science</h1>
+          {/** <SeasonalDisplay/> +> fix later*/}
           <h6 className="p-3">
             A support network and resource for female and other minority
             students in technology
@@ -28,8 +29,9 @@ function About() {
           <Col className="d-flex align-items-center">
             <div>
               <p className="align-middle">
-                Women in Computer Science is a student-led organization at Arizona State University, which aims
-                to support female and other minority students in technology.
+                Women in Computer Science is a student-led organization at
+                Arizona State University, which aims to support female and other
+                minority students in technology.
               </p>
             </div>
           </Col>
@@ -51,9 +53,8 @@ function About() {
               title="Mentorships"
               description="Our Mentors offer safe spaces for underclassmen to come together and discuss any issues they are facing, offering suport along the way."
               image={mentorships}
-          
             />
-          </Col >
+          </Col>
           <Col xs={12} md={4} className="my-3">
             <WWD
               title="Socials"

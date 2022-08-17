@@ -1,66 +1,100 @@
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  
-  
-  
-  .name.card-title.h5 {
-    font-size: 3rem;
-    padding-top: 2rem;
-  }
-  
-  .title {
-    color: #8c8c00;
-    padding-top: 20px;
-  }
-  
-  .description {
-    margin-top: 10%;
-    margin-bottom: 3%;
-  }
-  
-  .link {
-    color: #8c8c00;
-    text-decoration: none;
-    margin-left: 0%;
-  }
-  
-  .headers {
-    text-align: center;
-  }
-  
-  .table-of-contents {
-    font-size: 2rem;
-  }
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  .table-chapters {
-    text-decoration: underline;
-  }
-  
-  .SponsorCard {
-    margin-top: 5%;
-    margin-bottom: 5%;
-  }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+.App {
+  display: block;
+}
+
+.footer-container {
+  display: block;
   
 
-  .goldTier {
-    color:#8c8c00;
-  }
+}
 
-  .silverTier {
-    color: #92A9BD;
-  }
+.name.card-title.h5 {
+  font-size: 3rem;
+  padding-top: 2rem;
+}
 
-  .bronzeTier {
-    color: #9D5C0D;
-  }
+.title {
+  color: #8c8c00;
+  padding-top: 20px;
+}
+
+.description {
+  margin-top: 10%;
+  margin-bottom: 3%;
+}
+
+.link {
+  color: #8c8c00;
+  text-decoration: none;
+  margin-left: 0%;
+}
+
+.headers {
+  text-align: center;
+}
+
+.table-of-contents {
+  font-size: 2rem;
+}
+
+.table-chapters {
+  text-decoration: underline;
+}
+
+.SponsorCard {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.goldTier {
+  color: #8c8c00;
+}
+
+.silverTier {
+  color: #92a9bd;
+}
+
+.bronzeTier {
+  color: #9d5c0d;
+}
+
+.events-list-container {
+  padding: 20px;
+  justify-content: center;
+}
+
+.events-list {
+  display: flex;
+  flex-flow: center wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-card {
+  margin: 10px 5px;
+  position: relative;
+  max-width: 300px;
+  min-width: 200px;
+}
+
+.seasonal-display {
+  margin-left: 50px;
+  margin-right: 50px;
+}
