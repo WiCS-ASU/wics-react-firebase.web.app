@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import Cards from "./Cards";
 
 // Change this to the main calendar page
@@ -8,6 +8,16 @@ function EventsList() {
     <div className="bg-light">
       <div className="events-page-container">
         <h1 className="text-center p-4">Upcoming Events</h1>
+        <Button className="add-calendar-button">
+          <a
+            style={{ color: "white" }}
+            href="https://calendar.google.com/calendar/u/1?cid=Z2xyMzI3bm5jbHY0ZW80aW5xNm5pMTRzYWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
+          >
+            <h6 className="text-center p-4">
+              Add WiCS to Calendar
+            </h6>
+          </a>
+        </Button>
         <div className="events-list">
           <Cards
             title=""

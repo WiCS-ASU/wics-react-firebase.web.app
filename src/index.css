@@ -16,11 +16,11 @@ a {
 }
 
 .App {
-  display: block;
+  
 }
 
 .footer-container {
-  display: block;
+  /* display: block; */
   
 
 }
@@ -75,6 +75,18 @@ a {
   color: #9d5c0d;
 }
 
+.events-page-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center; 
+  justify-content: center;
+}
+
+.add-calendar-button {
+  max-height: fit-content;
+  max-width: fit-content;
+}
+
 .events-list-container {
   padding: 20px;
   justify-content: center;
@@ -85,7 +97,7 @@ a {
   flex-flow: center wrap;
   align-items: center;
   justify-content: center;
-  overflow:hidden
+  overflow:hidden;
 }
 
 .event-card {
