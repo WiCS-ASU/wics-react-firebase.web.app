@@ -11,8 +11,8 @@ import { FaSyncAlt } from "react-icons/fa";
 
 function FooterComp() {
   return (
-    <Container fluid className="bg-dark text-white ">
-      <div className="footer-container">
+    <div className="footer-container">
+      <div className="bg-dark text-white ">
         <Nav className="footer-nav">
           <Nav.Item>
             <Nav.Link className="text-white" as={Link} to="/contact-us">
@@ -67,7 +67,7 @@ function FooterComp() {
           </Nav.Item>
         </Nav>
       </div>
-    </Container>
+    </div>
   );
 }
 export default FooterComp;

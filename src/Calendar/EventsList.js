@@ -6,7 +6,7 @@ import Cards from "./Cards";
 function EventsList() {
   return (
     <div className="bg-light">
-      <Container className="events-list-container">
+      <div className="events-page-container">
         <h1 className="text-center p-4">Upcoming Events</h1>
         <div className="events-list">
           <Cards
@@ -22,7 +22,7 @@ function EventsList() {
             link="https://forms.gle/TJdJ3Q5Uy3XJKHj98"
           />
         </div>
-      </Container>
+      </div>
     </div>
   );
 }
