@@ -85,29 +85,46 @@ a {
 .add-calendar-button {
   max-height: fit-content;
   max-width: fit-content;
+  padding: 15px;
 }
 
-.events-list-container {
-  padding: 20px;
-  justify-content: center;
+.nav-add-calendar {
+  color: #700ada;
 }
+
 
 .events-list {
   display: flex;
   flex-flow: center wrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  overflow:hidden;
+  margin: 5%;
+  width: 90%;
 }
 
 .event-card {
   margin: 10px 5px;
-  position: relative;
   max-width: 300px;
   min-width: 200px;
 }
 
 .seasonal-display {
-  margin-left: 50px;
-  margin-right: 50px;
+  display: flex;
+  flex-flow: row;
 }
+
+.seasonal-event-card {
+  margin: 10px 5px;
+  /** figure out how to change settings based on size of window*/
+  position: relative;
+  width: 50%;
+}
+
+.about-intro {
+  display: flex;
+  flex-flow: row;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+

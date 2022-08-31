@@ -3,27 +3,24 @@ import SeasonalCards from "./SeasonalCards.js";
 import { Carousel, CarouselItem } from "react-bootstrap";
 //import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-
-
 function SeasonalDisplay() {
   return (
-    <div className="bg-dark">
-      <Carousel className="seasonal-display">
-        <CarouselItem>
-          <div>
-            <ul className="welcome-week-cards">
-              <SeasonalCards src="./images/Welcome_Week_22/2.png" />
-              <SeasonalCards src="./images/Welcome_Week_22/3.png" />
-              <SeasonalCards src="./images/Welcome_Week_22/4.png" />
-            </ul>
-          </div>
-        </CarouselItem>
-        <CarouselItem>
-          <div>
-            <SeasonalCards src="./images/Mentorship.png"/>
-          </div>
-        </CarouselItem>
-      </Carousel>
+    <div className="seasonal-display">
+      <SeasonalCards
+        src="../images/Resume_Database.png"
+        link="https://docs.google.com/forms/d/e/1FAIpQLSeagUwaOsPKmK_n-dM3_bAE55mSsLIT8dVFtCx931EEQmYpyA/viewform?usp=sf_link"
+        button="Submit"
+      />
+      <SeasonalCards
+        src="../images/Mentorship.png"
+        link="https://forms.gle/JzcLaKUnpg7CB1yH7"
+        button="Sign Up"
+      />
+      <SeasonalCards
+        src="../images/FSO_Career_Fairs.png"
+        link="https://career.engineering.asu.edu/events-calendar/"
+        button="Learn More"
+      />
     </div>
   );
 }

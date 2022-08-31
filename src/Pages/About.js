@@ -12,17 +12,21 @@ function About() {
       <Container>
         <div className="text-center pb-5">
           <h1 className=" display-1 p-3">Women in Computer Science</h1>
-          {/** <SeasonalDisplay/> +> fix later*/}
-          <h6 className="p-3">
-            A support network and resource for female and other minority
-            students in technology
-          </h6>
-          <Button
-            href="https://asu.campuslabs.com/engage/organization/women-in-computer-science"
-            variant="primary"
-          >
-            Join Now
-          </Button>
+          <div className="about-intro">
+            <SeasonalDisplay />
+          </div>
+          <div className="club-vision">
+            <h6 className="p-3">
+              A support network and resource for female and other minority
+              students in technology
+            </h6>
+            <Button
+              href="https://asu.campuslabs.com/engage/organization/women-in-computer-science"
+              variant="primary"
+            >
+              Join Now
+            </Button>
+          </div>
         </div>
 
         <Row className="mb-5">
