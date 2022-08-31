@@ -112,19 +112,21 @@ a {
 .seasonal-display {
   display: flex;
   flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .seasonal-event-card {
   margin: 10px 5px;
   /** figure out how to change settings based on size of window*/
   position: relative;
-  width: 50%;
+  max-width: 300px;
+  min-width: 200px;
 }
 
 .about-intro {
   display: flex;
   flex-flow: row;
-  margin-left: 10%;
-  margin-right: 10%;
+  justify-content: center;
 }
 
