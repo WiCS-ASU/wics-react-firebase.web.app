@@ -24,7 +24,7 @@ function App() {
           <Route path="/privacy-policy" element={ <PrivacyPolicy/> } />
           <Route path="/sponsors" element={ <Sponsors/> } />
         </Routes>
-        <FooterComp />
+        {/** <FooterComp /> Footer needs to be fixed for now */}
       </Router>
       
     </div>
