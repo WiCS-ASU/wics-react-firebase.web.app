@@ -19,10 +19,10 @@ function OurTeam() {
         <h1 className="text-center mb-5 pb-5">Our Team</h1>
         <TeamMembers
           officer={<img src={Sanjana} alt="woman" />}
-          name="Sanjana Shah"
+          name="Shaira Alam"
           title="President"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-          link="https://www.linkedin.com/in/sanjana-sshah/"
+          description= "Women in Computer Science was the first organization I joined at Arizona State University when I was a Freshman and it was one of the best decisions I could have made. This organization has not only provided me a multitude of opportunities to explore the industry, it has also been a beautiful organization full of dedicated and supportive women that I am so proud to be a part of. From being involved in the newest innovations to connecting to the broader community of tech-enthusiasts, my passion for the technology industry has driven my commitment to the future of this organization. As a current senior pursuing my Bachelors in Computer Systems Engineering, it is my honor to stand as the current President of Women in Computer Science at ASU this year. "
+          link="https://www.linkedin.com/in/shaira-alam/"
         />
 
         <TeamMembers
@@ -51,6 +51,14 @@ function OurTeam() {
         />
 
         <TeamMembers
+          officer={<img src={Rebecca} alt="woman" fluid />}
+          name="Bushra Karim"
+          title="VP of Service"
+          description="My name is Bushra Karim, and I am a third-year student majoring in Computer Science (Software Engineering) while minoring in Spanish. I am grateful to have been involved with WiCS since last year and now as Vice President of Outreach. In addition, I am also a Barrett Mentor, Service Chair for Alphi Phi Omega, and Source Global intern. In my free time, I love trying new foods and making art!"
+          link="https://www.linkedin.com/in/bushra-karim-669a101b1"
+        />
+
+        <TeamMembers
           officer={<img src={Aira} alt="woman" fluid />}
           name="Aira San Agustin"
           title="Marketing Director"
@@ -62,12 +70,10 @@ function OurTeam() {
 
         <TeamMembers
           officer={<img src={Emilia} alt="woman" fluid />}
-          name="Emilia Ferreyra"
-          title="WiCS Programming Comptetition and Professional Development Director"
-          description="Throughout her academic career at ASU, Emilia has worked as a Research Assistant for three different on-campus research studies, as a Fulton Ambassador, as an Undergraduate Teaching Assistant and Grader for CSE340, and a Software Engineering Intern for Garmin and New Relic. She currently has a full-time job at New Relic lined up for her at New Relic after she graduates in May 2022. 
-          Emilia’s hobbies include whatever she’s currently hyperfixating on. These include baking, running, reading, badminton, and embroidery. Emilia also spends way too much time on TikTok.
-          " 
-          link="https://www.linkedin.com/in/emilia-ferreyra-b3533b17b/"
+          name="Yeonghyeon (Clara) Kim"
+          title="Mentorship Program Director"
+          description="Clara is a sophomore majoring in Computer Science and minoring in Data Science at ASU. She is the Mentorship Program Director for WiCS where she organizes socials for mentors and mentees and sets up the end-of-year showcase where mentor groups will present their projects. She is interested in Data Science, Artificial Intelligence, and cloud computing. Her hobbies include baking, karaoke, listening to music, and watching movies." 
+          link="https://www.linkedin.com/in/yeonghyeon/"
         />
 
         <TeamMembers
@@ -80,10 +86,10 @@ function OurTeam() {
 
         <TeamMembers
           officer={<img src={Sihyeon} alt="woman" fluid />}
-          name="Sihyeon Kim"
+          name="Evelyn Brannen"
           title="Historian"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-          link="https://www.linkedin.com/in/sihyeon-kim-293790199/"
+          description="Hello, I'm a sophomore and I'm studying computer science! I'm not sure what I want my concentration to be yet, but right now I'm leaning towards software development. I'm in Barrett, and some other things I'm involved are Engineering Projects in Community Service (EPICS), and the Engineering Futures program at ASU. I also currently work at the Fulton Career Center as an Event Planner/Desk Assistant. Some things I love to do on my free time are reading and playing the guitar. I'm looking forward to being a part of the WiCS mentorship program in this year and meeting new people!"
+          link="https://www.linkedin.com/in/evelyn-brannen"
         />
 
         <hr />
