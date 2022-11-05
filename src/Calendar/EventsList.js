@@ -55,7 +55,15 @@ function EventsList() {
         <div className="events-list">
           <Cards title="" img="./images/GHC_Info.png" button="♥" link="" />
           <Cards title="" img="./images/GBM.png" button="♥" link="" />
+          <Cards
+            title=""
+            img="./images/TT1-1.png"
+            button="RSVP"
+            link="https://forms.gle/KCy9NG21C4vzmkRP9"
+          />
         </div>
+
+        
       </div>
     </div>
   );
