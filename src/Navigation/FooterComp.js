@@ -8,11 +8,19 @@ import { FaSyncAlt } from "react-icons/fa";
 
 // lets redo this section probably
 
-
 function FooterComp() {
   return (
     <div className="footer-container">
-      <div className="bg-dark text-white ">
+      
+    </div>
+  );
+}
+export default FooterComp;
+
+// OLD FOOTER BELOW
+
+{/**
+<div className="bg-dark text-white ">
         <Nav className="footer-nav">
           <Nav.Item>
             <Nav.Link className="text-white" as={Link} to="/contact-us">
@@ -27,7 +35,7 @@ function FooterComp() {
           </Nav.Item>
 
           <Nav.Item className="me-auto">
-            <Nav.Link href="https://www.linkedin.com/in/ariana-wells-08a57a206/">
+            <Nav.Link href="https://www.linkedin.com/company/wics-asu">
               <i className="bi bi-linkedin text-white"></i>
             </Nav.Link>
           </Nav.Item>
@@ -67,7 +75,4 @@ function FooterComp() {
           </Nav.Item>
         </Nav>
       </div>
-    </div>
-  );
-}
-export default FooterComp;
+*/}
