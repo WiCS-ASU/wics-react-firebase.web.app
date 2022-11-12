@@ -51,7 +51,7 @@ function EventsList() {
            * Tech Talk #5: General Dynamics: 11/9
            */}
           <Cards title="" img="./images/Socials/Social_2.png" button="♥" link="" />
-          <Cards title="" img="./images/TT2-1.png" button="♥" link="" />
+          <Cards title="" img="./images/Tech_Talks/TT2-1.png" button="♥" link="" />
           <Cards title="" img="./images/TIPS/Tips_1.png" button="♥" link="" />
           <Cards title="" img="./images/Socials/Social_1.png" button="♥" link="" />
           <Cards title="" img="./images/WoCo_Women's_Welcome.png" button="♥" link=""/>
