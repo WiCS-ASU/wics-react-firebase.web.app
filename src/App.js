@@ -8,7 +8,7 @@ import ContactUs from "./Pages/ContactUs";
 import OurTeam from "./Pages/OurTeam";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import Sponsors from "./Pages/Sponsors";
-
+import SponsorsCompetitionPackage from "./Pages/SponsorsCompetitionPackage";
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
           <Route path="/our-team" element={ <OurTeam/> } />
           <Route path="/privacy-policy" element={ <PrivacyPolicy/> } />
           <Route path="/sponsors" element={ <Sponsors/> } />
+          <Route path="/sponsors-competition-package" element={ <SponsorsCompetitionPackage/> } />
         </Routes>
         <FooterComp />
         {/**  Footer needs to be fixed for now */}
