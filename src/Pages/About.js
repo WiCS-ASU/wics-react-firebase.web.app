@@ -13,7 +13,7 @@ function About() {
         <div className="text-center pb-5">
           <h1 className=" display-1 p-3">Women in Computer Science</h1>
           <div className="about-intro">
-            <SeasonalDisplay />
+            {/** <SeasonalDisplay /> */}
           </div>
           <div className="club-vision">
             <h6 className="p-3">

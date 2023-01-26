@@ -1,5 +1,6 @@
 import React from "react";
 import {Card} from 'react-bootstrap'
+import './Sponsorships.js'
 
 
 function Sponsorships(props){
