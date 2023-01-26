@@ -7,12 +7,12 @@ function AnnualCompetition() {
       <Container>
         <div>
           <h1 className=" display-3 p-3 text-center">
-            WiCS 17th Annual Programming Competition
+            WiCS 18th Annual Programming Competition
           </h1>
-          <p className="text-center">Saturday, March 19, 2022</p>
+          <p className="text-center">Saturday, March 25, 2023</p>
           <p className="text-center">
             {" "}
-            <strong> Registration now closed! </strong>{" "}
+            <strong> Registration is open! </strong>{" "}
           </p>
 
           <main>
@@ -20,7 +20,7 @@ function AnnualCompetition() {
               <article>
                 <h3>Application</h3>
                 <p>
-                  Apply  <a href="https://docs.google.com/forms/d/e/1FAIpQLScq6uEnPNvnRhiFY31xSnRq2ppszd1UCURwKID_6sStC-TbKw/viewform">here</a> 
+                  Apply  <a href="https://docs.google.com/forms/d/e/1FAIpQLScLeaKblUEwmXpyb1LvDJ7xIH0NGxpWSTxTKyVaCDS1eSs5jQ/viewform?usp=sf_link">here </a> 
                   for the competition! Please note that the $15
                   deposit to our PayPal must be made before you are officially
                   registered. You will get the deposit returned to you after the
@@ -30,7 +30,7 @@ function AnnualCompetition() {
                 <p>
                   The PayPal account to submit the $15 deposit is
                   “wics.asu@gmail.com” and must have the memo be “WiCS
-                  Programming Competition 2022 Deposit: [Team Name]” where [Team
+                  Programming Competition 2023 Deposit: [Team Name]” where [Team
                   Name] is the official name submitted on the application.
                 </p>
                 <p>
@@ -39,8 +39,7 @@ function AnnualCompetition() {
                   includes the 60th applicant).
                 </p>
                 <p className="text-danger">
-                  DEADLINE IS THURSDAY, MARCH 10, 2022 (Thursday of Spring
-                  Break)!
+                  DEADLINE IS FRIDAY, MARCH 17, 2023!
                 </p>
               </article>
             </section>
@@ -84,7 +83,7 @@ function AnnualCompetition() {
                 </li>
                 <li>Raffle winners must be present to win.</li>
                 <li>
-                  Masks are required and please do not come if you do not meet
+                  Masks are encouraged. Please do not come if you do not meet
                   the ASU COVID-19 Mitigation policies.
                 </li>
               </ul>
@@ -110,7 +109,7 @@ function AnnualCompetition() {
                 <thead>
                   <tr className="text-center">
                     <th>Award</th>
-                    <th>Prize (for each particapating team member)</th>
+                    <th>Prize (for each participating team member)</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -119,36 +118,40 @@ function AnnualCompetition() {
                     <td>Nintendo Switch</td>
                   </tr>
                   <tr>
-                    <td>2cnd Place</td>
-                    <td>GoPro Hero</td>
+                    <td>2nd Place</td>
+                    <td>Samsung Galaxy Tablet</td>
                   </tr>
                   <tr>
                     <td>3rd Place</td>
-                    <td>Samsung SmartTV</td>
-                  </tr>
-                  <tr>
-                    <td>4th Place</td>
                     <td>Beats headphones</td>
                   </tr>
                   <tr>
+                    <td>4th Place</td>
+                    <td>Fujifilm Instax Mini</td>
+                  </tr>
+                  <tr>
                     <td>5th Place</td>
-                    <td>Polaroid camera and film</td>
+                    <td>Raspberry Pi 3 Ultimate Starter Kit</td>
                   </tr>
                   <tr>
                     <td>6th Place</td>
-                    <td>Raspberry PI 3 Ultimate Starter Kit</td>
+                    <td>Mini projector</td>
                   </tr>
                   <tr>
                     <td>7th Place</td>
-                    <td>Rocketbook Fusion</td>
+                    <td>JBL portable speaker</td>
                   </tr>
                   <tr>
                     <td>8th Place</td>
-                    <td>Gaming Keyboard</td>
+                    <td>Logitech Wireless Mouse</td>
                   </tr>
                   <tr>
                     <td>9th Place</td>
-                    <td>Amazon Gift Card</td>
+                    <td>$25 Amazon Gift Card</td>
+                  </tr>
+                  <tr>
+                    <td>10th Place</td>
+                    <td>$15 Amazon Gift Card</td>
                   </tr>
                   <tr>
                     <td>Top Female/Non-Binary Team</td>

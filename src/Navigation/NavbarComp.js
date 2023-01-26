@@ -36,9 +36,18 @@ function NavbarComp() {
                 Add WiCS to Calendar
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link className="px-5" as={Link} to="/sponsors">
-              Sponsors
-            </Nav.Link>
+            <NavDropdown
+              className="px-5"
+              title="Sponsors"
+              id="collasible-nav-dropdown"
+            >
+              <NavDropdown.Item as={Link} to="/sponsors">
+                Sponsors
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/sponsors-competition-package">
+                Sponsorship Package
+              </NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link className="px-5" as={Link} to="/our-team">
               Our Team
             </Nav.Link>
