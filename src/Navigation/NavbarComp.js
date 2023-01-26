@@ -22,9 +22,9 @@ function NavbarComp() {
               title="Events"
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item as={Link} to="/events-calendar">
+              {/** <NavDropdown.Item as={Link} to="/events-calendar">
                 Events Calendar
-              </NavDropdown.Item>
+              </NavDropdown.Item> */}
               <NavDropdown.Item as={Link} to="/annual-competition">
                 Annual Competition
               </NavDropdown.Item>
