@@ -86,15 +86,15 @@ function OurTeam() {
         <TeamMembers
           officer={
             <img
-              src="..\images\officer-images\blank-profile-circle.png"
+              src="..\images\officer-images\simran-kaur.png"
               alt="woman"
               fluid
             />
           }
           name="Simran Kaur"
           title="VP of Industry Affairs"
-          description="---"
-          link="---"
+          description="I am a Computer Science Honors student who plans to graduate in May 2023 with a BS. Additionally, I work at Intel as a Data Governance and Architecture intern. As one of the Vice Presidents for Women in Computer Science (WiCS), I seek to cultivate the local female and minority tech community and provide students with the opportunities to network in an engaging environment. My dedication to becoming a future leader within a STEM field has awarded me multiple opportunities, including the Grace Hopper, New American University, and Grand Challenge scholars programs. I was selected for the university's Desert WAVE team, a women's autonomous vehicle engineering team, to compete in RoboNation Inc.'s annual International RoboSub Competition. "
+          link="www.linkedin.com/in/simran-k-2000"
         />
 
         <TeamMembers
@@ -238,13 +238,18 @@ function OurTeam() {
         <hr />
         <h1 className="headers mt-5"> Web Team</h1>
         <TeamMembers
-          officer={<img src="..\images\officer-images\leyli-ghavami.png" alt="woman" fluid />}
+          officer={
+            <img
+              src="..\images\officer-images\leyli-ghavami.png"
+              alt="woman"
+              fluid
+            />
+          }
           name="Leyli Ghavami"
           title="Web Master"
           description="Leyli is a sophomore studying Computer Science, and has been a member of WiCS since the beginning of her freshman year. When she's not working on the WiCS website, she loves to draw, paint, and explore the world!"
           link="https://www.linkedin.com/in/leyli-ghavami/"
         />
-
       </Container>
     </div>
   );
