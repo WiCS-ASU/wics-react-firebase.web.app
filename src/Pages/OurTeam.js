@@ -65,14 +65,14 @@ function OurTeam() {
           }
           name="Aira Daniella San Agustin"
           title="VP of Internal Affairs"
-          description="Aira is majoring in Computer Science (Software Engineering) and minoring in Digital Culture at ASU. She will be graduating Fall 2022 with her Bachelor's degree, and will be continuing her 4+1 track for a Master's degree in CS. She has been working part-time for over a year as an XR developer in Meteor Studio and Learning Futures, and have interned as a Frontend Developer at AVEVA in Summer 2022. Her hobbies include drawing, baking, playing badminton, and karaoke."
+          description="Aira is majoring in Computer Science (Software Engineering) and minoring in Digital Culture at ASU. She graduated Fall 2022 with her Bachelor's degree, and will be continuing her 4+1 track for a Master's degree in CS. She has been working part-time for over a year as an XR developer at ASU, and have interned as a Frontend Developer at AVEVA in Summer 2022. Her hobbies include drawing, baking, playing badminton, and karaoke."
           link="https://www.linkedin.com/in/aira-daniella-san-agustin-b6a5a019a"
         />
 
         <TeamMembers
           officer={
             <img
-              src="..\images\officer-images\blank-profile-circle.png"
+              src="..\images\officer-images\abigail-sepulveda.png"
               alt="woman"
               fluid
             />
@@ -80,7 +80,7 @@ function OurTeam() {
           name="Abigail Sepulveda"
           title="Treasurer"
           description="---"
-          link="---"
+          // link="---"
         />
 
         <TeamMembers
@@ -129,15 +129,15 @@ function OurTeam() {
         <TeamMembers
           officer={
             <img
-              src="..\images\officer-images\blank-profile-circle.png"
+              src="..\images\officer-images\sumana-konatam.png"
               alt="woman"
               fluid
             />
           }
           name="Saisumana (Sumana) Konatam"
           title="Logistics Director"
-          description="---"
-          link="---"
+          description="Hello! I'm Sumana, the 2022-2023 Logistics Director of WICS. I am an Honors student majoring in Computer science. I've had 3 (including summer 2023) internship experiences so far. I love exploring upcoming technologies, constantly learning and evolving. I hope to graduate with my B.S in Computer science in 2024. In my free time I like to read, play tennis, and watch tv!"
+          link="https://www.linkedin.com/in/sumanakonatam/"
         />
         <TeamMembers
           officer={
@@ -155,20 +155,20 @@ function OurTeam() {
         <TeamMembers
           officer={
             <img
-              src="..\images\officer-images\blank-profile-circle.png"
+              src="..\images\officer-images\tasneema-azad.png"
               alt="woman"
               fluid
             />
           }
           name="Fahim (Tasneema) Azad"
           title="Programming Competition Director"
-          description="---"
-          link="---"
+          description="Tasneema is a Ph.D. student and Research Assistant at Arizona State University. Her research focuses on time series analysis, machine learning, attention mechanism and data science. Moreover, she is interested to explore causal inferences in the time series domain."
+          link="https://www.linkedin.com/in/fahimtasneemaazad16/"
         />
         <TeamMembers
           officer={
             <img
-              src="..\images\officer-images\blank-profile-circle.png"
+              src="..\images\officer-images\ariana-bui.png"
               alt="woman"
               fluid
             />
@@ -176,7 +176,7 @@ function OurTeam() {
           name="Ariana Bui"
           title="Professional Development Director"
           description="---"
-          link="---"
+          // link="---"
         />
 
         <TeamMembers
@@ -196,15 +196,15 @@ function OurTeam() {
         <TeamMembers
           officer={
             <img
-              src="..\images\officer-images\blank-profile-circle.png"
+              src="..\images\officer-images\krisha-vekaria.png"
               alt="woman"
               fluid
             />
           }
           name="Krisha Vekaria"
           title="Graphic Designer"
-          description="---"
-          link="---"
+          description="I am an undergraduate student majoring in Data Science with a concentration in Mathematics and graduating in May 2023. This past summer I interned as a Software Developer for Poolular, a pool tech startup based out of New Jersey. I also work part-time as a Technology Consultant at the University Technology Office. In my free time, I love to read books, travel and explore new places!"
+          link="http://www.linkedin.com/in/krisha-vekaria"
         />
 
         <TeamMembers
@@ -249,6 +249,41 @@ function OurTeam() {
           title="Web Master"
           description="Leyli is a sophomore studying Computer Science, and has been a member of WiCS since the beginning of her freshman year. When she's not working on the WiCS website, she loves to draw, paint, and explore the world!"
           link="https://www.linkedin.com/in/leyli-ghavami/"
+        />
+
+        <hr />
+        <h1 className="headers mt-5"> Our Advisors</h1>
+        <TeamMembers
+          officer={
+            <img
+              src="..\images\officer-images\navabi.png"
+              alt="woman"
+              fluid
+            />
+          }
+          name="Farideh Tadayon-Navabi"
+          title="Advisor"
+          description=<div>
+          <p>Farideh Tadayon-Navabi is a principal lecturer in the School of Computing, Informatics, and Decision System Engineering.  Prior to ASU, she held a teaching position at University of Louisiana in Monroe.</p>
+          <p>Tadayon-Navabi’s interested in improving the undergraduate program curriculum. She works on developing strategies to help students succeed in introductory courses and to retain students in the program. Her research focuses on computer science education, programming languages and software development.</p>
+          </div>
+          link="https://search.asu.edu/profile/71640"
+        />
+                <TeamMembers
+          officer={
+            <img
+              src="..\images\officer-images\nakamura.png"
+              alt="woman"
+              fluid
+            />
+          }
+          name="Mutsumi Nakamura"
+          title="Advisor"
+          description=<div>
+          <p>Mutsumi Nakamura is a teaching professor in the School of Computing and Augmented Intelligence in the Ira A. Fulton Schools of Engineering at Arizona State University. </p>
+          <p>Nakamura’s research focuses on active/web-based database systems, and deep learning. She has taught courses in database management, data structures and algorithms, automata theory, software engineering, computer organization and assembly language, and Java, C++, C# programming languages.</p>
+          </div>
+          link="https://search.asu.edu/profile/262996"
         />
       </Container>
     </div>
