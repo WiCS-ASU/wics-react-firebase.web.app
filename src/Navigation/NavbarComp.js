@@ -29,8 +29,8 @@ function NavbarComp() {
                 Annual Competition
               </NavDropdown.Item>
               <NavDropdown.Item
-                as={Link}
-                to="https://calendar.google.com/calendar/u/1?cid=Z2xyMzI3bm5jbHY0ZW80aW5xNm5pMTRzYWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
+                tag="a"
+                href="https://calendar.google.com/calendar/u/2?cid=Z2xyMzI3bm5jbHY0ZW80aW5xNm5pMTRzYWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
                 className="nav-add-calendar"
               >
                 Add WiCS to Calendar
