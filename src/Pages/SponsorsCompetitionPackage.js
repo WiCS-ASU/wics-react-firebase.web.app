@@ -125,7 +125,7 @@ function SponsorsCompetitionPackage() {
                     <td><a target="_blank" href="https://www.amazon.com/Fujifilm-Instax-Mini-40-Instant/dp/B09QD6X9XL/ref=psdc_291227_t1_B091D8C7RC"><u>Amazon</u></a></td>
                   </tr>
                   <tr>
-                    <td>Raspberry Pi 3 Ultimate Starter Kit (x3)</td>
+                    <td>Garmin Venu Sq watches (x3)</td>
                     <td>$360</td>
                     <td>5th Place</td>
                     <td><a target="_blank" href="https://www.bestbuy.com/site/canakit-raspberry-pi-4-2gb-ultimate-maker-kit-clear/6365733.p?skuId=6365733&ref=212&loc=1&extStoreId=1189&ref=212&loc=1&gclid=CjwKCAiAwKyNBhBfEiwA_mrUMvGG-8m-AUdKs82_x-Lx0ml1bsJQsgtHuQRPxMSP5mYfi_gtIIL1PhoCfzgQAvD_BwE&gclsrc=aw.ds"><u>Best Buy</u></a></td>
