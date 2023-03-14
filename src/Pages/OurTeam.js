@@ -79,8 +79,8 @@ function OurTeam() {
           }
           name="Abigail Sepulveda"
           title="Treasurer"
-          description="---"
-          // link="---"
+          description="Abigail is a senior at Arizona State University studying computer science. She has been actively involved in the student-led organization Women in Computer Science since 2021, where she served as a graphic designer and now holds the role of Treasurer. With a passion for learning, she works as a Student Data Engineering Specialist at Arizona State University Enterprise Partners and enjoys utilizing their technical skills for the benefit of others. Outside of this, she enjoys activities such as hiking, rock climbing, cooking, baking, and watching movies."
+          link="http://www.linkedin.com/in/sepulveda-abigail"
         />
 
         <TeamMembers
@@ -255,21 +255,28 @@ function OurTeam() {
         <h1 className="headers mt-5"> Our Advisors</h1>
         <TeamMembers
           officer={
-            <img
-              src="..\images\officer-images\navabi.png"
-              alt="woman"
-              fluid
-            />
+            <img src="..\images\officer-images\navabi.png" alt="woman" fluid />
           }
           name="Farideh Tadayon-Navabi"
           title="Advisor"
           description=<div>
-          <p>Farideh Tadayon-Navabi is a principal lecturer in the School of Computing, Informatics, and Decision System Engineering.  Prior to ASU, she held a teaching position at University of Louisiana in Monroe.</p>
-          <p>Tadayon-Navabi’s interested in improving the undergraduate program curriculum. She works on developing strategies to help students succeed in introductory courses and to retain students in the program. Her research focuses on computer science education, programming languages and software development.</p>
+            <p>
+              Farideh Tadayon-Navabi is a principal lecturer in the School of
+              Computing, Informatics, and Decision System Engineering. Prior to
+              ASU, she held a teaching position at University of Louisiana in
+              Monroe.
+            </p>
+            <p>
+              Tadayon-Navabi’s interested in improving the undergraduate program
+              curriculum. She works on developing strategies to help students
+              succeed in introductory courses and to retain students in the
+              program. Her research focuses on computer science education,
+              programming languages and software development.
+            </p>
           </div>
           link="https://search.asu.edu/profile/71640"
         />
-                <TeamMembers
+        <TeamMembers
           officer={
             <img
               src="..\images\officer-images\nakamura.png"
@@ -280,8 +287,18 @@ function OurTeam() {
           name="Mutsumi Nakamura"
           title="Advisor"
           description=<div>
-          <p>Mutsumi Nakamura is a teaching professor in the School of Computing and Augmented Intelligence in the Ira A. Fulton Schools of Engineering at Arizona State University. </p>
-          <p>Nakamura’s research focuses on active/web-based database systems, and deep learning. She has taught courses in database management, data structures and algorithms, automata theory, software engineering, computer organization and assembly language, and Java, C++, C# programming languages.</p>
+            <p>
+              Mutsumi Nakamura is a teaching professor in the School of
+              Computing and Augmented Intelligence in the Ira A. Fulton Schools
+              of Engineering at Arizona State University.{" "}
+            </p>
+            <p>
+              Nakamura’s research focuses on active/web-based database systems,
+              and deep learning. She has taught courses in database management,
+              data structures and algorithms, automata theory, software
+              engineering, computer organization and assembly language, and
+              Java, C++, C# programming languages.
+            </p>
           </div>
           link="https://search.asu.edu/profile/262996"
         />
