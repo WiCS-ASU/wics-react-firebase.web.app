@@ -131,7 +131,7 @@ function AnnualCompetition() {
                   </tr>
                   <tr>
                     <td>5th Place</td>
-                    <td>Raspberry Pi 3 Ultimate Starter Kit</td>
+                    <td>Garmin Venu Sq watches</td>
                   </tr>
                   <tr>
                     <td>6th Place</td>
