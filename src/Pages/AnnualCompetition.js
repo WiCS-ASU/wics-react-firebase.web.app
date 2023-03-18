@@ -12,7 +12,7 @@ function AnnualCompetition() {
           <p className="text-center">Saturday, March 25, 2023</p>
           <p className="text-center">
             {" "}
-            <strong> Registration is open! </strong>{" "}
+            <strong> Registration is closed! </strong>{" "}
           </p>
 
           <main>
