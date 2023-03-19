@@ -12,7 +12,7 @@ function AnnualCompetition() {
           <p className="text-center">Saturday, March 25, 2023</p>
           <p className="text-center">
             {" "}
-            <strong> Registration is open! </strong>{" "}
+            <strong> Registration is closed! </strong>{" "}
           </p>
 
           <main>
@@ -35,8 +35,8 @@ function AnnualCompetition() {
                 </p>
                 <p>
                   FIRST COME FIRST SERVE. We will be accepting approximately the
-                  first 60 people who apply (capped at the last team that
-                  includes the 60th applicant).
+                  first 90 people who apply (capped at the last team that
+                  includes the 90th applicant).
                 </p>
                 <p className="text-danger">
                   DEADLINE IS FRIDAY, MARCH 17, 2023!
@@ -234,9 +234,6 @@ function AnnualCompetition() {
             <section>
               <h3>Rules</h3>
               <ol>
-                <li>
-                  Teams have 3 hours to solve the given programming problems.
-                </li>
                 <li>
                   Teams have 3 hours to solve the given programming problems.
                 </li>
