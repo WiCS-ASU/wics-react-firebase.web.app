@@ -11,6 +11,7 @@ import Sponsors from "./Pages/Sponsors";
 import SponsorsCompetitionPackage from "./Pages/SponsorsCompetitionPackage";
 
 function App() {
+  window.scrollTo(0, 0);
   return (
     <div className="App">
       <Router>

@@ -23,11 +23,12 @@ function FooterComp() {
                     
             <div id="contact">
              <Nav.Link className="text-white" as={Link} to="/contact-us">
-                Contact Us
+                <b>Contact Us</b>
               </Nav.Link>
               {/* List of social media */}
               <Nav.Link href="https://www.instagram.com/wics.asu">
                 <BsInstagram size="1.5rem" color="white" />
+                {"  Instagram"}
               </Nav.Link>
               <Nav.Link href="https://www.linkedin.com/company/wics-asu">
                 <BsLinkedin size="1.5rem" color="white" />
@@ -60,11 +61,32 @@ function FooterComp() {
             </div>
 
             <div id="pages">
-            <Nav.Item>
-            <Nav.Link className="link-light" as={Link} to="/privacy-policy">
-              Privacy Policy
-            </Nav.Link>
-          </Nav.Item>
+              <Nav.Item>
+                <Nav.Link className="link-light" as={Link} to="/">
+                  <b>About Us</b> 
+                </Nav.Link>
+                <Nav.Link className="link-light" as={Link} to="/events-calendar">
+                  Events
+                </Nav.Link>
+                <Nav.Link className="link-light" as={Link} to="/annual-competition">
+                  Annual Competition
+                </Nav.Link>
+                <Nav.Link className="link-light" href="https://calendar.google.com/calendar/u/2?cid=Z2xyMzI3bm5jbHY0ZW80aW5xNm5pMTRzYWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">
+                  Google Calendar
+                </Nav.Link>
+                <Nav.Link className="link-light" as={Link} to="/sponsors">
+                  Sponsors
+                </Nav.Link>
+                <Nav.Link className="link-light" as={Link} to="/sponsors-competition-package">
+                  Sponsorship Packages
+                </Nav.Link>
+                <Nav.Link className="link-light" as={Link} to="/our-team">
+                  Officers
+                </Nav.Link>
+                <Nav.Link className="link-light" as={Link} to="/privacy-policy">
+                  Privacy Policy
+                </Nav.Link>
+              </Nav.Item>
             </div>
 
           

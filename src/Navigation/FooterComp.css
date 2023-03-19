@@ -3,7 +3,12 @@
     flex-direction: row;
     width: 100vw;
     justify-content: space-around;
+    padding: 2%;
 }
 #logo, #contact, #pages{
-    padding: 5%;
+    
+}
+
+a.nav-link {
+    color:white;
 }
