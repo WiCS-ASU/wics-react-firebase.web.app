@@ -54,8 +54,7 @@ function EventsList() {
   }
 
   useEffect(() => {
-    const events = getEvents();
-    setEvents(events);
+    window.scrollTo(0, 0);
   }, []);
 
   return (
@@ -73,13 +72,12 @@ function EventsList() {
 
         <div className="events-list">
           <button style={{width: 100, height: 50}} onClick={getEvents}>Get Events</button>
-          <ul>
+          <br></br>
           {events?.map((event) => (
-            <li key={event.id} className="flex justify-center">
+            <div key={event.id} >
               <Event description={event.summary} />
-            </li>
+            </div>
           ))}
-        </ul>
         </div>
         <div className="events-list"></div>
       </div>

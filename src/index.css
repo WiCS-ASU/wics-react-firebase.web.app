@@ -15,9 +15,7 @@ a {
   text-decoration: none;
 }
 
-.App {
-  
-}
+
 
 
 .name.card-title.h5 {
@@ -89,11 +87,11 @@ a {
 
 
 .events-list {
-  display: flex;
+  /* display: flex;
   flex-flow: center wrap;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   margin: 5%;
   width: 90%;
 }
