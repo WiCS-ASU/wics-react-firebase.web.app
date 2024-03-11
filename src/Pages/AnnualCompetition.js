@@ -179,6 +179,16 @@ function AnnualCompetition() {
               </p>
             </section>
             <section className="mb-5">
+              <h3>Sponsors</h3>
+                  <ul>
+                    <li>Amazon</li>
+                    <li>AVEVA</li>
+                    <li>General Dynamics Mission Systems</li>
+                    <li>Statefarm</li>
+                    <li>Garmin</li>
+                  </ul>
+            </section>
+            <section className="mb-5">
               <h3>The Competition</h3>
               <p>
                 <span className="text-decoration-underline">Check-in:</span>{" "}
