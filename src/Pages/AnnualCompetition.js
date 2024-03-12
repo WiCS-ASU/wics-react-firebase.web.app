@@ -7,12 +7,12 @@ function AnnualCompetition() {
       <Container>
         <div>
           <h1 className=" display-3 p-3 text-center">
-            WiCS 18th Annual Programming Competition
+            WiCS 19th Annual Programming Competition
           </h1>
-          <p className="text-center">Saturday, March 25, 2023</p>
+          <p className="text-center">Saturday, March 16, 2024</p>
           <p className="text-center">
             {" "}
-            <strong> Registration is closed! </strong>{" "}
+            <strong> Registration is OPEN! </strong>{" "}
           </p>
 
           <main>
@@ -20,7 +20,7 @@ function AnnualCompetition() {
               <article>
                 <h3>Application</h3>
                 <p>
-                  Apply  <a href="https://docs.google.com/forms/d/e/1FAIpQLScLeaKblUEwmXpyb1LvDJ7xIH0NGxpWSTxTKyVaCDS1eSs5jQ/viewform?usp=sf_link">here </a> 
+                  Apply  <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2Iu11J9YXbHFmpfvI-ZRrFtRulsa6sUDbaZgc9We8PJ9Wkg/viewform?usp=sf_link">here </a> 
                   for the competition! Please note that the $15
                   deposit to our PayPal must be made before you are officially
                   registered. You will get the deposit returned to you after the
@@ -30,16 +30,16 @@ function AnnualCompetition() {
                 <p>
                   The PayPal account to submit the $15 deposit is
                   “wics.asu@gmail.com” and must have the memo be “WiCS
-                  Programming Competition 2023 Deposit: [Team Name]” where [Team
+                  Programming Competition 2024 Deposit: [Team Name]” where [Team
                   Name] is the official name submitted on the application.
                 </p>
                 <p>
                   FIRST COME FIRST SERVE. We will be accepting approximately the
-                  first 90 people who apply (capped at the last team that
-                  includes the 90th applicant).
+                  first 100 people who apply (capped at the last team that
+                  includes the 60th applicant).
                 </p>
                 <p className="text-danger">
-                  DEADLINE IS FRIDAY, MARCH 17, 2023!
+                  DEADLINE IS THURSDAY, MARCH 14, 2024!
                 </p>
               </article>
             </section>
@@ -59,8 +59,9 @@ function AnnualCompetition() {
                 <li>
                   On the day of the competition at check-in, you will sign a
                   photo release form. We will provide them at the time of
-                  check-in. If you are a minor, you must bring the photo release
-                  form signed by a parent/guardian in order to participate or
+                  check-in. If you are a minor, you must bring the 
+                  <a href="https://docs.google.com/document/d/1yiNlDjGZmIHfgQaubL9n33YEKd5wlGFnfhqx0Fmg94U/edit?usp=sharing">photo release form </a>
+                  signed by a parent/guardian in order to participate or
                   have the parent/guardian with you at check-in to sign it.
                 </li>
                 <li>
@@ -82,10 +83,6 @@ function AnnualCompetition() {
                   Reception.
                 </li>
                 <li>Raffle winners must be present to win.</li>
-                <li>
-                  Masks are encouraged. Please do not come if you do not meet
-                  the ASU COVID-19 Mitigation policies.
-                </li>
               </ul>
             </section>
             <section className="mb-5">
@@ -97,9 +94,9 @@ function AnnualCompetition() {
               </p>
               <p>8:30 AM - Opening Ceremony @ BYENG210</p>
               <p>9:00 AM - Competition Begins @ BYENG Lab Room 214</p>
-              <p>12:00 PM - Competition ends, Lunch Begins @ BYAC150 </p>
-              <p>1:00 PM - Closing Ceremony @ BYAC150 </p>
-              <p>1:30 PM - Reception @ BYAC150</p>
+              <p>12:00 PM - Competition ends, Lunch Begins @ BYAC110 </p>
+              <p>1:00 PM - Closing Ceremony @ BYAC110 </p>
+              <p>1:30 PM - Reception @ BYAC110</p>
               <p>2:30 PM - Official Wrap-Up</p>
             </section>
 
@@ -115,55 +112,63 @@ function AnnualCompetition() {
                 <tbody>
                   <tr>
                     <td>1st Place</td>
-                    <td>Nintendo Switch</td>
+                    <td>Beats Headphones</td>
                   </tr>
                   <tr>
                     <td>2nd Place</td>
-                    <td>Samsung Galaxy Tablet</td>
+                    <td>Drone</td>
                   </tr>
                   <tr>
                     <td>3rd Place</td>
-                    <td>Beats headphones</td>
+                    <td>Polaroid</td>
                   </tr>
                   <tr>
                     <td>4th Place</td>
-                    <td>Fujifilm Instax Mini</td>
+                    <td>Raspberry Pi 3 Kit</td>
                   </tr>
                   <tr>
                     <td>5th Place</td>
-                    <td>Garmin Venu Sq watches</td>
+                    <td>Portable Printer</td>
                   </tr>
                   <tr>
                     <td>6th Place</td>
-                    <td>Mini projector</td>
+                    <td>Mini Projector</td>
                   </tr>
                   <tr>
                     <td>7th Place</td>
-                    <td>JBL portable speaker</td>
-                  </tr>
-                  <tr>
-                    <td>8th Place</td>
-                    <td>Logitech Wireless Mouse</td>
-                  </tr>
-                  <tr>
-                    <td>9th Place</td>
                     <td>$25 Amazon Gift Card</td>
                   </tr>
                   <tr>
-                    <td>10th Place</td>
+                    <td>8th Place</td>
+                    <td>$20 Amazon Gift Card</td>
+                  </tr>
+                  <tr>
+                    <td>9th Place</td>
                     <td>$15 Amazon Gift Card</td>
                   </tr>
                   <tr>
-                    <td>Top Female/Non-Binary Team</td>
-                    <td>27" monitor</td>
+                    <td>Most Innovative</td>
+                    <td>Google Nest</td>
                   </tr>
                   <tr>
-                    <td>1st Place Underclassmen Team</td>
-                    <td>Kindle/Samsung Tablet</td>
+                    <td>Most Efficient</td>
+                    <td>JBL Portable Speaker</td>
+                  </tr>
+                  <tr>
+                    <td>Most Well-Structured</td>
+                    <td>Logitech Wireless Mouse</td>
+                  </tr>
+                  <tr>
+                    <td>Top Female/Non-Binary Team</td>
+                    <td>Samsung 27" Monitor</td>
+                  </tr>
+                  <tr>
+                    <td>Top Underclassmen Team</td>
+                    <td>Amazon Tablet</td>
                   </tr>
                   <tr>
                     <td>2nd Place Underclassmen Team</td>
-                    <td>$20 Amazon Gift Card</td>
+                    <td>Amazon Gift Card</td>
                   </tr>
                 </tbody>
               </Table>
@@ -172,6 +177,16 @@ function AnnualCompetition() {
                 be re-distributed in a raffle. Participants need to be at the
                 closing ceremony to win the raffle.{" "}
               </p>
+            </section>
+            <section className="mb-5">
+              <h3>Sponsors</h3>
+                  <ul>
+                    <li>Amazon</li>
+                    <li>AVEVA</li>
+                    <li>General Dynamics Mission Systems</li>
+                    <li>Statefarm</li>
+                    <li>Garmin</li>
+                  </ul>
             </section>
             <section className="mb-5">
               <h3>The Competition</h3>
@@ -196,7 +211,7 @@ function AnnualCompetition() {
               </p>
               <p>
                 <span className="text-decoration-underline">Lunch:</span>{" "}
-                Following the competition, we will head to BYAC150. Sponsors
+                Following the competition, we will head to BYAC110. Sponsors
                 will have an opportunity to get lunch alongside participants
                 from 12:00 PM to 1:00 PM. This does NOT need to be official
                 communication with them, so do not feel pressure at that time.
@@ -222,8 +237,7 @@ function AnnualCompetition() {
               </p>
               <p>
                 <span className="text-decoration-underline">Wrap Up:</span>{" "}
-                Please arrive no later than 8:30 am to check in at BYENG210.You
-                are free to officially leave at this time if you are not a
+                You are free to officially leave at this time if you are not a
                 winner. This is designated time for WINNERS from 2:30PM to 3:00
                 PM. If you are a winner and have yet to be able to meet with
                 sponsors (and they are still there after the reception), this is
