@@ -59,8 +59,8 @@ function AnnualCompetition() {
                 <li>
                   On the day of the competition at check-in, you will sign a
                   photo release form. We will provide them at the time of
-                  check-in. If you are a minor, you must bring the 
-                  <a href="https://docs.google.com/document/d/1yiNlDjGZmIHfgQaubL9n33YEKd5wlGFnfhqx0Fmg94U/edit?usp=sharing">photo release form </a>
+                  check-in. If you are a minor, you must bring the
+                  <a href="https://docs.google.com/document/d/1yiNlDjGZmIHfgQaubL9n33YEKd5wlGFnfhqx0Fmg94U/edit?usp=sharing"> photo release form </a>
                   signed by a parent/guardian in order to participate or
                   have the parent/guardian with you at check-in to sign it.
                 </li>
