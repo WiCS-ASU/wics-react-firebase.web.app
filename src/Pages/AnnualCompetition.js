@@ -20,7 +20,7 @@ function AnnualCompetition() {
               <article>
                 <h3>Application</h3>
                 <p>
-                  Apply  <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2Iu11J9YXbHFmpfvI-ZRrFtRulsa6sUDbaZgc9We8PJ9Wkg/viewform?usp=sf_link">here </a> 
+                  Apply  <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2Iu11J9YXbHFmpfvI-ZRrFtRulsa6sUDbaZgc9We8PJ9Wkg/viewform?usp=sf_link">here </a>
                   for the competition! Please note that the $15
                   deposit to our PayPal must be made before you are officially
                   registered. You will get the deposit returned to you after the
@@ -59,13 +59,8 @@ function AnnualCompetition() {
                 <li>
                   On the day of the competition at check-in, you will sign a
                   photo release form. We will provide them at the time of
-<<<<<<< HEAD
-                  check-in. If you are a minor, you must bring the  
-                  <a href="https://docs.google.com/document/d/1yiNlDjGZmIHfgQaubL9n33YEKd5wlGFnfhqx0Fmg94U/edit?usp=sharing">photo release form </a>
-=======
                   check-in. If you are a minor, you must bring the
-                  <a href="https://docs.google.com/document/d/1yiNlDjGZmIHfgQaubL9n33YEKd5wlGFnfhqx0Fmg94U/edit?usp=sharing"> photo release form </a>
->>>>>>> 186f08fa434cdfb629723d3aabcd9e5713551926
+                  <a href="https://docs.google.com/document/d/1yiNlDjGZmIHfgQaubL9n33YEKd5wlGFnfhqx0Fmg94U/edit?usp=sharing">photo release form </a>
                   signed by a parent/guardian in order to participate or
                   have the parent/guardian with you at check-in to sign it.
                 </li>
@@ -185,13 +180,13 @@ function AnnualCompetition() {
             </section>
             <section className="mb-5">
               <h3>Sponsors</h3>
-                  <ul>
-                    <li>Amazon</li>
-                    <li>AVEVA</li>
-                    <li>General Dynamics Mission Systems</li>
-                    <li>Statefarm</li>
-                    <li>Garmin</li>
-                  </ul>
+              <ul>
+                <li>Amazon</li>
+                <li>AVEVA</li>
+                <li>General Dynamics Mission Systems</li>
+                <li>Statefarm</li>
+                <li>Garmin</li>
+              </ul>
             </section>
             <section className="mb-5">
               <h3>The Competition</h3>
