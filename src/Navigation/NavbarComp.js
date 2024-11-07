@@ -1,25 +1,30 @@
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import WiCSOption from "../UI/Branding/Logos/WiCSOption.svg";
+// This was changed from: import WiCSOption from "../UI/Branding/Logos/WiCSOption.png";
+import WiCSOption from "../UI/Branding/Logos/WiCS Logo.png";
 
+// bg = "light"
+// className = "light-purple"
 function NavbarComp() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light">
+    <Navbar collapseOnSelect expand="lg" className = "bg-light">
       <Container>
-        <Navbar.Brand as={Link} to="/" className="mx-0">
+        <Navbar.Brand as={Link} to="/" className="mx-1">
           {" "}
-          <img src={WiCSOption} alt="woman" width="100" />{" "}
+          <img src={WiCSOption} alt="woman" width="160" />{" "}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto p-1">
-            <Nav.Link className="px-5" as={Link} to="/">
-              About Us
+            <Nav.Link 
+              className="px-5 mx-5 custom-font-size3" as={Link} to="/">
+              <strong>About Us</strong>
             </Nav.Link>
             <NavDropdown
-              className="px-5"
-              title="Events"
+              className="px-5 mx-5 custom-font-size3"
+              title={<strong>Events</strong>}
+        /*       title="Events" */
               id="collasible-nav-dropdown"
             >
               {/** <NavDropdown.Item as={Link} to="/events-calendar">
@@ -37,8 +42,9 @@ function NavbarComp() {
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown
-              className="px-5"
-              title="Sponsors"
+              className="px-5 mx-5 custom-font-size3"
+              /* title="Sponsors" */
+              title={<strong>Sponsors</strong>}
               id="collasible-nav-dropdown"
             >
               <NavDropdown.Item as={Link} to="/sponsors">
@@ -48,8 +54,8 @@ function NavbarComp() {
                 Sponsorship Package
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link className="px-5" as={Link} to="/our-team">
-              Our Team
+            <Nav.Link className="px-5 mx-5 custom-font-size3" as={Link} to="/our-team">
+              <strong>Our Team</strong>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
