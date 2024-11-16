@@ -54,7 +54,7 @@ function OurTeam() {
         <TeamMembers
           officer={
             <img
-              src="..\images\officer-images\abigail-sepulveda.png"
+              src="..\images\officer-images\blank-profile-circle.png"
               alt="woman"
               fluid
             />
