@@ -6,6 +6,57 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ADDED CODE 8/25/2024 - Michelle Tam
+/* -------------------------------------------------------------------- */
+.platinumTier {
+  color: #6c757d; /* Matches bg-secondary */
+}
+
+.light-purple {
+  background-color: #dab7f17c; /* Light purple */
+}
+
+.light-purple2 {
+  background-color: #ecd9f888; /* Light purple */
+}
+
+.custom-font-size {
+  font-size: 19.5px !important; /* Adjust the size as needed */
+}
+
+.custom-font-size2 {
+  font-size: 18px !important; /* Adjust the size as needed */
+}
+
+.custom-font-size3 {
+  font-size: 17px !important; /* Adjust the size as needed */
+}
+
+.custom-image-col {
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.custom-image-col-test{
+  width: 100%;
+  max-width: 1000px; /* or any desired width */
+}
+
+.custom-card {
+  height: auto; /* Ensure card height adapts to content */
+}
+.custom-card-img {
+  height: 800px !important; /* Set your desired height */
+  object-fit: cover; /* Ensure image covers the area */
+}
+
+.custom-card-img-width {
+  width: 100% !important; /* Set your desired height */
+  object-fit: cover; /* Ensure image covers the area */
+}
+
+/* -------------------------------------------------------------------- */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

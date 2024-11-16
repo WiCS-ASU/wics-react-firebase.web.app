@@ -5,8 +5,10 @@ import { Card, Row, Col } from "react-bootstrap";
 function TeamMember(props) {
   return (
     <div className="row align-items-right">
+      {/* <Card border="light" className="bg-light"> */}
       <Card border="light" className="bg-light">
         <Card.Body>
+          {/* <Row className="vertical-align-top"> */}
           <Row className="vertical-align-top">
             <Col className="d-none d-md-flex justify-content-center">
               {props.officer}

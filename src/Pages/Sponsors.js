@@ -2,7 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Sponsorships from "../UI/Cards/Sponsorships";
 import { Carousel } from "react-bootstrap";
 import { useState } from "react";
-import GoldTier from "../Sponsor Tiers/GoldTier";
+import PlatinumTier from "../Sponsor Tiers/PlatinumTier";
 import SilverTier from "../Sponsor Tiers/SilverTier";
 import BronzeTier from "../Sponsor Tiers/BronzeTier";
 
@@ -23,7 +23,7 @@ function Sponsors() {
         indicators={null}
       >
         <Carousel.Item>
-          <GoldTier />
+          <PlatinumTier />
         </Carousel.Item>
 
         <Carousel.Item>
