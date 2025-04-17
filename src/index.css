@@ -12,12 +12,62 @@ body {
   color: #6c757d; /* Matches bg-secondary */
 }
 
+.tier-box {
+  border: 2px solid #6c757d; /* Gray border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 10px 20px; /* Space inside the box */
+  display: inline-block; /* Make the box fit the text size */
+  margin-bottom: 20px; /* Space below the box */
+  text-align: center; /* Center align the text */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow effect */
+}
+
+.carousel {
+  width: 100%;
+  height: 350px; /* Matches the intended image height */
+  overflow: hidden;
+}
+
+.carousel.slide {
+  height: 350px; /* Ensures the carousel container has the correct height */
+  overflow: hidden; /* Prevents unwanted overflow */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover; /* Ensures the image fills the area proportionally */
+  display: block; /* Ensures the image is treated as a block-level element */
+}
+
+.carousel.slide {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #7859AD; /* Set the background color */
+  filter: none; /* Remove default grayscale filter */
+}
+
+
 .light-purple {
   background-color: #dab7f17c; /* Light purple */
+  padding: 0;
+  margin: 0;
+  height: auto;
+  width: 100%;
 }
 
 .light-purple2 {
   background-color: #ecd9f888; /* Light purple */
+  padding: 0 !important;
+  margin: 0 !important;
+  height: auto;
+  width: 100%;
 }
 
 .custom-font-size {
@@ -36,6 +86,16 @@ body {
   display: flex;
   justify-content: center; /* Center the image horizontally */
   height: auto; /* Maintain aspect ratio */
+  padding: 0;
+  
+}
+
+.WhatWeDo-title {
+  margin-bottom: -50px; /* Move the title closer to the text */
+}
+
+.WhatWeDo-description {
+  margin-top: -30px; /* Move the text upwards */
 }
 
 .custom-image-col-test{
@@ -44,12 +104,19 @@ body {
 }
 
 .custom-card {
-  height: auto; /* Ensure card height adapts to content */
+  height: 100%; /* Ensures the card takes up the full height of the container */
+  display: flex;
+  flex-direction: column; /* Allows for content inside to stack */
 }
+
+
 .custom-card-img {
-  height: 800px !important; /* Set your desired height */
-  object-fit: cover; /* Ensure image covers the area */
+  width: 100%; /* Make the image as wide as the card */
+  height: 100%; /* Make the image as tall as the card */
+  object-fit: cover; /* Ensure the image maintains proportions while filling */
+  border-radius: inherit; /* Matches any card border radius */
 }
+
 
 .custom-card-img-width {
   width: 100% !important; /* Set your desired height */
@@ -64,16 +131,6 @@ code {
 
 a {
   text-decoration: none;
-}
-
-.App {
-  
-}
-
-.footer-container {
-  /* display: block; */
-  
-
 }
 
 .name.card-title.h5 {
