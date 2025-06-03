@@ -33,6 +33,11 @@ function NavbarComp() {
               <NavDropdown.Item as={Link} to="/annual-competition">
                 Annual Competition
               </NavDropdown.Item>
+
+              <NavDropdown.Item as={Link} to="/past-competitions">
+                Past Competitions
+              </NavDropdown.Item>
+              
               <NavDropdown.Item
                 tag="a"
                 href="https://calendar.google.com/calendar/u/2?cid=Z2xyMzI3bm5jbHY0ZW80aW5xNm5pMTRzYWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"

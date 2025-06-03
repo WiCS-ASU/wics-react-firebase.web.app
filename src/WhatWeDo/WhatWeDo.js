@@ -67,7 +67,7 @@ function whatWeDo() {
     <div className="light-purple2">
       <Row className="justify-content-center">
         {imageData.map((data, index) => (
-          <Col xs={12} md={4} className="my-3 custom-image-col" key={index}>
+          <Col xs={12} md={4} className="my-3 px-2 custom-image-col" key={index}>
             <WWD
               title={data.title}
               description={data.description}

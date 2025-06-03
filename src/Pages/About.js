@@ -55,7 +55,7 @@ function About() {
             />
           </Col>
         </Row>
-        <h3 className="text-center m-4">What we do</h3>
+        <h3 className="text-center m-2">What We Do</h3>
          <WhatWeDo />  
       </Container>
     </div>
