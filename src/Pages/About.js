@@ -27,12 +27,9 @@ function About() {
               A support network and resource for female and other minority
               students in technology
             </h6>
-            <Button
-              href="https://asu.campuslabs.com/engage/organization/women-in-computer-science"
-              variant="primary"
-            >
-              Join Now
-            </Button>
+            <Button href="https://asu.campuslabs.com/engage/organization/women-in-computer-science" 
+            variant="primary"
+            className="">Join Now</Button>
           </div>
         </div>
 

@@ -3,7 +3,7 @@ import { Container, Table } from "react-bootstrap";
 
 function AnnualCompetition() {
   return (
-    <div className="bg-light pb-5">
+    <div className="light-purple pb-5">
       <Container>
         <div>
           <h1 className=" display-3 p-3 text-center">
