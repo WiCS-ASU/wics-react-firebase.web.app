@@ -18,7 +18,7 @@ function About() {
     <div className="light-purple">
       <Container>
         <div className="text-center pb-3 ">
-          <h1 className=" display-1 p-5 mb-0">Women in Computer Science</h1>
+          <h1 className=" display-1 p-5 mb-0">Women In Computer Science </h1>
           <div className="about-intro">
             {/** <SeasonalDisplay /> */}
           </div>

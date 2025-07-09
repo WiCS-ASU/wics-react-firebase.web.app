@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import NavbarComp from "./Navigation/NavbarComp";
 import FooterComp from "./Navigation/FooterComp";
 import About from "./Pages/About";
+import NewAbout from "./Pages/NewAbout";
 import Events from "./Pages/Events";
 import AnnualCompetition from "./Pages/AnnualCompetition";
 import PastCompetitions from "./Pages/PastCompetitions";
