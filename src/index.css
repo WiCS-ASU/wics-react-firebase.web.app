@@ -242,3 +242,6 @@ a {
   justify-content: center;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

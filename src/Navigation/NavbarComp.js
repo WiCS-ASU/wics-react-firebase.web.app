@@ -8,7 +8,7 @@ import WiCSOption from "../UI/Branding/Logos/WiCS Logo.png";
 // className = "light-purple"
 function NavbarComp() {
   return (
-    <Navbar collapseOnSelect expand="lg" className = "light-purple fs-5 fw-bold px-4">
+    <Navbar collapseOnSelect expand="lg" className = "fw-bold px-4 text-lg">
         <Navbar.Brand as={Link} to="/" className="mx-1">
           {" "}
           <img src={WiCSOption} alt="woman" width="160" />{" "}

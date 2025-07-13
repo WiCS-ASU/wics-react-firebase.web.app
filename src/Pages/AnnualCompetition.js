@@ -3,21 +3,18 @@ import { Container, Table } from "react-bootstrap";
 
 function AnnualCompetition() {
   return (
-    <div className="light-purple pb-5">
+    <div className="pb-5 font-serif">
       <Container>
         <div>
-          <h1 className=" display-3 p-3 text-center">
+          <h1 className="text-4xl md:text-6xl p-3 text-center">
             WiCS 20th Annual Tech Competition: 2025 Hackathon
           </h1>
-          <p className="text-center">Saturday, March 29, 2025</p>
-          <p className="text-center">
-            {" "}
-            <strong> Registration is OPEN! </strong>{" "}
-          </p>
-
+          <p className="text-center md:text-lg">Saturday, March 29, 2025 <br/>
+          <span className="font-bold">Registration is OPEN!</span></p>
           <main>
             <section className="mb-5">
               <article>
+                
                 <h3>Application</h3>
                 <p>
                   Apply  <a href="https://docs.google.com/forms/d/e/1FAIpQLSerF9LnsUV5Q2dcWopuCyEQ5MfXCuWhupQC8-d27SE7QVIbrw/viewform">here </a>

@@ -11,30 +11,32 @@ import WhatWeDo from "../WhatWeDo/WhatWeDo.js";
 //import homePic from "../public/imagesCropped2024/wicsHomePage"
 // ---------------------------------------------------------
 import SeasonalDisplay from "../SeasonalDisplay/SeasonalDisplay.js";
+// ----- Added imports - Diya -------
+import SponsorScroll from "../Components/Sponsorscroll";
+import Footer from "../Navigation/Footer.jsx";
 
 //bg-light
 function About() {
   return (
-    <div className="light-purple">
+    <div className="light-purple font-serif">
       <Container>
-        <div className="text-center pb-3 ">
-          <h1 className=" display-1 p-5 mb-0">Women In Computer Science </h1>
-          <div className="about-intro">
-            {/** <SeasonalDisplay /> */}
-          </div>
+        <div className="text-center pb-3">
+          <h1 className="text-4xl md:text-6xl p-5 pb-2">Women In Computer Science </h1>
           <div className="club-vision">
             <h6 className="p-0 mb-4 custom-font-size2">
-              A support network and resource for female and other minority
-              students in technology
+              A support network to empower women and other minorities in tech
             </h6>
             <Button href="https://asu.campuslabs.com/engage/organization/women-in-computer-science" 
             variant="primary"
-            className="">Join Now</Button>
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-sans">Join Now</Button>
           </div>
         </div>
-
-        <Row className="mb-5 ">
+{/* --- OLD BOOTSTRAP STYLING ----
+        <Row className="mb-5">
           <Col className="d-flex align-items-center custom-font-size3">
+
             <div>
               <p className="align-middle">
                 Women in Computer Science is a student-led organization at
@@ -52,9 +54,34 @@ function About() {
             />
           </Col>
         </Row>
+              */}
+        <div className="flex flex-col md:flex-row font-serif my-10">
+          <div className="w-full md:w-1/2">
+            <div>
+              <p className="text-lg">Women in Computer Science is a student-led organization at
+                Arizona State University, which aims to support female and other
+                minority students in technology.</p>
+            </div>
+            <div>
+            </div>
+          </div>
+          <img
+              src={Scene}
+              className="img-fluid mx-10 ml-20 hidden md:block"
+              alt="scene of two women in collaboration"
+          />
+        </div>
+
+
+
+
         <h3 className="text-center m-2">What We Do</h3>
-         <WhatWeDo />  
+         <WhatWeDo /> 
+         <h3 className="text-center m-2 pb-2 pt-10">Sponsors</h3> 
       </Container>
+      <SponsorScroll/>
+      <div className="py-10"></div>
+      <Footer/>
     </div>
     );
 }
