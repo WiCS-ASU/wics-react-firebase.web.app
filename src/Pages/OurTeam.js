@@ -24,104 +24,6 @@ function OurTeam() {
         <h1 className="text-center mb-5 pb-5">Our Team</h1>
         <TeamMembers
           officer={
-            <img src="../images2024/Krisha Raut.png" alt="woman" />
-            /* <img src="../images/officer-images/shaira-alam.png" alt="woman" /> */
-          }
-          name="Krisha Raut"
-          title="President"
-          description=<div>
-            <p>
-             Hello! I’m a Junior majoring in computer science at ASU. A fun fact about me: I love traveling and meeting new people! {" "}
-            </p>
-          </div>
-          link="https://www.linkedin.com/in/krisha-raut-1b31b8280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-        />
-
-        <TeamMembers
-          officer={
-            <img
-              src="../imagesCropped2024/Evelyn Brannen.png"
-              alt="woman"
-              fluid
-            />
-          }
-          name="Evelyn Brannen"
-          title="VP of Internal Affairs"
-          description="I'm Evelyn, and I'm a senior majoring in computer science! I got into this field because I love problem solving and seeing my ideas come to life, and I love being able to put my creativity into what I do. I'm graduating with my undergrad in December 2024, then I will be pursuing the 4+1 at ASU to get a masters in CS. In my free time I love to read and play the guitar!"
-          link="https://www.linkedin.com/in/evelyn-brannen/"
-        />
-
-        <TeamMembers
-          officer={
-            <img
-              src="..\images\officer-images\blank-profile-circle.png"
-              alt="woman"
-              fluid
-            />
-          }
-          name="Ananya Singh"
-          title="Treasurer"
-          description="--"
-          link="http://www.linkedin.com/in/sepulveda-abigail"
-        />
-
-        <TeamMembers
-          officer={
-            <img
-              src="..\images\officer-images\kaushiki-singh.png"
-              alt="woman"
-              fluid
-            />
-          }
-          name="Kaushiki Singh"
-          title="Co-Treasurer"
-          description=" I’m a computer science senior. I joined WiCS as a member last semester (Spring 2022) and participated in the mentorship program as a mentee, where I got the opportunity to collaborate with other members on a project. I’m always looking for opportunities to learn and grow, which is why I enjoy being a part of WiCS. My hobbies include listening to music all the time and watching anime. "
-          link="https://www.linkedin.com/in/kaushikisingh"
-        />
-        <TeamMembers
-          officer={
-            <img
-              src="../imagesCropped2024/Asmita Jalote.png"
-              alt="woman"
-              fluid
-            />
-          }
-          name="Asmita Jalote"
-          title="VP of Industry Affairs"
-          description="I am a senior in Computer Science (SWE), and WiCS has been a constant pillar of support for me throughout my college years. I spent the last two years creatively building the WiCS brand identity, and this year I look forward to strengthening relations with our industry sponsors. Leading on the executive team has given me purpose, friendship, and opportunity. I hope that I graduate having left a lasting impact on the community of women in STEM at ASU.I am an undergraduate student majoring in Computer Science, graduating in December 2024. This past summer, I interned at Wells Fargo as a software engineering intern. I have been involved with WiCS since my freshman year, and now I am the Vice President of External Affairs. Aside from school, I love traveling and studying new languages (the languages we speak, not programming languages! :))."
-          link="https://www.linkedin.com/in/asmitajalote/"
-        />
-
-        <TeamMembers
-          officer={
-            <img
-              src="../imagesCropped2024/Yeonghyeon Kim (2).png"
-              alt="woman"
-              fluid
-            />
-          }
-          name="Yeonghyeon (Clara) Kim"
-          title="VP of External Affairs"
-          description="I am an undergraduate student majoring in Computer Science, graduating in December 2024. This past summer, I interned at Wells Fargo as a software engineering intern. I have been involved with WiCS since my freshman year, and now I am the Vice President of External Affairs. Aside from school, I love traveling and studying new languages (the languages we speak, not programming languages! :))."
-          link="https://www.linkedin.com/in/yeonghyeon/"
-        />
-
-        <TeamMembers
-          officer={
-            <img
-              src="../imagesCropped2024/Riya Ubhe.png"
-              alt="woman"
-              fluid
-            />
-          }
-          name="Riya Ubhe"
-          title="VP of Outreach"
-          description="I am a sophomore majoring in computer science. I have been a part of WiCS since my freshman year. "
-          /*link="https://www.linkedin.com/in/bushra-karim-669a101b1" */
-        />
-
-        <TeamMembers
-          officer={
             <img
               src="../imagesCropped2024/Han Nguyen (2).png"
               alt="woman"
@@ -129,7 +31,7 @@ function OurTeam() {
             />
           }
           name="Han Nguyen"
-          title="Logistics Director"
+          title="President"
           description="I'm a Computer Science with interest in full-stack development, algorithm, and film photography!"
           link="https://www.linkedin.com/in/hannguyen0712/"
         />
@@ -142,35 +44,9 @@ function OurTeam() {
             />
           }
           name="Sofie Vargas"
-          title="Marketing Director"
+          title="VP of Industry Affairs"
           description="I am a sophomore majoring in computer science and minoring in math! My other interests are in sustainability, environmental sciences, and food -- in high school I ran a food blog on Instagram for restaurants in San Diego :-)"
           link="www.linkedin.com/in/sofia-vargas-8886b5284"
-        />
-        <TeamMembers
-          officer={
-            <img
-              src="../imagesCropped2024/Ishita Ranjan (1).png"
-              alt="woman"
-              fluid
-            />
-          }
-          name="Ishita Ranjan"
-          title="Graphic Designer"
-          description="I'm a junior majoring in Computer Science and minoring in Data Science. I have been a part of WiCS since I was a freshman!"
-          link="https://www.linkedin.com/in/ishita-ranjan-/"
-        />
-        <TeamMembers
-          officer={
-            <img
-              src="..\images\officer-images\blank-profile-circle.png"
-              alt="woman"
-              fluid
-            />
-          }
-          name="Sia Sheguri"
-          title="Programming Competition Director"
-          description=" -- "
-          link=""
         />
         <TeamMembers
           officer={
@@ -182,139 +58,153 @@ function OurTeam() {
           }
 
           name="Tanmayi Ghadge"
+          title="VP of External Affairs"
+          description="--"
+          link=""
+        />
+        <TeamMembers
+          officer={
+            <img
+              src="../imagesCropped2024/Ishita Ranjan (1).png"
+              alt="woman"
+              fluid
+            />
+          }
+          name="Ishita Ranjan"
+          title="VP Outreach"
+          description="I'm a junior majoring in Computer Science and minoring in Data Science. I have been a part of WiCS since I was a freshman!"
+          link="https://www.linkedin.com/in/ishita-ranjan-/"
+        />
+        <TeamMembers
+          officer={
+            <img
+              src="..\images\officer-images\blank-profile-circle.png"
+              alt="woman"
+              fluid
+            />
+          }
+
+          name="Tiya Lath"
+          title="VP of Internal Affairs"
+          description="--"
+          link=""
+        />
+        <TeamMembers
+          officer={
+            <img
+              src="..\images\officer-images\blank-profile-circle.png"
+              alt="woman"
+              fluid
+            />
+          }
+
+          name="Ananya Arora"
           title="Mentorship Program Director"
           description="--"
           link=""
         />
-
         <TeamMembers
           officer={
             <img
-              src="../imagesCropped2024/Michelle Tam.png"
+              src="..\images\officer-images\blank-profile-circle.png"
               alt="woman"
               fluid
             />
           }
-          name="Michelle Tam"
-          title="Web Master"
-          description="Hi! I am a senior majoring in Computer Science! I love to cook, play games and hang out with friends! On my free time I also like to try and learn new instruments :)"
-          link="www.linkedin.com/in/tammichelle830"
+
+          name="Diya Shrivastava"
+          title="Webmaster"
+          description="I'm a junior majoring in Computer Science and minoring in Business. I've been involved in WiCS since my 
+          freshman year, including as a mentee and now as the web master. In my free time, I love listening to 
+          music and working on side projects."
+          link="https://www.linkedin.com/in/diya-shrivastava/"
         />
-
         <TeamMembers
           officer={
             <img
-              src="../imagesCropped2024/Shannen Aganon.png"
+              src="..\images\officer-images\blank-profile-circle.png"
               alt="woman"
               fluid
             />
           }
-          name="Shannen Aganon"
+
+          name="Nga Vu"
+          title="Professional Development & Programming Competition Director"
+          description="--"
+          link=""
+        />
+        <TeamMembers
+          officer={
+            <img
+              src="..\images\officer-images\blank-profile-circle.png"
+              alt="woman"
+              fluid
+            />
+          }
+
+          name="Naiomi Sutphen"
+          title="Logistics Director"
+          description="--"
+          link=""
+        />
+        <TeamMembers
+          officer={
+            <img
+              src="..\images\officer-images\blank-profile-circle.png"
+              alt="woman"
+              fluid
+            />
+          }
+
+          name="Riya Nalla"
+          title="Marketing Director"
+          description="--"
+          link=""
+        />
+        <TeamMembers
+          officer={
+            <img
+              src="..\images\officer-images\blank-profile-circle.png"
+              alt="woman"
+              fluid
+            />
+          }
+
+          name="Neha Kanjamala"
           title="Campus Relations Director"
-          description="Hi, my name is Shannen Aganon and I am a Senior studying Computer Science! In my free time I like to try new foods, hang out with my friends, and spend time outside!"
-          link="https://www.linkedin.com/in/shannenaganon/"
+          description="--"
+          link=""
         />
-
-        {/* <TeamMembers
+        <TeamMembers
           officer={
             <img
-              src="..\images\officer-images\tasneema-azad.png"
+              src="..\images\officer-images\blank-profile-circle.png"
               alt="woman"
               fluid
             />
           }
 
-          name="Fahim (Tasneema) Azad"
-          title="Programming Competition Director"
-          description="Tasneema is a Ph.D. student and Research Assistant at Arizona State University. Her research focuses on time series analysis, machine learning, attention mechanism and data science. Moreover, she is interested to explore causal inferences in the time series domain."
-          link="https://www.linkedin.com/in/fahimtasneemaazad16/"
-        /> */}
-
-        {/* <TeamMembers
+          name="Shashota Saha"
+          title="Treasurer"
+          description="--"
+          link=""
+        />
+        <TeamMembers
           officer={
             <img
-              src="..\images\officer-images\ariana-bui.png"
+              src="..\images\officer-images\blank-profile-circle.png"
               alt="woman"
               fluid
             />
           }
-          name="Ariana Bui"
-          title="Professional Development Director"
-          description="---"
-          // link="---"
-        /> */}
 
-        {/* <TeamMembers
-          officer={
-            <img
-              src="..\images\officer-images\yeonghyeon-kim.png"
-              alt="woman"
-              fluid
-            />
-          }
-          name="Yeonghyeon (Clara) Kim"
-          title="Mentorship Program Director"
-          description="Clara is a sophomore majoring in Computer Science and minoring in Data Science at ASU. She is the Mentorship Program Director for WiCS where she organizes socials for mentors and mentees and sets up the end-of-year showcase where mentor groups will present their projects. She is interested in Data Science, Artificial Intelligence, and cloud computing. Her hobbies include baking, karaoke, listening to music, and watching movies."
-          link="https://www.linkedin.com/in/yeonghyeon/"
-        /> */}
-
-        {/* <TeamMembers
-          officer={
-            <img
-              src="..\images\officer-images\krisha-vekaria.png"
-              alt="woman"
-              fluid
-            />
-          }
-          name="Krisha Vekaria"
+          name="Srija Ramisetty"
           title="Graphic Designer"
-          description="I am an undergraduate student majoring in Data Science with a concentration in Mathematics and graduating in May 2023. This past summer I interned as a Software Developer for Poolular, a pool tech startup based out of New Jersey. I also work part-time as a Technology Consultant at the University Technology Office. In my free time, I love to read books, travel and explore new places!"
-          link="http://www.linkedin.com/in/krisha-vekaria"
-        /> */}
+          description="--"
+          link=""
+        />
 
-        {/* <TeamMembers
-          officer={
-            <img
-              src="..\images\officer-images\evelyn-brannen.png"
-              alt="woman"
-              fluid
-            />
-          }
-          name="Evelyn Brannen"
-          title="Historian"
-          description="Hello, I'm a sophomore and I'm studying computer science! I'm not sure what I want my concentration to be yet, but right now I'm leaning towards software development. I'm in Barrett, and some other things I'm involved are Engineering Projects in Community Service (EPICS), and the Engineering Futures program at ASU. I also currently work at the Fulton Career Center as an Event Planner/Desk Assistant. Some things I love to do on my free time are reading and playing the guitar. I'm looking forward to being a part of the WiCS mentorship program in this year and meeting new people!"
-          link="https://www.linkedin.com/in/evelyn-brannen"
-        /> */}
 
-        {/* <TeamMembers
-          officer={
-            <img
-              src="..\images\officer-images\kaushiki-singh.png"
-              alt="woman"
-              fluid
-            />
-          }
-          name="Kaushiki Singh"
-          title="Campus Relations Director"
-          description="I’m a computer science sophomore in my fourth semester. I joined WiCS as a member last semester (Spring 2022) and participated in the mentorship program as a mentee, where I got the opportunity to collaborate with other members on a project. I’m always looking for opportunities to learn and grow, which is why I enjoy being a part of WiCS. My hobbies include listening to music all the time and watching anime. "
-          link="https://www.linkedin.com/in/kaushikisingh"
-        /> */}
-{/* 
-        <hr />
-        <h1 className="headers mt-5"> Web Team</h1>
-        <TeamMembers
-          officer={
-            <img
-              src="..\images\officer-images\leyli-ghavami.png"
-              alt="woman"
-              fluid
-            />
-          }
-          name="Leyli Ghavami"
-          title="Web Master"
-          description="Leyli is a sophomore studying Computer Science, and has been a member of WiCS since the beginning of her freshman year. When she's not working on the WiCS website, she loves to draw, paint, and explore the world!"
-          link="https://www.linkedin.com/in/leyli-ghavami/"
-        /> */}
 
         <hr />
         <h1 className="headers mt-5"> Our Advisors</h1>

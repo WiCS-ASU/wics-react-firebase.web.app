@@ -7,33 +7,37 @@ const AutoScrollReel = () => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
-    let scrollAmount = 0;
-    const scrollSpeed = 1;
+    let animationFrameId;
+    let scrollSpeed = 1;
 
     const scroll = () => {
-      scrollAmount += scrollSpeed;
-      scrollContainer.scrollLeft = scrollAmount;
+      scrollContainer.scrollLeft += scrollSpeed;
 
-      // Loop back for infinite scroll
-      if (scrollAmount >= scrollContainer.scrollWidth / 2) {
-        scrollAmount = 0;
+      // Reset when we reach the duplicate content
+      if (
+        scrollContainer.scrollLeft >=
+        scrollContainer.scrollWidth / 2
+      ) {
         scrollContainer.scrollLeft = 0;
       }
+
+      animationFrameId = requestAnimationFrame(scroll);
     };
 
-    const interval = setInterval(scroll, 20);
-    return () => clearInterval(interval);
+    scroll(); // Start the animation loop
+
+    return () => cancelAnimationFrame(animationFrameId);
   }, []);
 
   const images = [
-    "../Sponsors2024/hexagon.jpg",
-    "../Sponsors2024/workiva.jpg",
-    "../Sponsors2024/general dynamics.png",
+    "/Sponsors2024/hexagon.jpg",
+    "/Sponsors2024/workiva.jpg",
+    "/Sponsors2024/general dynamics.png",
     "/Sponsors2024/microchip.png",
     "/Sponsors2024/statefarm.jpg",
-    "/Sponsors2024/nationwide.jpg", 
-    "/Sponsors2024/aveva.png", 
-    "/Sponsors2024/mufg.png", 
+    "/Sponsors2024/nationwide.jpg",
+    "/Sponsors2024/aveva.png",
+    "/Sponsors2024/mufg.png",
     "/Sponsors2024/service now.png"
   ];
 
@@ -43,16 +47,14 @@ const AutoScrollReel = () => {
     <div className="w-full overflow-hidden py-6 bg-white">
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto whitespace-nowrap scroll-smooth no-scrollbar"
+        className="flex overflow-x-scroll whitespace-nowrap no-scrollbar"
       >
         {doubledImages.map((src, i) => (
           <img
             key={i}
             src={src}
             alt={`img-${i}`}
-            className={`h-24 w-auto mr-7 rounded-lg transition-all duration-500 ${
-              i < 3 ? "scale-110 brightness-110" : ""
-            }`}
+            className="h-24 w-auto mr-7 rounded-lg"
           />
         ))}
       </div>
@@ -61,6 +63,7 @@ const AutoScrollReel = () => {
 };
 
 export default AutoScrollReel;
+
 
 
 
