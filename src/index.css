@@ -1,3 +1,7 @@
+@tailwind base; 
+@tailwind components;
+@tailwind utilities;
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -55,7 +59,7 @@ body {
 
 
 .light-purple {
-  background-color: #dab7f17c; /* Light purple */
+  background-color: #dab7f17c; /* Light purple*/
   padding: 0;
   margin: 0;
   height: auto;
@@ -238,3 +242,6 @@ a {
   justify-content: center;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
