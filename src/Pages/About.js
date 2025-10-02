@@ -26,7 +26,7 @@ function About() {
             <h6 className="p-0 mb-4 custom-font-size2">
               A support network to empower women and other minorities in tech
             </h6>
-            <Button href="https://asu.campuslabs.com/engage/organization/women-in-computer-science" 
+            <Button href="https://sundevilcentral.eoss.asu.edu/wics/home/" 
             variant="primary"
             target="_blank"
             rel="noopener noreferrer"
