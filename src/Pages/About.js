@@ -15,7 +15,7 @@ function About() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [hoveredCard, setHoveredCard] = useState(null);
 
-  // Sample events data - replace with your actual data
+  // Sample events data 
   const eventsData = [
     {
       title: "SunHacks 2024",
