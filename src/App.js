@@ -28,7 +28,7 @@ function App() {
           <Route path="/privacy-policy" element={ <PrivacyPolicy/> } />
           <Route path="/sponsors" element={ <Sponsors/> } />
           <Route path="/sponsors-competition-package" element={ <SponsorsCompetitionPackage/> } />
-          <Route path="/ohacks" element={<OHacks />} />
+          <Route path="/OHacks" element={<OHacks />} />
         </Routes>
         <FooterComp />
         {/**  Footer needs to be fixed for now */}
