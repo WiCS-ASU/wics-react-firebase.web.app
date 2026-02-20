@@ -11,6 +11,7 @@ import OurTeam from "./Pages/OurTeam";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import Sponsors from "./Pages/Sponsors";
 import SponsorsCompetitionPackage from "./Pages/SponsorsCompetitionPackage";
+import OHacks from "./Pages/OHacks";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/privacy-policy" element={ <PrivacyPolicy/> } />
           <Route path="/sponsors" element={ <Sponsors/> } />
           <Route path="/sponsors-competition-package" element={ <SponsorsCompetitionPackage/> } />
+          <Route path="/ohacks" element={<OHacks />} />
         </Routes>
         <FooterComp />
         {/**  Footer needs to be fixed for now */}
