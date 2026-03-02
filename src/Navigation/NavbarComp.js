@@ -34,7 +34,7 @@ function NavbarComp() {
               <NavDropdown.Item as={Link} to="/sponsors-competition-package">Sponsorship Package</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as={Link} to="/our-team">Our Team</Nav.Link>
-            <Nav.Link as={Link} to="/ohacks">OHacks</Nav.Link>
+            <Nav.Link as={Link} to="/Ohacks">OHacks</Nav.Link>
           </Nav>
         </Navbar.Collapse>
     </Navbar>
