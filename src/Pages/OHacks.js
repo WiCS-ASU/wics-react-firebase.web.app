@@ -3,8 +3,8 @@ import { Table } from "react-bootstrap";
 
 function OHacks() {
   return (
-    <div className="pb-5 font-serif mx-10">
-      <div>
+    <div className="light-purple pb-5 font-serif mx-10 py-4 px-1">
+      <div className="bg-white max-w-5xl mx-auto p-8 shadow-xl rounded-lg">
         <h1 className="text-4xl md:text-6xl p-3 text-center">
           OHacks: Nonprofit Innovation Challenge
         </h1>
@@ -24,9 +24,7 @@ function OHacks() {
           {/* APPLICATION SECTION */}
           <section className="mb-5">
             <article>
-              <h3 className="bg-gray-200 p-2 hover:bg-gray-400 hover:bg-opacity-80">
-                Application
-              </h3>
+              <h3 className="text-2xl font-bold mb-4 border-b pb-2"> Application </h3>
               <p>
                 Apply{" "}
                 <a
@@ -52,8 +50,8 @@ function OHacks() {
 
           {/* DON'T FORGET SECTION */}
           <section className="mb-5">
-            <h3>Don't Forget</h3>
-            <ul>
+            <h3 className="text-2xl font-bold mb-4 border-b pb-2">Don't Forget</h3>
+            <ul className="list-disc pl-6 space-y-1">
               <li>You must check in as a team.</li>
               <li>
                 On the day of the hackathon, you will need to bring your student
@@ -61,7 +59,7 @@ function OHacks() {
               </li>
               <li>
                 On the day of the competition at check-in, you will sign a photo
-                release form. We will provide them at the time of check-in. If
+                release form. We will provide them at the time of check-in. <br/> If
                 you are a minor, you must bring the photo release form signed by
                 a parent/guardian in order to participate, or have the
                 parent/guardian with you at check-in to sign it.
@@ -89,8 +87,7 @@ function OHacks() {
 
           {/* AGENDA SECTION */}
           <section className="mb-5">
-            <h3>Agenda</h3>
-
+            <h3 className="text-2xl font-bold mb-4 border-b pb-2">Agenda</h3>
             <p className="font-bold mt-3">Saturday, March 28, 2026</p>
             <p>8:00 AM – Doors Open — Registration & Staff Check-in. Only first 100 admitted.</p>
             <p>9:10 AM – Keynote — Opening presentation.</p>
@@ -122,7 +119,7 @@ function OHacks() {
 
           {/* LOCATION SECTION */}
           <section className="mb-5">
-            <h3>Location</h3>
+            <h3 className="text-2xl font-bold mb-4 border-b pb-2">Location</h3>
             <p>
               <strong>Tooker eSpaces</strong> — 500 E University Dr, Tempe, AZ
               85281
@@ -135,7 +132,7 @@ function OHacks() {
 
           {/* PRIZES SECTION */}
           <section className="mb-5">
-            <h3>Prizes</h3>
+            <h3 className="text-2xl font-bold mb-4 border-b pb-2">Prizes</h3>
             <Table striped bordered hover>
               <thead>
                 <tr className="text-center">
@@ -186,7 +183,7 @@ function OHacks() {
 
           {/* NONPROFITS SECTION */}
           <section className="mb-5">
-            <h3>Partnered Nonprofits</h3>
+            <h3 className="text-2xl font-bold mb-4 border-b pb-2">Partnered Nonprofits</h3>
             <p>
               This hackathon challenges participants to build real software
               solutions for partnered nonprofits. Nonprofit project details will
@@ -208,7 +205,7 @@ function OHacks() {
 
           {/* THE COMPETITION SECTION */}
           <section className="mb-5">
-            <h3>The Competition</h3>
+            <h3 className="text-2xl font-bold mb-4 border-b pb-2">The Competition</h3>
             <p>
               <span className="text-decoration-underline">Check-in:</span>{" "}
               Please arrive no later than 9:00 AM to check in at Tooker eSpaces.
@@ -267,7 +264,7 @@ function OHacks() {
 
           {/* RULES SECTION */}
           <section>
-            <h3>Rules</h3>
+            <h3 className="text-2xl font-bold mb-4 border-b pb-2">Rules</h3>
 
             <p>
               <strong>Team Formation</strong>
