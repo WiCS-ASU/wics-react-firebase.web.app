@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import NavbarComp from "./Navigation/NavbarComp";
 import FooterComp from "./Navigation/FooterComp";
 import About from "./Pages/About";
-import NewAbout from "./Pages/NewAbout";
 import Events from "./Pages/Events";
 import AnnualCompetition from "./Pages/AnnualCompetition";
 import PastCompetitions from "./Pages/PastCompetitions";
@@ -28,7 +27,7 @@ function App() {
           <Route path="/privacy-policy" element={ <PrivacyPolicy/> } />
           <Route path="/sponsors" element={ <Sponsors/> } />
           <Route path="/sponsors-competition-package" element={ <SponsorsCompetitionPackage/> } />
-          <Route path="/Ohacks" element={<OHacks />} />
+          <Route path="/ohacks" element={<OHacks />} />
         </Routes>
         <FooterComp />
         {/**  Footer needs to be fixed for now */}
