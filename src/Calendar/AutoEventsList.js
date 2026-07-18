@@ -1,1 +1,0 @@
-// new events list page that is updated w/ Google calendar

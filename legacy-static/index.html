@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WiCS @ ASU</title>
+<link rel="icon" href="faviconwics.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050407;
+  --ink:#f7f2ff;
+  --muted:#b9adc7;
+  --dim:#7e6d91;
+  --purple:#7b22e6;
+  --purple-2:#47108f;
+  --purple-3:#a66cff;
+  --line:rgba(183,148,255,.18);
+  --panel:rgba(16,11,25,.72);
+  --mono:'Geist Mono',monospace;
+  --serif:'DM Serif Display',serif;
+  --sans:'Instrument Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);overflow-x:hidden}
+a{color:inherit}
+body::before{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E")}
+body{animation:pageFade .7s ease both}
+
+.v6-nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;background:rgba(5,4,7,.78);border-bottom:1px solid rgba(183,148,255,.12);backdrop-filter:blur(18px)}
+.v6-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.v6-logo img{height:46px;width:auto;filter:brightness(0) saturate(100%) invert(95%) sepia(8%) saturate(445%) hue-rotate(218deg) brightness(102%) contrast(96%);opacity:.94}
+.nav-links{display:flex;align-items:center;gap:40px;list-style:none}
+.nav-links a{position:relative;text-decoration:none;font-family:var(--mono);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(247,242,255,.82)}
+.nav-links a.active{color:var(--purple)}
+.nav-links a.active::after{content:'';position:absolute;left:50%;bottom:-15px;width:7px;height:7px;border-radius:50%;background:var(--purple);transform:translateX(-50%)}
+.nav-socials{display:flex;align-items:center;gap:18px}
+.social{width:22px;height:22px;display:grid;place-items:center;color:#fff;text-decoration:none;opacity:.84;transition:opacity .2s,color .2s,transform .2s}
+.social svg{width:20px;height:20px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.social.fill svg{fill:currentColor;stroke:none}
+.social:hover{opacity:1;color:var(--purple-3);transform:translateY(-1px)}
+.join-btn{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 22px;border:1px solid rgba(138,53,255,.7);border-radius:6px;color:#fff;text-decoration:none;font-family:var(--mono);font-size:.86rem;text-transform:uppercase;letter-spacing:.05em;background:rgba(138,53,255,.08)}
+.join-btn:hover{background:rgba(138,53,255,.18)}
+.mobile-nav-toggle{display:none}
+.mobile-menu-btn,.mobile-backdrop,.mobile-drawer{display:none}
+.mobile-menu-btn{width:46px;height:46px;border:1px solid rgba(166,108,255,.48);border-radius:6px;background:rgba(123,34,230,.1);place-items:center;cursor:pointer}
+.mobile-menu-btn span{display:block;width:20px;height:2px;border-radius:999px;background:#f7f2ff;box-shadow:0 7px 0 #f7f2ff,0 -7px 0 #f7f2ff}
+.mobile-backdrop{position:fixed;inset:0;z-index:1001;background:#050407}
+.mobile-drawer{position:fixed;inset:0;z-index:1002;width:100vw;min-height:100vh;padding:28px 26px;background:#050407;transform:translateY(-100%);transition:transform .28s ease;overflow:auto}
+.mobile-drawer-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:48px}
+.mobile-drawer-title{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-3)}
+.mobile-close{width:40px;height:40px;display:grid;place-items:center;border:1px solid rgba(247,242,255,.16);border-radius:50%;color:#fff;font-family:var(--mono);font-size:1.35rem;cursor:pointer}
+.mobile-drawer nav{display:grid;gap:16px}
+.mobile-drawer nav a{display:flex;align-items:center;justify-content:space-between;min-height:58px;padding:0 4px;border-bottom:1px solid rgba(247,242,255,.12);text-decoration:none;font-family:var(--mono);font-size:1rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,242,255,.9)}
+.mobile-drawer nav a.active{color:var(--purple-3)}
+.mobile-drawer nav a::after{content:'→';color:rgba(166,108,255,.74)}
+.mobile-drawer .join-btn{width:100%;justify-content:center;margin-top:26px;background:linear-gradient(135deg,var(--purple),var(--purple-2));border-color:transparent;border-radius:999px}
+.mobile-socials{display:flex;gap:12px;margin-top:26px}
+.mobile-socials a{flex:1;min-height:40px;display:grid;place-items:center;border:1px solid rgba(166,108,255,.28);border-radius:999px;text-decoration:none;font-family:var(--mono);font-size:.66rem;text-transform:uppercase;color:rgba(247,242,255,.78)}
+.mobile-nav-toggle:checked ~ .mobile-backdrop{display:block}
+.mobile-nav-toggle:checked ~ .mobile-drawer{display:block;transform:translateY(0)}
+
+.hero{position:relative;min-height:100vh;padding:132px 52px 74px;overflow:hidden;background:
+  radial-gradient(circle at 76% 32%,rgba(138,53,255,.18),transparent 31%),
+  linear-gradient(180deg,#050407,#08050d)}
+.hero::before{content:'';position:absolute;inset:88px 0 0;background-image:linear-gradient(rgba(183,148,255,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(183,148,255,.075) 1px,transparent 1px);background-size:74px 74px;mask-image:linear-gradient(to bottom,black 0%,black 72%,transparent 100%)}
+.hero::after{content:'';position:absolute;inset:0;background:
+  radial-gradient(circle at 9% 15%,rgba(138,53,255,.34) 0 1px,transparent 2px),
+  radial-gradient(circle at 36% 18%,rgba(138,53,255,.42) 0 2px,transparent 3px),
+  radial-gradient(circle at 49% 72%,rgba(138,53,255,.42) 0 2px,transparent 3px),
+  radial-gradient(circle at 92% 22%,rgba(138,53,255,.42) 0 2px,transparent 3px);
+  pointer-events:none}
+.hero-inner{position:relative;z-index:2;width:min(1280px,100%);margin:0 auto;display:grid;grid-template-columns:minmax(0,.88fr) minmax(380px,.9fr);gap:44px;align-items:center}
+.side-code{position:absolute;left:36px;top:308px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:13px;font-family:var(--mono);font-size:.67rem;letter-spacing:.16em;color:rgba(247,242,255,.72);text-transform:uppercase}
+.side-code span{writing-mode:vertical-rl;transform:rotate(180deg)}
+.side-code i{display:block;width:1px;height:74px;background:rgba(247,242,255,.42)}
+.side-code b{display:block;width:9px;height:9px;border:1px solid var(--purple-3);border-radius:50%;background:rgba(123,34,230,.18)}
+.corner-copy{position:absolute;right:78px;top:156px;max-width:260px;font-family:var(--mono);font-size:.78rem;line-height:1.55;color:rgba(183,148,255,.82);text-transform:uppercase}
+.spark{position:absolute;right:82px;top:260px;width:58px;height:58px}
+.spark::before,.spark::after{content:'';position:absolute;left:50%;top:50%;width:58px;height:1px;background:var(--purple);transform:translate(-50%,-50%)}
+.spark::after{transform:translate(-50%,-50%) rotate(90deg)}
+.spark span{position:absolute;inset:0;transform:rotate(45deg)}
+.spark span::before,.spark span::after{content:'';position:absolute;left:50%;top:50%;width:58px;height:1px;background:var(--purple);transform:translate(-50%,-50%)}
+.spark span::after{transform:translate(-50%,-50%) rotate(90deg)}
+
+.hero-copy{position:relative;z-index:3;max-width:660px}
+.eyebrow{font-family:var(--mono);font-size:1.72rem;font-weight:400;letter-spacing:.075em;text-transform:uppercase;color:#fff;margin-bottom:12px}
+.hero-title{font-family:var(--serif);font-size:clamp(5.6rem,7.7vw,7.65rem);line-height:.89;letter-spacing:-.035em;font-weight:400}
+.hero-title span{display:block}
+.hero-title .type-line{display:block;color:#fff}
+.hero-title .purple{color:var(--purple)}
+.hero-title .mono{display:flex;align-items:flex-end;gap:.52em;margin-top:4px;font-family:"Courier New",var(--mono),monospace;font-style:italic;font-weight:400;letter-spacing:.01em;color:#fff;font-size:.58em;line-height:1.05}
+.hero-title .mono em,.hero-title .mono strong{font:inherit}
+.hero-title .mono strong{position:relative}
+.hero-title .mono strong::before,.hero-title .mono strong::after{content:'';position:absolute;left:-4px;height:3px;background:var(--purple);border-radius:999px;transform-origin:left center}
+.hero-title .mono strong::before{width:350px;bottom:-8px;transform:rotate(-1.2deg) skewX(-18deg);opacity:.98;clip-path:polygon(0 42%,7% 20%,28% 45%,53% 18%,78% 55%,100% 30%,100% 100%,0 100%)}
+.hero-title .mono strong::after{width:310px;left:32px;bottom:-17px;transform:rotate(-2.4deg) skewX(-15deg);opacity:.82;clip-path:polygon(0 48%,10% 28%,34% 55%,58% 18%,82% 45%,100% 32%,100% 100%,0 100%)}
+.hero-sub{max-width:600px;margin-top:34px;color:rgba(247,242,255,.72);font-family:var(--mono);font-size:.96rem;line-height:1.7}
+.hero-sub span{display:inline}
+.hero-actions{display:flex;gap:18px;flex-wrap:wrap;margin-top:34px}
+.btn{min-height:60px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:0 36px;text-decoration:none;font-family:var(--mono);font-size:.9rem;letter-spacing:.045em;text-transform:uppercase}
+.btn-primary{background:linear-gradient(135deg,var(--purple),var(--purple-2));color:#fff;box-shadow:0 18px 45px rgba(123,34,230,.3)}
+.btn-outline{border:1px solid rgba(138,53,255,.74);color:#fff;background:rgba(5,4,7,.38);padding-inline:42px}
+
+.butterfly-wrap{position:relative;height:620px;display:grid;place-items:center;overflow:visible}
+.moth-bg{position:relative;width:min(1120px,84vw);aspect-ratio:16/10;transform:translate(-292px,-44px);filter:hue-rotate(-8deg) saturate(.95) brightness(1.06) drop-shadow(0 26px 90px rgba(123,34,230,.32));opacity:.98;background-image:url("images/branding/wics-website-moth.png");background-size:contain;background-position:center;background-repeat:no-repeat}
+.moth-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(28,9,52,.18),rgba(28,9,52,.18)),rgba(0,0,0,.18);mix-blend-mode:multiply;pointer-events:none}
+.mini-moth{width:38px;height:38px;filter:drop-shadow(0 0 18px rgba(138,53,255,.42))}
+.mini-moth path{fill:var(--purple)}
+
+.stats{position:relative;z-index:4;width:min(1120px,100%);margin:42px auto 0;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(247,242,255,.14);background:rgba(5,4,7,.62);backdrop-filter:blur(10px)}
+.stat{position:relative;min-height:104px;display:flex;align-items:center;justify-content:center;gap:24px;border-right:1px solid rgba(247,242,255,.14)}
+.stat:not(:last-child)::after{content:'+';position:absolute;right:-9px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:1.35rem;color:rgba(247,242,255,.42);z-index:2}
+.stat:last-child{border-right:0}
+.stat-icon{width:42px;height:42px;color:var(--purple);flex:0 0 auto}
+.stat-icon svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.stat-icon.fill svg{fill:currentColor;stroke:none}
+.stat b{display:block;font-family:var(--mono);font-size:2.08rem;font-weight:500;color:#fff;line-height:1;letter-spacing:-.04em}
+.stat span{display:block;max-width:230px;margin-top:8px;font-family:var(--mono);font-size:.72rem;line-height:1.35;color:var(--purple-3);letter-spacing:.08em;text-transform:uppercase}
+.code-note{position:absolute;right:42px;bottom:92px;font-family:var(--mono);font-size:.76rem;line-height:1.6;color:rgba(123,34,230,.8)}
+.hero-copy{animation:heroSettle .42s ease .06s both}
+.stats{animation:heroSettle .42s ease .12s both}
+
+.gallery-section{position:relative;padding:88px 52px 104px;background:#08050d}
+.gallery-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(183,148,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(183,148,255,.045) 1px,transparent 1px);background-size:68px 68px;mask-image:linear-gradient(to bottom,black,transparent 92%)}
+.gallery-inner{position:relative;z-index:2;width:min(1280px,100%);margin:0 auto}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:36px}
+.section-label{font-family:var(--mono);font-size:.72rem;color:var(--purple-3);letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-family:var(--serif);font-size:clamp(2.6rem,4.8vw,4.4rem);line-height:.96;letter-spacing:-.035em}
+.section-copy{max-width:510px;color:rgba(247,242,255,.66);font-family:var(--mono);font-size:.88rem;line-height:1.7}
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr);aspect-ratio:4/3;gap:6px;border:1px solid rgba(183,148,255,.14);border-radius:12px;overflow:hidden;background:#090610;padding:6px}
+.tile{position:relative;overflow:hidden;border-radius:4px;background:#0e0a15;border:0;transition:transform .5s ease}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.03);opacity:0;transition:opacity 2.6s ease,transform .8s ease,filter .8s ease}
+.tile img.is-active{opacity:1}
+.tile:hover img{transform:scale(1.018);filter:saturate(1.08)}
+
+.pillars-section{position:relative;padding:100px 52px;background:#050407;border-top:1px solid rgba(183,148,255,.12)}
+.pillars-inner{width:min(1280px,100%);margin:0 auto}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:54px}
+.pillar{min-height:310px;padding:30px;border:1px solid rgba(183,148,255,.16);border-radius:10px;background:linear-gradient(180deg,rgba(19,11,31,.78),rgba(8,5,13,.78));transition:transform .25s,border-color .25s,background .25s}
+.pillar:hover{transform:translateY(-6px);border-color:rgba(183,148,255,.38);background:linear-gradient(180deg,rgba(28,16,45,.92),rgba(10,6,16,.9))}
+.pillar-num{font-family:var(--mono);font-size:.68rem;color:rgba(183,148,255,.6);letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px}
+.pillar-mark{width:46px;height:46px;border:1px solid rgba(123,34,230,.42);border-radius:8px;display:grid;place-items:center;margin-bottom:22px;color:var(--purple-3);font-family:var(--mono);font-size:1.2rem;background:rgba(123,34,230,.08)}
+.pillar h3{font-family:var(--serif);font-size:1.55rem;letter-spacing:-.02em;margin-bottom:12px}
+.pillar p{color:rgba(247,242,255,.66);font-size:.9rem;line-height:1.75}
+.pillar-cta{display:inline-flex;margin-top:22px;color:var(--purple-3);font-family:var(--mono);font-size:.78rem;text-decoration:none}
+.sponsor-section{background:#1a1820;border-top:1px solid rgba(247,242,255,.1);border-bottom:1px solid rgba(247,242,255,.1);padding:42px 0;overflow:hidden}
+.sponsor-label{text-align:center;font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-3);margin-bottom:24px}
+.sponsor-track-wrap{overflow:hidden;position:relative}
+.sponsor-track-wrap::before,.sponsor-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:110px;z-index:2;pointer-events:none}
+.sponsor-track-wrap::before{left:0;background:linear-gradient(to right,#1a1820,transparent)}
+.sponsor-track-wrap::after{right:0;background:linear-gradient(to left,#1a1820,transparent)}
+.sponsor-track{display:flex;align-items:center;width:max-content;white-space:nowrap;animation:sponsorScroll 46s linear infinite}
+.sponsor-track:hover{animation-play-state:paused}
+.sponsor-set{display:flex;align-items:center;flex-shrink:0}
+.sponsor-item{display:inline-flex;align-items:center;justify-content:center;padding:0 58px;flex-shrink:0;height:104px;min-width:210px}
+.sponsor-item img{height:72px;width:auto;max-width:216px;object-fit:contain;filter:grayscale(1) saturate(0) brightness(3.6) contrast(.55);opacity:.9;transition:opacity .3s,filter .3s,transform .3s}
+.sponsor-item img[src*="hexagon"],.sponsor-item img[src*="service-now"]{filter:grayscale(1) saturate(0) brightness(5.8) contrast(.42);opacity:.98}
+.sponsor-item:hover img{opacity:1;filter:none;transform:scale(1.04)}
+.sponsor-sep{color:rgba(247,242,255,.24);font-size:.55rem;flex-shrink:0}
+.v6-footer{background:#050407;border-top:1px solid rgba(183,148,255,.12);padding:40px 52px;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.v6-footer p{color:rgba(247,242,255,.52);font-size:.75rem;font-family:var(--mono)}
+
+@keyframes sponsorScroll{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-50%,0,0)}}
+@keyframes pageFade{0%{opacity:0;background:#020104}100%{opacity:1;background:var(--bg)}}
+@keyframes heroSettle{0%{opacity:0;transform:translateY(6px)}100%{opacity:1;transform:translateY(0)}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
+@media(max-width:1040px){
+  .hero{padding:112px 22px 58px}.hero-inner{grid-template-columns:minmax(0,1fr);gap:36px}.hero-copy{text-align:left;max-width:100%;min-width:0}.butterfly-wrap{height:480px}.moth-bg{width:min(680px,104vw);transform:translate(0,0)}
+  .stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid rgba(247,242,255,.14)}
+  .side-code,.corner-copy,.spark,.micro-tag,.code-note{display:none}
+  .gallery-section,.pillars-section{padding:70px 22px}.section-head{display:block}.section-copy{margin-top:16px}.pillars-grid{grid-template-columns:1fr}.v6-footer{padding:32px 22px;flex-direction:column;text-align:center}
+}
+@media(max-width:620px){
+  .v6-nav{height:76px;padding:0 22px}.v6-logo img{height:38px}
+  .nav-links,.nav-socials{display:none}
+  .mobile-menu-btn{display:grid}
+  .mobile-menu-btn{width:42px;height:42px}
+  .mobile-drawer{padding:26px 22px 34px}
+  .mobile-drawer nav a{min-height:56px;font-size:.92rem}
+  .mobile-socials{display:grid;grid-template-columns:repeat(2,1fr)}
+  .hero{min-height:auto;padding:100px 20px 42px}
+  .hero-inner{gap:0}
+  .hero-copy{width:100%}
+  .eyebrow{font-size:1.12rem;margin-bottom:9px;letter-spacing:.11em}
+  .hero-title{max-width:100%;font-size:clamp(2.7rem,14vw,3.82rem);line-height:.95;letter-spacing:-.048em}
+  .hero-title .purple{display:block;white-space:normal}
+  .hero-title .mono{gap:.3em;margin-top:4px;font-size:.5em;line-height:1.18}
+  .hero-title .mono strong::before{width:min(56vw,220px);height:2px;bottom:-6px}
+  .hero-title .mono strong::after{width:min(47vw,190px);height:2px;left:18px;bottom:-13px}
+  .hero-sub{max-width:100%;margin-top:28px;font-size:.76rem;line-height:1.6}
+  .hero-actions{display:grid;grid-template-columns:1fr;gap:12px;margin-top:26px}
+  .btn{width:100%;min-height:54px;padding-inline:22px;font-size:.78rem}
+  .butterfly-wrap{display:none}
+  .moth-bg{width:min(330px,96vw);transform:translate(10px,-6px);opacity:.82}
+  .moth-bg::after{background:linear-gradient(rgba(28,9,52,.22),rgba(28,9,52,.22)),rgba(0,0,0,.24)}
+  .stats{grid-template-columns:1fr;margin-top:18px;border-radius:8px;overflow:hidden}.stat{min-height:92px;justify-content:flex-start;padding:0 20px;border-right:0;border-bottom:1px solid rgba(247,242,255,.14);gap:18px}.stat:last-child{border-bottom:0}
+  .stat-icon{width:34px;height:34px}.stat b{font-size:1.72rem}.stat span{font-size:.64rem;line-height:1.4}
+  .stat:not(:last-child)::after{display:none}
+  .gallery-section,.pillars-section{padding:58px 20px}
+  .section-title{font-size:clamp(2.25rem,13vw,3.35rem)}
+  .mosaic{grid-template-columns:repeat(2,1fr);grid-template-rows:auto;aspect-ratio:auto;gap:5px;padding:5px;border-radius:10px}
+  .tile{aspect-ratio:1/1}
+  .pillars-grid{gap:12px;margin-top:34px}
+  .pillar{min-height:auto;padding:24px}
+  .sponsor-section{padding:34px 0}.sponsor-item{min-width:170px;height:88px;padding:0 34px}.sponsor-item img{height:58px;max-width:170px}
+  .sponsor-track-wrap::before,.sponsor-track-wrap::after{width:54px}
+  .v6-footer{align-items:flex-start;text-align:left;font-size:.72rem}
+}
+</style>
+</head>
+<body>
+<nav class="v6-nav">
+  <a class="v6-logo" href="index.html" aria-label="WiCS home">
+    <img src="images/branding/wics-logo.png" alt="WiCS Logo">
+  </a>
+  <input class="mobile-nav-toggle" type="checkbox" id="mobile-nav-index" aria-label="Open navigation">
+  <label class="mobile-menu-btn" for="mobile-nav-index" aria-label="Open navigation"><span></span></label>
+  <label class="mobile-backdrop" for="mobile-nav-index" aria-label="Close navigation"></label>
+  <aside class="mobile-drawer" aria-label="Mobile navigation">
+    <div class="mobile-drawer-top">
+      <div class="mobile-drawer-title">WiCS Menu</div>
+      <label class="mobile-close" for="mobile-nav-index" aria-label="Close navigation">×</label>
+    </div>
+    <nav>
+      <a class="active" href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="team.html">Team</a>
+      <a href="sponsors.html">Sponsors</a>
+    </nav>
+    <a class="join-btn" href="https://sundevilcentral.eoss.asu.edu/wics/" target="_blank">Join Now →</a>
+    <div class="mobile-socials">
+      <a href="https://www.instagram.com/wics.asu/" target="_blank">IG</a>
+      <a href="mailto:wics.asu@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/company/wics-asu/posts/?feedView=all" target="_blank">IN</a>
+      <a href="https://www.facebook.com/wics.asu" target="_blank">FB</a>
+    </div>
+  </aside>
+  <ul class="nav-links">
+    <li><a class="active" href="index.html">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="sponsors.html">Sponsors</a></li>
+  </ul>
+  <div class="nav-socials">
+    <a class="social" href="https://www.instagram.com/wics.asu/" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+    </a>
+    <a class="social" href="mailto:wics.asu@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg>
+    </a>
+    <a class="social fill" href="https://www.linkedin.com/company/wics-asu/posts/?feedView=all" target="_blank" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.38 8.1h4.24V23H.38V8.1Zm7.32 0h4.06v2.04h.06c.56-1.06 1.94-2.18 4-2.18 4.28 0 5.07 2.82 5.07 6.48V23h-4.23v-7.62c0-1.82-.03-4.16-2.54-4.16-2.54 0-2.93 1.98-2.93 4.03V23H7.7V8.1Z" transform="translate(1.5 0) scale(.92)"></path></svg>
+    </a>
+    <a class="social fill" href="https://www.facebook.com/wics.asu" target="_blank" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 8.1V6.2c0-.9.3-1.5 1.6-1.5h1.8V1.2C16.7 1.1 15.6 1 14.4 1c-2.8 0-4.7 1.7-4.7 4.8v2.3H6.6v3.9h3.1V23h4.2V12h3.5l.5-3.9h-3.7Z"></path></svg>
+    </a>
+    <a class="join-btn" href="https://sundevilcentral.eoss.asu.edu/wics/" target="_blank">Join Now →</a>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="side-code"><span>WiCS</span><i></i><b></b><i></i><span>EST. 2003</span></div>
+    <div class="corner-copy">Building the future through community, code, and curiosity.</div>
+    <div class="spark"><span></span></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">We help</div>
+        <h1 class="hero-title">
+          <span class="type-line">women</span>
+          <span class="purple">code, create,</span>
+          <span class="mono"><em>and</em><strong>connect</strong></span>
+        </h1>
+        <p class="hero-sub"><span>Where skills find support, and ideas become impact.</span></p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://sundevilcentral.eoss.asu.edu/wics/" target="_blank">Join Now →</a>
+        </div>
+      </div>
+
+      <div class="butterfly-wrap" aria-hidden="true">
+        <div class="moth-bg"></div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="16" cy="16" r="5"></circle><circle cx="32" cy="16" r="5"></circle><path d="M7 37c1.2-7 5-11 9-11s7.8 4 9 11"></path><path d="M23 37c1.2-7 5-11 9-11s7.8 4 9 11"></path></svg></div>
+        <div><b>10,000+</b><span>Student members and alumni</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 35 21 23l8 8 12-18"></path><path d="M32 13h9v9"></path><path d="M9 39c7-1 13-1 20 1"></path></svg></div>
+        <div><b>50+</b><span>Sponsors</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5v38"></path><path d="M5 24h38"></path><path d="M10.5 10.5 37.5 37.5"></path><path d="M37.5 10.5 10.5 37.5"></path></svg></div>
+        <div><b>50+</b><span>Events annually</span></div>
+      </div>
+    </div>
+    <div class="code-note">if (she.belongs())<br>{ the.future = hers; }</div>
+  </section>
+
+  <section id="gallery" class="gallery-section">
+    <div class="gallery-inner">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Life at WiCS</div>
+          <h2 class="section-title">Community, right underneath.</h2>
+        </div>
+      </div>
+      <div class="mosaic">
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/DSC06226.jpeg" alt="WiCS event"><img src="images/home-page-images/hero-photos/Pumpkin Painting Social.png" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/Cookie Decorating Social.png" alt="WiCS social"><img src="images/home-page-images/hero-photos/IMG_7993.jpeg" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/MentorshipMeet1.png" alt="WiCS mentorship"><img src="images/home-page-images/hero-photos/General Body Meeting Pizza.png" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/IMG_3252.jpg" alt="WiCS hackathon"><img src="images/home-page-images/hero-photos/Game Social.png" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/General Body Meeting Pizza.png" alt="WiCS general body meeting"><img src="images/home-page-images/hero-photos/IMG_7988.jpeg" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/wicsHomePage.png" alt="WiCS community"><img src="images/home-page-images/hero-photos/IMG_3192.jpg" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/IMG_9321.jpeg" alt="WiCS event"><img src="images/home-page-images/hero-photos/Jeapordy Night Social.png" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/Tote Bag Social.png" alt="WiCS social"><img src="images/home-page-images/hero-photos/MentorshipMeet3.png" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/IMG_3192.jpg" alt="WiCS event"><img src="images/home-page-images/hero-photos/20220319_140520.jpg" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/MentorshipMeet2.png" alt="WiCS mentorship"><img src="images/home-page-images/hero-photos/Painting Social.png" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/IMG_8310.jpeg" alt="WiCS community"><img src="images/home-page-images/hero-photos/wicsHomePage.png" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/Painting Social.png" alt="WiCS painting social"><img src="images/home-page-images/hero-photos/image-from-ios.jpg" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pillars" class="pillars-section">
+    <div class="pillars-inner">
+      <div class="section-head">
+        <div>
+          <div class="section-label">What We Do</div>
+          <h2 class="section-title">Three pillars of<br>everything WiCS.</h2>
+        </div>
+        <p class="section-copy">From mentorship to programming competitions to career panels, WiCS creates spaces where students can belong, build confidence, and grow together.</p>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar">
+          <div class="pillar-num">01 / Mentorship</div>
+          <div class="pillar-mark">01</div>
+          <h3>Mentorship Program</h3>
+          <p>Get matched with a WiCS alumna or industry mentor for guidance, interview prep, and navigating CS as a woman in tech.</p>
+          <a href="#" class="pillar-cta">Apply this semester →</a>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">02 / Competition</div>
+          <div class="pillar-mark">02</div>
+          <h3>WiCS Annual Programming Competition</h3>
+          <p>We host an annual programming competition with industry to build a community of hands-on problem solvers tackling technical challenges.</p>
+          <a href="events.html#past-events" class="pillar-cta">Learn more →</a>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">03 / Events</div>
+          <div class="pillar-mark">03</div>
+          <h3>Year-Round Events</h3>
+          <p>Industry panels, resume workshops, tech talks, socials, and community nights across career, academic, and social tracks.</p>
+          <a href="events.html" class="pillar-cta">See the calendar →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="sponsors" class="sponsor-section">
+    <div class="sponsor-label">Our Sponsors &amp; Partners</div>
+    <div class="sponsor-track-wrap">
+      <div class="sponsor-track">
+        <div class="sponsor-set">
+          <div class="sponsor-item"><img src="images/sponsors/general-dynamics.png" alt="General Dynamics"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/wl-gore.svg" alt="W. L. Gore"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/garmin.svg" alt="Garmin"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/godaddy-transparent.png" alt="GoDaddy"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/freeport-mcmoran.svg" alt="Freeport McMoRan"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/statefarm-transparent.png" alt="State Farm"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/dell-transparent.png" alt="Dell"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/wells-fargo-transparent.png" alt="Wells Fargo"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/hexagon.jpg" alt="Hexagon"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/workiva.jpg" alt="Workiva"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/microchip.png" alt="Microchip"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/nationwide.jpg" alt="Nationwide"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/aveva.png" alt="AVEVA"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/mufg.png" alt="MUFG"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/service-now.png" alt="ServiceNow"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/drivetime-transparent.png" alt="DriveTime"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/intel.svg" alt="Intel"></div>
+          <span class="sponsor-sep">+</span>
+        </div>
+        <div class="sponsor-set" aria-hidden="true">
+          <div class="sponsor-item"><img src="images/sponsors/general-dynamics.png" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/wl-gore.svg" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/garmin.svg" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/godaddy-transparent.png" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/freeport-mcmoran.svg" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/statefarm-transparent.png" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/dell-transparent.png" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/wells-fargo-transparent.png" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/hexagon.jpg" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/workiva.jpg" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/microchip.png" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/nationwide.jpg" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/aveva.png" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/mufg.png" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/service-now.png" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/drivetime-transparent.png" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/intel.svg" alt=""></div>
+          <span class="sponsor-sep">+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="v6-footer">
+  <p>2026 WiCS at ASU / 1151 S Forest Ave, Tempe AZ 85281</p>
+  <p>made by the WiCS web team</p>
+</footer>
+<script>
+const GALLERY_PHOTOS = [
+  'images/home-page-images/hero-photos/DSC06226.jpeg',
+  'images/home-page-images/hero-photos/IMG_7993.jpeg',
+  'images/home-page-images/hero-photos/IMG_3252.jpg',
+  'images/home-page-images/hero-photos/IMG_9321.jpeg',
+  'images/home-page-images/hero-photos/IMG_7988.jpeg',
+  'images/home-page-images/hero-photos/20220319_140520.jpg',
+  'images/home-page-images/hero-photos/IMG_8310.jpeg',
+  'images/home-page-images/hero-photos/IMG_3192.jpg',
+  'images/home-page-images/hero-photos/image-from-ios.jpg',
+  'images/home-page-images/hero-photos/wicsHomePage.png',
+  'images/home-page-images/hero-photos/Cookie Decorating Social.png',
+  'images/home-page-images/hero-photos/Pumpkin Painting Social.png',
+  'images/home-page-images/hero-photos/Jeapordy Night Social.png',
+  'images/home-page-images/hero-photos/Tote Bag Social.png',
+  'images/home-page-images/hero-photos/Painting Social.png',
+  'images/home-page-images/hero-photos/Game Social.png',
+  'images/home-page-images/hero-photos/MentorshipMeet1.png',
+  'images/home-page-images/hero-photos/MentorshipMeet2.png',
+  'images/home-page-images/hero-photos/MentorshipMeet3.png',
+  'images/home-page-images/hero-photos/General Body Meeting Pizza.png'
+];
+
+const galleryTiles = [...document.querySelectorAll('.mosaic .tile')];
+const tilePhoto = galleryTiles.map(tile => tile.querySelector('.is-active')?.getAttribute('src') || '');
+const galleryShuffle = arr => {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+};
+const getGalleryNeighbors = index => {
+  const cols = 4;
+  const row = Math.floor(index / cols);
+  const col = index % cols;
+  return galleryTiles
+    .map((_, i) => i)
+    .filter(i => {
+      if (i === index) return false;
+      const nextRow = Math.floor(i / cols);
+      const nextCol = i % cols;
+      return Math.abs(nextRow - row) + Math.abs(nextCol - col) === 1;
+    });
+};
+const pickGalleryPhoto = (current, index) => {
+  const visiblePhotos = new Set(tilePhoto.filter((photo, tileIndex) => tileIndex !== index && photo));
+  const neighborPhotos = new Set(getGalleryNeighbors(index).map(tileIndex => tilePhoto[tileIndex]).filter(Boolean));
+  const freshPool = GALLERY_PHOTOS.filter(photo => photo !== current && !visiblePhotos.has(photo));
+  const nonNeighborPool = GALLERY_PHOTOS.filter(photo => photo !== current && !neighborPhotos.has(photo));
+  const pool = freshPool.length ? freshPool : nonNeighborPool.length ? nonNeighborPool : GALLERY_PHOTOS.filter(photo => photo !== current);
+  return pool[Math.floor(Math.random() * pool.length)];
+};
+function swapGalleryTile(index) {
+  const tile = galleryTiles[index];
+  if (!tile) return;
+  const active = tile.querySelector('img.is-active');
+  const next = [...tile.querySelectorAll('img')].find(img => img !== active);
+  if (!active || !next) return;
+  const chosen = pickGalleryPhoto(tilePhoto[index], index);
+  tilePhoto[index] = chosen;
+  next.src = chosen;
+  requestAnimationFrame(() => {
+    next.classList.add('is-active');
+    active.classList.remove('is-active');
+  });
+}
+
+function runGalleryWave() {
+  const wave = galleryShuffle([...galleryTiles.keys()]);
+  wave.forEach((index, step) => {
+    setTimeout(() => swapGalleryTile(index), step * 360);
+  });
+}
+
+if (galleryTiles.length) {
+  setTimeout(runGalleryWave, 1200);
+  setInterval(runGalleryWave, 9200);
+}
+
+</script>
+</body>
+</html>

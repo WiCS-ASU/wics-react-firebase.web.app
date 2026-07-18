@@ -1,40 +1,83 @@
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import NavbarComp from "./Navigation/NavbarComp";
-import FooterComp from "./Navigation/FooterComp";
-import About from "./Pages/About";
-import Events from "./Pages/Events";
-import AnnualCompetition from "./Pages/AnnualCompetition";
-import PastCompetitions from "./Pages/PastCompetitions";
-import ContactUs from "./Pages/ContactUs";
-import OurTeam from "./Pages/OurTeam";
-import PrivacyPolicy from "./Pages/PrivacyPolicy";
-import Sponsors from "./Pages/Sponsors";
-import SponsorsCompetitionPackage from "./Pages/SponsorsCompetitionPackage";
-import OHacks from "./Pages/OHacks";
+import { useEffect, useMemo, useState } from 'react';
+import { pages } from './generatedPages.js';
 
-function App() {
-  return (
-    <div className="App">
-      <Router>
-        <NavbarComp />
-        <Routes>
-          <Route path="/" element={ <About/> } />
-          <Route path="/events-calendar" element={ <Events/> } />
-          <Route path="/annual-competition" element={ <AnnualCompetition/> } />
-          <Route path="/past-competitions" element={ <PastCompetitions/> } />
-          <Route path="/contact-us" element={ <ContactUs/> } />
-          <Route path="/our-team" element={ <OurTeam/> } />
-          <Route path="/privacy-policy" element={ <PrivacyPolicy/> } />
-          <Route path="/sponsors" element={ <Sponsors/> } />
-          <Route path="/sponsors-competition-package" element={ <SponsorsCompetitionPackage/> } />
-          <Route path="/ohacks" element={<OHacks />} />
-        </Routes>
-        <FooterComp />
-        {/**  Footer needs to be fixed for now */}
-      </Router>
-      
-    </div>
-  );
+const ROUTES = {
+  '/': 'home',
+  '/index': 'home',
+  '/index.html': 'home',
+  '/events': 'events',
+  '/events.html': 'events',
+  '/team': 'team',
+  '/team.html': 'team',
+  '/sponsors': 'sponsors',
+  '/sponsors.html': 'sponsors'
+};
+
+function getPageKey() {
+  return ROUTES[window.location.pathname] || 'home';
 }
 
-export default App;
+function runPageScript(script) {
+  if (!script.trim()) return;
+  // eslint-disable-next-line no-new-func
+  const pageScript = new Function(script);
+  pageScript();
+}
+
+function StaticPage({ page }) {
+  useEffect(() => {
+    document.title = page.title || 'WiCS @ ASU';
+    document.body.className = page.bodyClass || '';
+
+    const style = document.createElement('style');
+    style.dataset.pageStyle = page.key;
+    style.textContent = page.style;
+    document.head.appendChild(style);
+
+    const timer = window.setTimeout(() => runPageScript(page.script), 0);
+
+    return () => {
+      window.clearTimeout(timer);
+      document.head.querySelectorAll('style[data-page-style]').forEach((node) => node.remove());
+      document.body.className = '';
+    };
+  }, [page]);
+
+  return <div dangerouslySetInnerHTML={{ __html: page.body }} />;
+}
+
+export default function App() {
+  const [pageKey, setPageKey] = useState(getPageKey);
+
+  useEffect(() => {
+    const handlePopState = () => setPageKey(getPageKey());
+    window.addEventListener('popstate', handlePopState);
+
+    const handleClick = (event) => {
+      const link = event.target.closest('a[href]');
+      if (!link) return;
+
+      const url = new URL(link.href);
+      if (url.origin !== window.location.origin || link.target === '_blank') return;
+
+      const nextKey = ROUTES[url.pathname];
+      if (!nextKey) return;
+
+      event.preventDefault();
+      window.history.pushState({}, '', url.pathname);
+      setPageKey(nextKey);
+      window.scrollTo(0, 0);
+    };
+
+    document.addEventListener('click', handleClick);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      document.removeEventListener('click', handleClick);
+    };
+  }, []);
+
+  const page = useMemo(() => pages[pageKey] || pages.home, [pageKey]);
+
+  return <StaticPage page={page} />;
+}

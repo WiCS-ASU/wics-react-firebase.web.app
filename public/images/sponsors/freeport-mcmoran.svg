@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" role="img" aria-label="Freeport-McMoRan">
+  <rect width="520" height="180" rx="18" fill="none"/>
+  <path d="M65 120 132 48l66 72H65z" fill="#0066a4"/>
+  <path d="M132 48 198 120h-54z" fill="#f28c28"/>
+  <text x="344" y="82" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="800" fill="#0066a4">Freeport</text>
+  <text x="344" y="124" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#334">McMoRan</text>
+</svg>
