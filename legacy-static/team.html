@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WiCS @ ASU - Team</title>
+<link rel="icon" href="faviconwics.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050407;
+  --ink:#f7f2ff;
+  --purple:#7b22e6;
+  --purple-2:#47108f;
+  --purple-3:#a66cff;
+  --mono:'Geist Mono',monospace;
+  --serif:'DM Serif Display',serif;
+  --sans:'Instrument Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);overflow-x:hidden;animation:pageFade .7s ease both}
+a{color:inherit}
+body::before{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E")}
+.v6-nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;background:rgba(5,4,7,.78);border-bottom:1px solid rgba(183,148,255,.12);backdrop-filter:blur(18px)}
+.v6-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.v6-logo img{height:46px;width:auto;filter:brightness(0) saturate(100%) invert(95%) sepia(8%) saturate(445%) hue-rotate(218deg) brightness(102%) contrast(96%);opacity:.94}
+.nav-links{display:flex;align-items:center;gap:40px;list-style:none}
+.nav-links a{position:relative;text-decoration:none;font-family:var(--mono);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(247,242,255,.82)}
+.nav-links a.active{color:var(--purple)}
+.nav-links a.active::after{content:'';position:absolute;left:50%;bottom:-15px;width:7px;height:7px;border-radius:50%;background:var(--purple);transform:translateX(-50%)}
+.nav-socials{display:flex;align-items:center;gap:18px}
+.social{width:22px;height:22px;display:grid;place-items:center;color:#fff;text-decoration:none;opacity:.84;transition:opacity .2s,color .2s,transform .2s}
+.social svg{width:20px;height:20px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.social.fill svg{fill:currentColor;stroke:none}
+.social:hover{opacity:1;color:var(--purple-3);transform:translateY(-1px)}
+.join-btn{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 22px;border:1px solid rgba(138,53,255,.7);border-radius:6px;color:#fff;text-decoration:none;font-family:var(--mono);font-size:.86rem;text-transform:uppercase;letter-spacing:.05em;background:rgba(138,53,255,.08)}
+.join-btn:hover{background:rgba(138,53,255,.18)}
+.mobile-nav-toggle{display:none}
+.mobile-menu-btn,.mobile-backdrop,.mobile-drawer{display:none}
+.mobile-menu-btn{width:46px;height:46px;border:1px solid rgba(166,108,255,.48);border-radius:6px;background:rgba(123,34,230,.1);place-items:center;cursor:pointer}
+.mobile-menu-btn span{display:block;width:20px;height:2px;border-radius:999px;background:#f7f2ff;box-shadow:0 7px 0 #f7f2ff,0 -7px 0 #f7f2ff}
+.mobile-backdrop{position:fixed;inset:0;z-index:1001;background:#050407}
+.mobile-drawer{position:fixed;inset:0;z-index:1002;width:100vw;min-height:100vh;padding:28px 26px;background:#050407;transform:translateY(-100%);transition:transform .28s ease;overflow:auto}
+.mobile-drawer-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:48px}
+.mobile-drawer-title{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-3)}
+.mobile-close{width:40px;height:40px;display:grid;place-items:center;border:1px solid rgba(247,242,255,.16);border-radius:50%;color:#fff;font-family:var(--mono);font-size:1.35rem;cursor:pointer}
+.mobile-drawer nav{display:grid;gap:16px}
+.mobile-drawer nav a{display:flex;align-items:center;justify-content:space-between;min-height:58px;padding:0 4px;border-bottom:1px solid rgba(247,242,255,.12);text-decoration:none;font-family:var(--mono);font-size:1rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,242,255,.9)}
+.mobile-drawer nav a.active{color:var(--purple-3)}
+.mobile-drawer nav a::after{content:'→';color:rgba(166,108,255,.74)}
+.mobile-drawer .join-btn{width:100%;justify-content:center;margin-top:26px;background:linear-gradient(135deg,var(--purple),var(--purple-2));border-color:transparent;border-radius:999px}
+.mobile-socials{display:flex;gap:12px;margin-top:26px}
+.mobile-socials a{flex:1;min-height:40px;display:grid;place-items:center;border:1px solid rgba(166,108,255,.28);border-radius:999px;text-decoration:none;font-family:var(--mono);font-size:.66rem;text-transform:uppercase;color:rgba(247,242,255,.78)}
+.mobile-nav-toggle:checked ~ .mobile-backdrop{display:block}
+.mobile-nav-toggle:checked ~ .mobile-drawer{display:block;transform:translateY(0)}
+.team-page{position:relative;min-height:100vh;padding:136px 52px 108px;background:#080909;overflow:hidden}
+.team-page::before{content:'';position:absolute;inset:88px 0 0;background-image:linear-gradient(rgba(183,148,255,.052) 1px,transparent 1px),linear-gradient(90deg,rgba(183,148,255,.052) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,black,transparent 86%);pointer-events:none}
+.team-page::after{content:'                      +                  .                  +                      .\\A       .                  +                              .                 +\\A              +                 .                  +                   .';white-space:pre;position:absolute;inset:116px 36px auto;color:rgba(166,108,255,.3);font-family:var(--mono);font-size:.82rem;line-height:3.9;letter-spacing:.12em;pointer-events:none}
+.team-inner{position:relative;z-index:2;width:min(1280px,100%);margin:0 auto}
+.team-hero{display:grid;grid-template-columns:minmax(300px,.8fr) minmax(380px,1fr);gap:32px;align-items:end;margin-bottom:54px;padding-bottom:34px;border-bottom:1px solid rgba(247,242,255,.13)}
+.section-label{font-family:var(--mono);font-size:.72rem;color:var(--purple-3);letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}
+.team-title{font-family:var(--serif);font-size:clamp(2.6rem,4.8vw,4.4rem);line-height:.96;letter-spacing:-.035em;margin-top:8px;font-weight:400}
+.team-title span{display:block;color:#fff}
+.team-title small{display:block;margin-top:4px;font:inherit;color:var(--purple)}
+.team-copy{max-width:580px;color:rgba(247,242,255,.66);font-family:var(--mono);font-size:.9rem;line-height:1.75}
+.advisor-section{margin-bottom:68px}
+.section-row{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:24px}
+.section-title{font-family:var(--serif);font-size:clamp(2.4rem,4vw,4rem);line-height:.96;letter-spacing:-.035em}
+.advisor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.advisor-card{display:grid;grid-template-columns:240px minmax(0,1fr);min-height:360px;border:1px solid rgba(183,148,255,.16);border-radius:6px;background:linear-gradient(180deg,rgba(20,13,31,.82),rgba(8,6,13,.86));overflow:hidden;animation:softEnter .52s ease both}
+.advisor-card:hover{border-color:rgba(166,108,255,.42)}
+.advisor-image{background:radial-gradient(circle at 50% 42%,rgba(123,34,230,.2),transparent 46%),linear-gradient(180deg,rgba(247,242,255,.04),rgba(247,242,255,.015));display:grid;place-items:center;border-right:1px solid rgba(247,242,255,.09)}
+.advisor-image img{width:172px;height:172px;border-radius:50%;object-fit:cover;border:1px solid rgba(247,242,255,.2);box-shadow:0 20px 60px rgba(0,0,0,.32)}
+.advisor-body{padding:28px}
+.advisor-body .team-description{min-height:0;margin-top:14px}
+.advisor-body .team-description + .team-description{margin-top:12px}
+.supporter-section{margin-bottom:68px}
+.supporter-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.supporter-card{min-height:380px;border:1px solid rgba(183,148,255,.15);border-radius:6px;background:linear-gradient(180deg,rgba(20,13,31,.78),rgba(8,6,13,.84));overflow:hidden;transition:transform .25s ease,border-color .25s ease,background .25s ease;animation:softEnter .52s ease both}
+.supporter-card:hover{transform:translateY(-5px);border-color:rgba(166,108,255,.44);background:linear-gradient(180deg,rgba(28,17,44,.9),rgba(9,6,15,.9))}
+.supporter-image{height:172px;display:grid;place-items:end center;background:radial-gradient(circle at 50% 44%,rgba(123,34,230,.2),transparent 45%),linear-gradient(180deg,rgba(247,242,255,.035),rgba(247,242,255,.015));border-bottom:1px solid rgba(247,242,255,.09)}
+.supporter-image img{width:122px;height:122px;border-radius:50%;object-fit:cover;margin-bottom:24px;border:1px solid rgba(247,242,255,.18);box-shadow:0 18px 55px rgba(0,0,0,.3);filter:saturate(.95)}
+.supporter-body{padding:22px}
+.supporter-card .team-description{min-height:0;margin-top:14px}
+.team-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.team-card{position:relative;min-height:350px;border:1px solid rgba(183,148,255,.15);border-radius:6px;background:linear-gradient(180deg,rgba(20,13,31,.82),rgba(8,6,13,.86));overflow:hidden;transition:transform .25s ease,border-color .25s ease,background .25s ease;animation:softEnter .52s ease both;animation-delay:calc(var(--i) * 38ms)}
+.team-card:hover{transform:translateY(-6px);border-color:rgba(166,108,255,.46);background:linear-gradient(180deg,rgba(28,17,44,.9),rgba(9,6,15,.9))}
+.team-image{height:198px;display:grid;place-items:end center;background:radial-gradient(circle at 50% 44%,rgba(123,34,230,.2),transparent 45%),linear-gradient(180deg,rgba(247,242,255,.035),rgba(247,242,255,.015));border-bottom:1px solid rgba(247,242,255,.09)}
+.team-image img{width:136px;height:136px;border-radius:50%;object-fit:cover;margin-bottom:28px;border:1px solid rgba(247,242,255,.18);box-shadow:0 18px 55px rgba(0,0,0,.3);filter:saturate(.95)}
+.team-body{padding:22px}
+.team-role{font-family:var(--mono);font-size:.68rem;line-height:1.45;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-3);margin-bottom:12px}
+.team-name{font-family:var(--serif);font-size:1.58rem;line-height:1;margin-bottom:12px}
+.team-description{min-height:72px;color:rgba(247,242,255,.64);font-size:.88rem;line-height:1.65}
+.team-link{display:inline-flex;margin-top:18px;color:#fff;font-family:var(--mono);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;border-bottom:1px solid rgba(166,108,255,.72);padding-bottom:3px}
+.team-link.is-disabled{color:rgba(247,242,255,.4);border-color:rgba(247,242,255,.16);pointer-events:none}
+.team-actions{display:flex;gap:10px;margin-top:18px}
+.team-icon-link{width:38px;height:38px;border:1px solid rgba(166,108,255,.42);border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(123,34,230,.1);text-decoration:none;transition:background .2s,border-color .2s,transform .2s,color .2s}
+.team-icon-link svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.team-icon-link:hover{background:rgba(123,34,230,.25);border-color:rgba(166,108,255,.72);transform:translateY(-1px);color:var(--purple-3)}
+.team-icon-link.is-disabled{opacity:.34;pointer-events:none}
+.v6-footer{background:#050407;border-top:1px solid rgba(183,148,255,.12);padding:40px 52px;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.v6-footer p{color:rgba(247,242,255,.52);font-size:.75rem;font-family:var(--mono)}
+@keyframes pageFade{0%{opacity:0;background:#020104}100%{opacity:1;background:var(--bg)}}
+@keyframes softEnter{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media(max-width:1180px){.team-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.advisor-grid{grid-template-columns:1fr}.supporter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.team-hero{grid-template-columns:1fr}}
+@media(max-width:760px){.v6-nav{height:76px;padding:0 22px}.v6-logo img{height:38px}.nav-links,.nav-socials{display:none}.mobile-menu-btn{display:grid;width:42px;height:42px}.mobile-drawer{padding:26px 22px 34px}.mobile-drawer nav a{min-height:56px;font-size:.92rem}.mobile-socials{display:grid;grid-template-columns:repeat(2,1fr)}.team-page{padding:104px 20px 72px}.team-page::after{display:none}.team-hero{gap:18px;margin-bottom:42px;padding-bottom:26px}.team-title{font-size:clamp(2.35rem,13vw,3.3rem)}.team-copy{font-size:.8rem;line-height:1.65}.team-grid,.supporter-grid{grid-template-columns:1fr;gap:14px}.advisor-grid{gap:14px}.advisor-card{grid-template-columns:1fr;min-height:auto}.advisor-image{min-height:220px;border-right:0;border-bottom:1px solid rgba(247,242,255,.09)}.advisor-body{padding:22px}.section-row{display:block;margin-bottom:20px}.section-title{font-size:clamp(2.1rem,12vw,3rem)}.supporter-section,.advisor-section{margin-bottom:54px}.supporter-card{min-height:auto}.supporter-image{height:176px}.supporter-image img{width:122px;height:122px;margin-bottom:24px}.supporter-body{padding:20px}.team-card{min-height:auto}.team-image{height:176px}.team-image img{width:122px;height:122px;margin-bottom:24px}.team-body{padding:20px}.team-role{font-size:.62rem}.team-name{font-size:1.46rem}.team-description{min-height:0;font-size:.82rem}.team-actions{display:grid;grid-template-columns:repeat(2,44px)}.v6-footer{padding:32px 22px;flex-direction:column;align-items:flex-start;text-align:left}}
+</style>
+</head>
+<body>
+<nav class="v6-nav">
+  <a class="v6-logo" href="index.html" aria-label="WiCS home">
+    <img src="images/branding/wics-logo.png" alt="WiCS Logo">
+  </a>
+  <input class="mobile-nav-toggle" type="checkbox" id="mobile-nav-team" aria-label="Open navigation">
+  <label class="mobile-menu-btn" for="mobile-nav-team" aria-label="Open navigation"><span></span></label>
+  <label class="mobile-backdrop" for="mobile-nav-team" aria-label="Close navigation"></label>
+  <aside class="mobile-drawer" aria-label="Mobile navigation">
+    <div class="mobile-drawer-top">
+      <div class="mobile-drawer-title">WiCS Menu</div>
+      <label class="mobile-close" for="mobile-nav-team" aria-label="Close navigation">×</label>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a class="active" href="team.html">Team</a>
+      <a href="sponsors.html">Sponsors</a>
+    </nav>
+    <a class="join-btn" href="https://sundevilcentral.eoss.asu.edu/wics/" target="_blank">Join Now →</a>
+    <div class="mobile-socials">
+      <a href="https://www.instagram.com/wics.asu/" target="_blank">IG</a>
+      <a href="mailto:wics.asu@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/company/wics-asu/" target="_blank">IN</a>
+      <a href="https://www.facebook.com/wics.asu" target="_blank">FB</a>
+    </div>
+  </aside>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a class="active" href="team.html">Team</a></li>
+    <li><a href="sponsors.html">Sponsors</a></li>
+  </ul>
+  <div class="nav-socials">
+    <a class="social" href="https://www.instagram.com/wics.asu/" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+    </a>
+    <a class="social" href="mailto:wics.asu@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"></path><path d="m4 7 8 6 8-6"></path></svg>
+    </a>
+    <a class="social" href="https://www.linkedin.com/company/wics-asu/" target="_blank" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><path d="M2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
+    </a>
+    <a class="social fill" href="https://www.facebook.com/wics.asu" target="_blank" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 8.1V6.2c0-.9.3-1.5 1.6-1.5h1.8V1.2C16.7 1.1 15.6 1 14.4 1c-2.8 0-4.7 1.7-4.7 4.8v2.3H6.6v3.9h3.1V23h4.2V12h3.5l.5-3.9h-3.7Z"></path></svg>
+    </a>
+    <a class="join-btn" href="https://sundevilcentral.eoss.asu.edu/wics/" target="_blank">Join Now →</a>
+  </div>
+</nav>
+<main>
+  <section class="team-page">
+    <div class="team-inner">
+      <div class="team-hero">
+        <div>
+          <div class="section-label">Leadership</div>
+          <h1 class="team-title"><span>Meet</span><small>the team</small></h1>
+        </div>
+        <p class="team-copy">The WiCS officer board builds the community, programming, mentorship, and industry connections that help members feel supported and seen in tech.</p>
+      </div>
+      <section class="advisor-section">
+        <div class="section-row">
+          <div>
+            <div class="section-label">Faculty Advisors</div>
+            <h2 class="section-title">Guidance behind WiCS.</h2>
+          </div>
+        </div>
+        <div class="advisor-grid">
+          <article class="advisor-card">
+            <div class="advisor-image">
+              <img src="images/team/farideh-tadayon-navabi.png" alt="Farideh Tadayon-Navabi">
+            </div>
+            <div class="advisor-body">
+              <div class="team-role">Advisor</div>
+              <h3 class="team-name">Farideh Tadayon-Navabi</h3>
+              <p class="team-description">Farideh Tadayon-Navabi is a principal lecturer in the School of Computing, Informatics, and Decision Systems Engineering. Prior to ASU, she held a teaching position at University of Louisiana in Monroe.</p>
+              <p class="team-description">Her work focuses on improving undergraduate curriculum, helping students succeed in introductory courses, and retaining students in computing programs.</p>
+              <a class="team-link" href="https://search.asu.edu/profile/71640" target="_blank">View Profile →</a>
+            </div>
+          </article>
+          <article class="advisor-card">
+            <div class="advisor-image">
+              <img src="images/team/samira-ghayekhloo.png" alt="Samira Ghayekhloo">
+            </div>
+            <div class="advisor-body">
+              <div class="team-role">Advisor</div>
+              <h3 class="team-name">Samira Ghayekhloo</h3>
+              <p class="team-description">Samira Ghayekhloo is an assistant teaching professor at the School of Computing and Augmented Intelligence at Arizona State University. She earned her PhD in Artificial Intelligence and has over ten years of teaching experience.</p>
+              <p class="team-description">Before joining ASU, she served as an assistant professor in the Department of Computer Engineering at Azad University, Iran, mentoring graduate and undergraduate students.</p>
+              <a class="team-link" href="https://search.asu.edu/profile/3516139" target="_blank">View Profile →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="supporter-section">
+        <div class="section-row">
+          <div>
+            <div class="section-label">Supporting Faculty</div>
+            <h2 class="section-title">Faculty Supporters &amp; Honorary Mentors.</h2>
+          </div>
+        </div>
+        <div class="supporter-grid">
+          <article class="supporter-card">
+            <div class="supporter-image">
+              <img src="images/team/blank-profile-circle.png" alt="Mutsumi Nakamura">
+            </div>
+            <div class="supporter-body">
+              <div class="team-role">Past Advisor</div>
+              <h3 class="team-name">Mutsumi Nakamura</h3>
+              <p class="team-description">Retired professor and former WiCS advisor whose support helped shape the organization.</p>
+              <a class="team-link" href="https://search.asu.edu/profile/262996" target="_blank">View Profile →</a>
+            </div>
+          </article>
+          <article class="supporter-card">
+            <div class="supporter-image">
+              <img src="images/team/ Ross_Maciejewski.png" alt="Ross Maciejewski">
+            </div>
+            <div class="supporter-body">
+              <div class="team-role">Frequent Supporter</div>
+              <h3 class="team-name">Ross Maciejewski</h3>
+              <p class="team-description">SCAI director and frequent supporter of WiCS events, meetings, and community initiatives.</p>
+              <a class="team-link" href="https://search.asu.edu/profile/1783228" target="_blank">View Profile →</a>
+            </div>
+          </article>
+          <article class="supporter-card">
+            <div class="supporter-image">
+              <img src="images/team/Andrea-Richa.png" alt="Andrea Richa">
+            </div>
+            <div class="supporter-body">
+              <div class="team-role">Frequent Supporter</div>
+              <h3 class="team-name">Andrea Richa</h3>
+              <p class="team-description">Professor and longtime supporter who continues to show up for major WiCS gatherings.</p>
+              <a class="team-link" href="https://search.asu.edu/profile/198256" target="_blank">View Profile →</a>
+            </div>
+          </article>
+          <article class="supporter-card">
+            <div class="supporter-image">
+              <img src="images/team/Srividya-Bansal.png" alt="Srividya Bansal">
+            </div>
+            <div class="supporter-body">
+              <div class="team-role">Frequent Supporter</div>
+              <h3 class="team-name">Srividya Bansal</h3>
+              <p class="team-description">Professor and frequent supporter of WiCS programming, big meetings, and student community.</p>
+              <a class="team-link" href="https://search.asu.edu/profile/1629159" target="_blank">View Profile →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <div class="section-row">
+        <div>
+          <div class="section-label">Officer Board</div>
+          <h2 class="section-title">Student leaders.</h2>
+        </div>
+      </div>
+      <div class="team-grid" id="teamGrid"></div>
+    </div>
+  </section>
+</main>
+<footer class="v6-footer">
+  <p>2026 WiCS at ASU / 1151 S Forest Ave, Tempe AZ 85281</p>
+  <p>made by the WiCS web team</p>
+</footer>
+<script>
+const TEAM_MEMBERS = [
+  { role: 'President', name: 'Neha Kanjamala', image: 'images/team/neha-kanjamala.jpg', email: 'nkanjama@asu.edu', linkedin: 'https://www.linkedin.com/in/neha-kanjamala' },
+  { role: 'Co-president', name: 'Riya Nalla', image: 'images/team/riya-nalla.jpg', email: 'rsnalla@asu.edu', linkedin: 'https://www.linkedin.com/in/riya-nalla-508070233/' },
+  { role: 'Treasurer', name: 'Hansika Peethala', image: 'images/team/Hansika-Peethala.jpeg', email: 'hpeethal@asu.edu', linkedin: 'https://www.linkedin.com/in/hansika-peethala/' },
+  { role: 'VP of Industry Relations', name: 'Poojitha Nuthalapati', image: 'images/team/poojitha-nuthalapati.jpeg', email: 'pnuthal1@asu.edu', linkedin: 'https://www.linkedin.com/in/poojithanuthalapati/' },
+  { role: 'VP of Internal Relations', name: 'Dhriti Girish', image: 'images/team/Dhriti-Girish.jpg', email: 'dgirish3@asu.edu', linkedin: 'https://www.linkedin.com/in/dhriti-g/' },
+  { role: 'VP of Outreach', name: 'Jahaira Flores', image: 'images/team/Jahaira_Flores.jpg', email: 'jflor108@asu.edu', linkedin: 'https://www.linkedin.com/in/jfasu/' },
+  { role: 'Logistics Director', name: 'Supraja Sreevatsan', image: 'images/team/Supraja-Sreevatsan.jpeg', email: 'ssreevat@asu.edu', linkedin: 'https://www.linkedin.com/in/supraja-sreevatsan-277425365' },
+  { role: 'Campus Relations Director (Undergraduate)', name: 'Sanjita Patwardhan', image: 'images/team/sanjita-patwardhan.jpeg', email: 'spatwar5@asu.edu', linkedin: 'https://www.linkedin.com/in/sanjita-patwardhan-69a28a26a/' },
+  { role: 'Director of Professional Development', name: 'Sumedha Gupta', image: 'images/team/sumedha_gupta.jpeg', email: 'sgupt354@asu.edu', linkedin: 'https://www.linkedin.com/in/sumedha092' },
+  { role: 'Mentorship Program Director', name: 'Tiya Lath', image: 'images/team/tiya-lath.png', email: 'tlath@asu.edu', linkedin: 'https://www.linkedin.com/in/tiya-lath' },
+  { role: 'Co-mentorship Director', name: 'Vallari Tripathi', email: 'vtripat8@asu.edu' },
+  { role: 'Marketing Director', name: 'Kendra Montes', email: 'kmontes4@asu.edu', linkedin: 'https://www.linkedin.com/in/kendra-montes-712a42381' },
+  { role: 'Marketing Officer', name: 'Anchana Selvaganabathy', image: 'images/team/anchana-selvaganabathy.jpeg', email: 'aselvag1@asu.edu', linkedin: 'https://www.linkedin.com/in/anchana-selvaganabathy' },
+  { role: 'Graphic Designer', name: 'Ananya Jalote', image: 'images/team/ananya-jalote.jpg', email: 'ajalote4@asu.edu', linkedin: 'https://www.linkedin.com/in/ananyajalote/' },
+  { role: 'Webmaster', name: 'Deepti Ravi Kumar', image: 'images/team/deepti-ravi-kumar.png', email: 'draviku8@asu.edu', linkedin: 'https://www.linkedin.com/in/deepti-ravi-kumar/' }
+];
+
+const teamGrid = document.getElementById('teamGrid');
+const placeholderImage = 'images/team/blank-profile-circle.png';
+
+const iconEmail = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"></path><path d="m4 7 8 6 8-6"></path></svg>';
+const iconLinkedIn = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><path d="M2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>';
+const contactLink = (href, label, icon) => href
+  ? `<a class="team-icon-link" href="${href}" target="_blank" aria-label="${label}">${icon}</a>`
+  : `<a class="team-icon-link is-disabled" href="#" aria-disabled="true" aria-label="${label}">${icon}</a>`;
+
+teamGrid.innerHTML = TEAM_MEMBERS.map((member, index) => `
+  <article class="team-card" style="--i:${index}">
+    <div class="team-image">
+      <img src="${member.image || placeholderImage}" alt="${member.name}">
+    </div>
+    <div class="team-body">
+      <div class="team-role">${member.role}</div>
+      <h2 class="team-name">${member.name}</h2>
+      <div class="team-actions">
+        ${contactLink(member.email ? `mailto:${member.email}` : '', `Email ${member.name}`, iconEmail)}
+        ${contactLink(member.linkedin || '', `${member.name} LinkedIn`, iconLinkedIn)}
+      </div>
+    </div>
+  </article>
+`).join('');
+</script>
+</body>
+</html>

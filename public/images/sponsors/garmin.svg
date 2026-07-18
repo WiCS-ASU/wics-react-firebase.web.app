@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" role="img" aria-label="Garmin">
+  <rect width="520" height="180" rx="18" fill="none"/>
+  <text x="238" y="112" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="800" fill="#007cc3" letter-spacing="2">GARMIN</text>
+  <path d="M420 45l38 67h-76z" fill="#007cc3"/>
+</svg>

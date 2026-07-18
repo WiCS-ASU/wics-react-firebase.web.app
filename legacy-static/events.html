@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WiCS @ ASU - Events</title>
+<link rel="icon" href="faviconwics.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050407;
+  --ink:#f7f2ff;
+  --muted:#b9adc7;
+  --dim:#7e6d91;
+  --purple:#7b22e6;
+  --purple-2:#47108f;
+  --purple-3:#a66cff;
+  --line:rgba(183,148,255,.18);
+  --panel:rgba(16,11,25,.72);
+  --mono:'Geist Mono',monospace;
+  --serif:'DM Serif Display',serif;
+  --sans:'Instrument Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);overflow-x:hidden}
+a{color:inherit}
+body::before{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E")}
+body{animation:pageFade .7s ease both}
+
+.v6-nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;background:rgba(5,4,7,.78);border-bottom:1px solid rgba(183,148,255,.12);backdrop-filter:blur(18px)}
+.v6-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.v6-logo img{height:46px;width:auto;filter:brightness(0) saturate(100%) invert(95%) sepia(8%) saturate(445%) hue-rotate(218deg) brightness(102%) contrast(96%);opacity:.94}
+.nav-links{display:flex;align-items:center;gap:40px;list-style:none}
+.nav-links a{position:relative;text-decoration:none;font-family:var(--mono);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(247,242,255,.82)}
+.nav-links a.active{color:var(--purple)}
+.nav-links a.active::after{content:'';position:absolute;left:50%;bottom:-15px;width:7px;height:7px;border-radius:50%;background:var(--purple);transform:translateX(-50%)}
+.nav-socials{display:flex;align-items:center;gap:18px}
+.social{width:22px;height:22px;display:grid;place-items:center;color:#fff;text-decoration:none;opacity:.84;transition:opacity .2s,color .2s,transform .2s}
+.social svg{width:20px;height:20px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.social.fill svg{fill:currentColor;stroke:none}
+.social:hover{opacity:1;color:var(--purple-3);transform:translateY(-1px)}
+.join-btn{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 22px;border:1px solid rgba(138,53,255,.7);border-radius:6px;color:#fff;text-decoration:none;font-family:var(--mono);font-size:.86rem;text-transform:uppercase;letter-spacing:.05em;background:rgba(138,53,255,.08)}
+.join-btn:hover{background:rgba(138,53,255,.18)}
+.mobile-nav-toggle{display:none}
+.mobile-menu-btn,.mobile-backdrop,.mobile-drawer{display:none}
+.mobile-menu-btn{width:46px;height:46px;border:1px solid rgba(166,108,255,.48);border-radius:6px;background:rgba(123,34,230,.1);place-items:center;cursor:pointer}
+.mobile-menu-btn span{display:block;width:20px;height:2px;border-radius:999px;background:#f7f2ff;box-shadow:0 7px 0 #f7f2ff,0 -7px 0 #f7f2ff}
+.mobile-backdrop{position:fixed;inset:0;z-index:1001;background:#050407}
+.mobile-drawer{position:fixed;inset:0;z-index:1002;width:100vw;min-height:100vh;padding:28px 26px;background:#050407;transform:translateY(-100%);transition:transform .28s ease;overflow:auto}
+.mobile-drawer-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:48px}
+.mobile-drawer-title{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-3)}
+.mobile-close{width:40px;height:40px;display:grid;place-items:center;border:1px solid rgba(247,242,255,.16);border-radius:50%;color:#fff;font-family:var(--mono);font-size:1.35rem;cursor:pointer}
+.mobile-drawer nav{display:grid;gap:16px}
+.mobile-drawer nav a{display:flex;align-items:center;justify-content:space-between;min-height:58px;padding:0 4px;border-bottom:1px solid rgba(247,242,255,.12);text-decoration:none;font-family:var(--mono);font-size:1rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,242,255,.9)}
+.mobile-drawer nav a.active{color:var(--purple-3)}
+.mobile-drawer nav a::after{content:'→';color:rgba(166,108,255,.74)}
+.mobile-drawer .join-btn{width:100%;justify-content:center;margin-top:26px;background:linear-gradient(135deg,var(--purple),var(--purple-2));border-color:transparent;border-radius:999px}
+.mobile-socials{display:flex;gap:12px;margin-top:26px}
+.mobile-socials a{flex:1;min-height:40px;display:grid;place-items:center;border:1px solid rgba(166,108,255,.28);border-radius:999px;text-decoration:none;font-family:var(--mono);font-size:.66rem;text-transform:uppercase;color:rgba(247,242,255,.78)}
+.mobile-nav-toggle:checked ~ .mobile-backdrop{display:block}
+.mobile-nav-toggle:checked ~ .mobile-drawer{display:block;transform:translateY(0)}
+
+.hero{position:relative;min-height:100vh;padding:132px 52px 74px;overflow:hidden;background:
+  radial-gradient(circle at 76% 32%,rgba(138,53,255,.18),transparent 31%),
+  linear-gradient(180deg,#050407,#08050d)}
+.hero::before{content:'';position:absolute;inset:88px 0 0;background-image:linear-gradient(rgba(183,148,255,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(183,148,255,.075) 1px,transparent 1px);background-size:74px 74px;mask-image:linear-gradient(to bottom,black 0%,black 72%,transparent 100%)}
+.hero::after{content:'';position:absolute;inset:0;background:
+  radial-gradient(circle at 9% 15%,rgba(138,53,255,.34) 0 1px,transparent 2px),
+  radial-gradient(circle at 36% 18%,rgba(138,53,255,.42) 0 2px,transparent 3px),
+  radial-gradient(circle at 49% 72%,rgba(138,53,255,.42) 0 2px,transparent 3px),
+  radial-gradient(circle at 92% 22%,rgba(138,53,255,.42) 0 2px,transparent 3px);
+  pointer-events:none}
+.hero-inner{position:relative;z-index:2;width:min(1280px,100%);margin:0 auto;display:grid;grid-template-columns:minmax(0,.88fr) minmax(380px,.9fr);gap:44px;align-items:center}
+.side-code{position:absolute;left:36px;top:308px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:13px;font-family:var(--mono);font-size:.67rem;letter-spacing:.16em;color:rgba(247,242,255,.72);text-transform:uppercase}
+.side-code span{writing-mode:vertical-rl;transform:rotate(180deg)}
+.side-code i{display:block;width:1px;height:74px;background:rgba(247,242,255,.42)}
+.side-code b{display:block;width:9px;height:9px;border:1px solid var(--purple-3);border-radius:50%;background:rgba(123,34,230,.18)}
+.micro-tag{position:absolute;left:170px;top:150px;font-family:var(--mono);font-size:.72rem;color:rgba(183,148,255,.7);letter-spacing:.12em;text-transform:uppercase}
+.corner-copy{position:absolute;right:78px;top:156px;max-width:260px;font-family:var(--mono);font-size:.78rem;line-height:1.55;color:rgba(183,148,255,.82);text-transform:uppercase}
+.spark{position:absolute;right:82px;top:260px;width:58px;height:58px}
+.spark::before,.spark::after{content:'';position:absolute;left:50%;top:50%;width:58px;height:1px;background:var(--purple);transform:translate(-50%,-50%)}
+.spark::after{transform:translate(-50%,-50%) rotate(90deg)}
+.spark span{position:absolute;inset:0;transform:rotate(45deg)}
+.spark span::before,.spark span::after{content:'';position:absolute;left:50%;top:50%;width:58px;height:1px;background:var(--purple);transform:translate(-50%,-50%)}
+.spark span::after{transform:translate(-50%,-50%) rotate(90deg)}
+
+.hero-copy{position:relative;z-index:3;max-width:660px}
+.eyebrow{font-family:var(--mono);font-size:1.58rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:12px}
+.hero-title{font-family:var(--sans);font-size:clamp(5.25rem,7.35vw,7.25rem);line-height:.9;letter-spacing:-.052em;font-weight:800}
+.hero-title span{display:block}
+.hero-title .purple{color:var(--purple)}
+.hero-title .mono{display:flex;align-items:flex-end;gap:.46em;margin-top:4px;font-family:var(--mono);font-style:italic;font-weight:500;letter-spacing:-.03em;color:#fff;font-size:.58em;line-height:1.05}
+.hero-title .mono em,.hero-title .mono strong{font:inherit}
+.hero-title .mono strong{position:relative}
+.hero-title .mono strong::before,.hero-title .mono strong::after{content:'';position:absolute;left:-4px;height:3px;background:var(--purple);border-radius:999px;transform-origin:left center}
+.hero-title .mono strong::before{width:350px;bottom:-8px;transform:rotate(-1.2deg) skewX(-18deg);opacity:.98;clip-path:polygon(0 42%,7% 20%,28% 45%,53% 18%,78% 55%,100% 30%,100% 100%,0 100%)}
+.hero-title .mono strong::after{width:310px;left:78px;bottom:-17px;transform:rotate(-2.4deg) skewX(-15deg);opacity:.82;clip-path:polygon(0 48%,10% 28%,34% 55%,58% 18%,82% 45%,100% 32%,100% 100%,0 100%)}
+.hero-sub{max-width:600px;margin-top:34px;color:rgba(247,242,255,.72);font-family:var(--mono);font-size:.96rem;line-height:1.7}
+.hero-sub span{display:block}
+.hero-actions{display:flex;gap:18px;flex-wrap:wrap;margin-top:34px}
+.btn{min-height:60px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:0 36px;text-decoration:none;font-family:var(--mono);font-size:.9rem;letter-spacing:.045em;text-transform:uppercase}
+.btn-primary{background:linear-gradient(135deg,var(--purple),var(--purple-2));color:#fff;box-shadow:0 18px 45px rgba(123,34,230,.3)}
+.btn-outline{border:1px solid rgba(138,53,255,.74);color:#fff;background:rgba(5,4,7,.38);padding-inline:42px}
+
+.butterfly-wrap{position:relative;height:620px;display:grid;place-items:center;overflow:visible}
+.moth-bg{position:relative;width:min(1120px,84vw);aspect-ratio:16/10;transform:translate(-292px,-44px);filter:hue-rotate(-8deg) saturate(.95) brightness(1.06) drop-shadow(0 26px 90px rgba(123,34,230,.32));opacity:.98;background-image:url("images/branding/wics-website-moth.png");background-size:contain;background-position:center;background-repeat:no-repeat}
+.moth-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(28,9,52,.18),rgba(28,9,52,.18)),rgba(0,0,0,.18);mix-blend-mode:multiply;pointer-events:none}
+.mini-moth{width:38px;height:38px;filter:drop-shadow(0 0 18px rgba(138,53,255,.42))}
+.mini-moth path{fill:var(--purple)}
+
+.stats{position:relative;z-index:4;width:min(1120px,100%);margin:42px auto 0;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(247,242,255,.14);background:rgba(5,4,7,.62);backdrop-filter:blur(10px)}
+.stat{position:relative;min-height:104px;display:flex;align-items:center;justify-content:center;gap:24px;border-right:1px solid rgba(247,242,255,.14)}
+.stat:not(:last-child)::after{content:'+';position:absolute;right:-9px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:1.35rem;color:rgba(247,242,255,.42);z-index:2}
+.stat:last-child{border-right:0}
+.stat-icon{width:42px;height:42px;color:var(--purple);flex:0 0 auto}
+.stat-icon svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.stat-icon.fill svg{fill:currentColor;stroke:none}
+.stat b{display:block;font-family:var(--mono);font-size:2.08rem;font-weight:500;color:#fff;line-height:1;letter-spacing:-.04em}
+.stat span{display:block;margin-top:8px;font-family:var(--mono);font-size:.72rem;color:var(--purple-3);letter-spacing:.08em;text-transform:uppercase}
+.code-note{position:absolute;right:42px;bottom:92px;font-family:var(--mono);font-size:.76rem;line-height:1.6;color:rgba(123,34,230,.8)}
+
+.gallery-section{position:relative;padding:88px 52px 104px;background:#08050d}
+.gallery-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(183,148,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(183,148,255,.045) 1px,transparent 1px);background-size:68px 68px;mask-image:linear-gradient(to bottom,black,transparent 92%)}
+.gallery-inner{position:relative;z-index:2;width:min(1280px,100%);margin:0 auto}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:36px}
+.section-label{font-family:var(--mono);font-size:.72rem;color:var(--purple-3);letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-family:var(--serif);font-size:clamp(2.6rem,4.8vw,4.4rem);line-height:.96;letter-spacing:-.035em}
+.section-copy{max-width:510px;color:rgba(247,242,255,.66);font-family:var(--mono);font-size:.88rem;line-height:1.7}
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:145px;gap:0;border:1px solid rgba(183,148,255,.14);border-radius:12px;overflow:hidden;background:#090610;padding:0}
+.tile{position:relative;overflow:hidden;border-radius:0;background:#0e0a15;border:0;transition:transform .5s ease}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;filter:saturate(1.03);opacity:0;transition:opacity 2.6s ease,transform .8s ease,filter .8s ease}
+.tile img.is-active{opacity:1}
+.tile:hover img{transform:scale(1.018);filter:saturate(1.08)}
+.tile.tall{grid-row:span 3}
+.tile.medium{grid-row:span 2}
+.tile.wide{grid-column:span 2;grid-row:span 2}
+
+.pillars-section{position:relative;padding:100px 52px;background:#050407;border-top:1px solid rgba(183,148,255,.12)}
+.pillars-inner{width:min(1280px,100%);margin:0 auto}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:54px}
+.pillar{min-height:310px;padding:30px;border:1px solid rgba(183,148,255,.16);border-radius:10px;background:linear-gradient(180deg,rgba(19,11,31,.78),rgba(8,5,13,.78));transition:transform .25s,border-color .25s,background .25s}
+.pillar:hover{transform:translateY(-6px);border-color:rgba(183,148,255,.38);background:linear-gradient(180deg,rgba(28,16,45,.92),rgba(10,6,16,.9))}
+.pillar-num{font-family:var(--mono);font-size:.68rem;color:rgba(183,148,255,.6);letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px}
+.pillar-mark{width:46px;height:46px;border:1px solid rgba(123,34,230,.42);border-radius:8px;display:grid;place-items:center;margin-bottom:22px;color:var(--purple-3);font-family:var(--mono);font-size:1.2rem;background:rgba(123,34,230,.08)}
+.pillar h3{font-family:var(--serif);font-size:1.55rem;letter-spacing:-.02em;margin-bottom:12px}
+.pillar p{color:rgba(247,242,255,.66);font-size:.9rem;line-height:1.75}
+.pillar-cta{display:inline-flex;margin-top:22px;color:var(--purple-3);font-family:var(--mono);font-size:.78rem;text-decoration:none}
+.events-page{position:relative;padding:58px 52px 96px;background:#080909;border-top:1px solid rgba(231,231,229,.1);overflow:hidden}
+.events-page::before{content:'                      .           +                  ✧                         .      +\\A       ✧                         .                         +                         ✧\\A               +                         .             ✧                         .';white-space:pre;position:absolute;inset:96px 34px auto;min-height:220px;color:rgba(166,108,255,.32);font-family:var(--mono);font-size:.9rem;line-height:3.7;letter-spacing:.12em;pointer-events:none}
+.events-page::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(231,231,229,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(231,231,229,.045) 1px,transparent 1px);background-size:68px 68px;mask-image:linear-gradient(to bottom,black,transparent 82%);pointer-events:none}
+.events-inner{position:relative;z-index:2;width:min(1280px,100%);margin:0 auto}
+.events-inner::before,.events-inner::after{content:'';position:absolute;pointer-events:none;opacity:.78}
+.events-inner::before{right:4%;top:6px;width:70px;height:70px;background:linear-gradient(var(--purple),var(--purple)) center/100% 1px no-repeat,linear-gradient(var(--purple),var(--purple)) center/1px 100% no-repeat;filter:drop-shadow(0 0 18px rgba(123,34,230,.32));opacity:.42}
+.events-inner::after{left:-18px;top:148px;width:16px;height:16px;border:1px solid rgba(166,108,255,.76);box-shadow:0 0 0 18px rgba(123,34,230,.035),0 0 24px rgba(123,34,230,.4)}
+.events-hero{display:flex;flex-direction:column;gap:18px;align-items:stretch}
+.events-aside{padding-bottom:16px;border-bottom:1px solid rgba(231,231,229,.13)}
+.events-aside h2{font-family:var(--serif);font-size:clamp(2.6rem,4.8vw,4.4rem);line-height:.96;letter-spacing:-.035em;margin-top:8px;font-weight:400}
+.events-aside h2 span{display:block;color:#fff}
+.events-aside h2 small{display:block;margin-top:4px;font:inherit;color:var(--purple)}
+.events-aside p{max-width:560px;margin-top:22px;color:rgba(231,231,229,.66);font-family:var(--mono);font-size:.9rem;line-height:1.7}
+.events-meta{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end}
+.events-mini-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:0}
+.events-mini-stat{border-top:1px solid rgba(231,231,229,.18);padding-top:14px}
+.events-mini-stat b{display:block;font-family:var(--mono);font-size:1.7rem;color:#e7e7e5;font-weight:500}
+.events-mini-stat span{display:block;margin-top:5px;font-family:var(--mono);font-size:.68rem;color:var(--purple-3);text-transform:uppercase;letter-spacing:.1em}
+.events-email{display:inline-flex;color:#e7e7e5;font-family:var(--mono);font-size:.8rem;text-decoration:none;border-bottom:1px solid rgba(166,108,255,.62)}
+.calendar-shell{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(330px,.62fr);gap:18px;align-items:start;padding:14px;border:1px solid rgba(166,108,255,.16);border-radius:8px;background:linear-gradient(180deg,rgba(18,12,28,.74),rgba(7,7,9,.66));box-shadow:0 24px 80px rgba(0,0,0,.34),inset 0 1px 0 rgba(247,242,255,.045)}
+.month-strip{width:100%;padding:0}
+.month-card{width:100%;border:1px solid rgba(231,231,229,.22);border-radius:6px;background:linear-gradient(180deg,rgba(14,12,18,.96),rgba(8,9,10,.94));overflow:hidden;box-shadow:0 18px 58px rgba(0,0,0,.26)}
+.month-top{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid rgba(231,231,229,.18);background:rgba(247,242,255,.035)}
+.month-top h3{font-family:var(--mono);font-size:.92rem;text-transform:uppercase;letter-spacing:.08em}
+.month-actions{display:flex;gap:10px}
+.month-action{border:1px solid rgba(231,231,229,.18);background:transparent;color:rgba(231,231,229,.76);font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;border-radius:999px;padding:7px 10px;cursor:pointer}
+.month-arrow{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;font-size:.95rem;color:#f7f2ff;background:rgba(166,108,255,.12);border-color:rgba(166,108,255,.42)}
+.month-arrow:hover{background:rgba(166,108,255,.26);border-color:rgba(166,108,255,.72)}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr)}
+.day-name,.day-cell{min-height:64px;border-right:1px solid rgba(231,231,229,.14);border-bottom:1px solid rgba(231,231,229,.14)}
+.day-name{min-height:auto;padding:9px 6px;font-family:var(--mono);font-size:.62rem;color:rgba(231,231,229,.72);text-align:center;text-transform:uppercase;letter-spacing:.12em}
+.day-name:nth-child(7n),.day-cell:nth-child(7n){border-right:0}
+.day-cell{position:relative;padding:7px;background:rgba(255,255,255,.026)}
+.day-cell.empty{background:rgba(255,255,255,.04)}
+.day-cell.today{background:linear-gradient(180deg,rgba(123,34,230,.22),rgba(255,255,255,.018));box-shadow:inset 0 0 0 1px rgba(166,108,255,.62)}
+.day-cell.today .day-num{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;border-radius:50%;background:var(--purple);color:#fff}
+.day-num{font-family:var(--mono);font-size:.68rem;color:rgba(247,242,255,.5)}
+.event-dot{display:block;width:100%;margin-top:5px;padding:5px 6px;border:1px solid rgba(166,108,255,.36);border-radius:6px;background:rgba(123,34,230,.18);color:#fff;font-family:var(--mono);font-size:.6rem;line-height:1.2;text-align:left;cursor:pointer}
+.event-dot:hover,.event-dot.active{background:rgba(123,34,230,.34);border-color:rgba(166,108,255,.72)}
+.event-detail{position:sticky;top:110px;border:1px solid rgba(231,231,229,.22);border-radius:6px;background:linear-gradient(180deg,rgba(14,12,18,.96),rgba(8,9,10,.94));overflow:hidden;box-shadow:0 18px 58px rgba(0,0,0,.28)}
+.event-detail img{width:100%;aspect-ratio:16/8.4;object-fit:cover;display:block;background:#100b17}
+.event-detail-body{padding:18px}
+.event-detail-kicker{font-family:var(--mono);font-size:.62rem;color:var(--purple-3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.event-detail h3{font-family:var(--serif);font-size:1.55rem;line-height:1;margin-bottom:9px}
+.event-detail p{color:rgba(247,242,255,.68);font-size:.82rem;line-height:1.58}
+.event-meta-line{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0;color:rgba(247,242,255,.7);font-family:var(--mono);font-size:.68rem}
+.event-actions{display:flex;gap:10px;flex-wrap:wrap}
+.event-register{display:inline-flex;align-items:center;min-height:38px;padding:0 15px;border-radius:999px;background:linear-gradient(135deg,var(--purple),var(--purple-2));color:#fff;font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
+.event-register.is-disabled,.event-calendar.is-disabled{pointer-events:none;cursor:not-allowed;background:rgba(247,242,255,.08);border:1px solid rgba(247,242,255,.16);color:rgba(247,242,255,.46);box-shadow:none}
+.event-calendar{display:inline-flex;align-items:center;min-height:38px;padding:0 15px;border-radius:999px;border:1px solid rgba(166,108,255,.62);color:#fff;background:rgba(5,4,7,.34);font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
+.events-aside{animation:softEnter .5s ease both}
+.calendar-shell{animation:softEnter .62s ease .35s both}
+.past-events-cue{position:fixed;left:50%;bottom:24px;z-index:50;display:inline-flex;align-items:center;gap:12px;transform:translateX(-50%);color:rgba(247,242,255,.92);font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:12px 16px;border:1px solid rgba(166,108,255,.5);border-radius:999px;background:linear-gradient(135deg,rgba(123,34,230,.32),rgba(5,4,7,.78));backdrop-filter:blur(14px);box-shadow:0 18px 52px rgba(0,0,0,.36),0 0 34px rgba(123,34,230,.18);animation:cueEnter .62s ease .55s both;transition:opacity .28s ease,transform .28s ease,visibility .28s ease}
+.past-events-cue.is-hidden{opacity:0;visibility:hidden;transform:translate(-50%,14px);pointer-events:none}
+.past-events-cue span{width:32px;height:32px;border:1px solid rgba(166,108,255,.5);border-radius:50%;display:grid;place-items:center;color:var(--purple-3);animation:cueBounce 1.8s ease-in-out infinite}
+.past-events-cue:hover{color:#fff;border-color:rgba(166,108,255,.7)}
+.sponsor-section{background:#1a1820;border-top:1px solid rgba(247,242,255,.1);border-bottom:1px solid rgba(247,242,255,.1);padding:42px 0;overflow:hidden}
+.past-events{position:relative;z-index:2;padding:96px 52px 108px;background:#050407;border-top:1px solid rgba(183,148,255,.12)}
+.past-events-inner{width:min(1280px,100%);margin:0 auto}
+.past-event-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.past-event-card{border:1px solid rgba(183,148,255,.14);background:rgba(14,10,21,.78);overflow:hidden;border-radius:4px;transition:transform .24s ease,border-color .24s ease}
+.past-event-card:hover{transform:translateY(-5px);border-color:rgba(166,108,255,.44)}
+.past-event-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:saturate(1.04)}
+.past-event-image{aspect-ratio:16/10;display:grid;place-items:center;background:linear-gradient(135deg,rgba(123,34,230,.18),rgba(247,242,255,.035));border-bottom:1px solid rgba(183,148,255,.12);font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,242,255,.54)}
+.past-event-body{padding:20px}
+.past-event-body span{display:block;font-family:var(--mono);font-size:.68rem;color:var(--purple-3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.past-event-body h3{font-family:var(--serif);font-size:1.6rem;line-height:1;margin-bottom:10px}
+.past-event-body p{font-size:.88rem;line-height:1.65;color:rgba(247,242,255,.66)}
+.sponsor-label{text-align:center;font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,242,255,.68);margin-bottom:24px}
+.sponsor-track-wrap{overflow:hidden;position:relative}
+.sponsor-track-wrap::before,.sponsor-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:110px;z-index:2;pointer-events:none}
+.sponsor-track-wrap::before{left:0;background:linear-gradient(to right,#1a1820,transparent)}
+.sponsor-track-wrap::after{right:0;background:linear-gradient(to left,#1a1820,transparent)}
+.sponsor-track{display:flex;align-items:center;width:max-content;white-space:nowrap;animation:sponsorScroll 30s linear infinite}
+.sponsor-track:hover{animation-play-state:paused}
+.sponsor-set{display:flex;align-items:center;flex-shrink:0}
+.sponsor-item{display:inline-flex;align-items:center;justify-content:center;padding:0 58px;flex-shrink:0;height:104px;min-width:210px}
+.sponsor-item img{height:72px;width:auto;max-width:216px;object-fit:contain;filter:grayscale(1) saturate(0) brightness(3.6) contrast(.55);opacity:.9;transition:opacity .3s,filter .3s,transform .3s}
+.sponsor-item img[src*="hexagon"],.sponsor-item img[src*="service-now"]{filter:grayscale(1) saturate(0) brightness(5.8) contrast(.42);opacity:.98}
+.sponsor-item:hover img{opacity:1;filter:none;transform:scale(1.04)}
+.sponsor-sep{color:rgba(247,242,255,.24);font-size:.55rem;flex-shrink:0}
+.v6-footer{background:#050407;border-top:1px solid rgba(183,148,255,.12);padding:40px 52px;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.v6-footer p{color:rgba(247,242,255,.52);font-size:.75rem;font-family:var(--mono)}
+body.events-only .hero,
+body.events-only .gallery-section,
+body.events-only .pillars-section,
+body.events-only .sponsor-section{display:none}
+body.events-only .events-page{min-height:calc(100vh - 88px);padding-top:96px}
+
+@keyframes sponsorScroll{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-50%,0,0)}}
+@keyframes pageFade{0%{opacity:0;background:#020104}100%{opacity:1;background:var(--bg)}}
+@keyframes softEnter{0%{opacity:0;transform:translateY(12px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes softTextIn{0%{opacity:0;transform:translateY(8px);filter:blur(5px)}100%{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes typeWord{0%{max-width:0;filter:blur(2px)}100%{max-width:6ch;filter:blur(0)}}
+@keyframes caretBlink{0%,100%{opacity:0}50%{opacity:1}}
+@keyframes caretFade{to{opacity:0}}
+@keyframes cueEnter{0%{opacity:0;transform:translate(-50%,12px)}100%{opacity:1;transform:translate(-50%,0)}}
+@keyframes cueBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
+@media(max-width:1040px){
+  .hero{padding:112px 22px 58px}.hero-inner{grid-template-columns:1fr;gap:36px}.hero-copy{text-align:left}.butterfly-wrap{height:480px}.moth-bg{width:min(680px,104vw);transform:translate(0,0)}
+  .stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid rgba(247,242,255,.14)}
+  .side-code,.corner-copy,.spark,.micro-tag,.code-note{display:none}
+  .gallery-section,.pillars-section,.events-page,.past-events{padding:70px 22px}.section-head{display:block}.section-copy{margin-top:16px}.mosaic{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.tile.tall,.tile.medium,.tile.wide{grid-row:span 2;grid-column:auto}.pillars-grid{grid-template-columns:1fr}.events-aside,.events-meta,.calendar-shell{grid-template-columns:1fr}.events-mini-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.event-detail{position:relative;top:auto}.past-event-grid{grid-template-columns:1fr}.events-only .events-page{padding-top:96px}.v6-footer{padding:32px 22px;flex-direction:column;text-align:center}
+}
+@media(max-width:620px){
+  .v6-nav{height:76px;padding:0 22px}.v6-logo img{height:38px}.nav-links,.nav-socials{display:none}.mobile-menu-btn{display:grid;width:42px;height:42px}
+  .mobile-drawer{padding:26px 22px 34px}.mobile-drawer nav a{min-height:56px;font-size:.92rem}.mobile-socials{display:grid;grid-template-columns:repeat(2,1fr)}
+  .hero-copy{width:100%}.hero-title{font-size:clamp(2.75rem,14vw,3.9rem);line-height:.96}.hero-title .purple{display:block;white-space:normal}.btn{width:100%;min-height:54px}.event-actions{display:grid;grid-template-columns:1fr;gap:10px}.event-register,.event-calendar{width:100%;justify-content:center;min-height:44px}.month-action{min-height:36px}.butterfly-wrap{display:none}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid rgba(247,242,255,.14)}.stat:last-child{border-bottom:0}
+  body.events-only .events-page{min-height:auto;padding:98px 18px 72px}
+  .events-page::before{display:none}.events-page::after{background-size:48px 48px}
+  .events-hero{gap:16px}
+  .events-aside{padding-bottom:12px}.events-aside h2{white-space:normal;flex-wrap:wrap;font-size:clamp(2.35rem,13vw,3.25rem)}.events-aside h2 small{margin-top:0}
+  .calendar-shell{display:block;padding:10px;border-radius:10px;background:linear-gradient(180deg,rgba(18,12,28,.9),rgba(7,7,9,.84))}
+  .month-card{border-radius:8px}
+  .month-top{padding:12px;gap:10px;align-items:flex-start}.month-top h3{font-size:.78rem;line-height:1.35}.month-actions{gap:7px}.month-arrow{width:34px;height:34px}
+  .day-name{padding:8px 2px;font-size:.52rem;letter-spacing:.04em}
+  .day-cell{min-height:50px;padding:5px 3px}.day-num{font-size:.6rem}
+  .day-cell.today .day-num{min-width:19px;height:19px}
+  .event-dot{margin-top:4px;padding:0;width:8px;height:8px;border-radius:50%;font-size:0;overflow:hidden}
+  .event-detail{position:relative;top:auto;margin-top:12px;border-radius:8px}
+  .event-detail img{aspect-ratio:16/10}
+  .event-detail-body{padding:16px}.event-detail h3{font-size:1.42rem}.event-detail p{font-size:.8rem}
+  .past-events-cue{position:static;transform:none;margin:16px auto 0;width:100%;justify-content:center;font-size:.66rem;padding:11px 12px}.past-events-cue.is-hidden{display:none}
+  .past-events{padding:62px 18px 76px}.past-event-grid{gap:14px;margin-top:26px}.past-event-body{padding:18px}.past-event-body h3{font-size:1.42rem}
+  .mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto;gap:5px}.tile,.tile.tall,.tile.medium,.tile.wide{grid-row:auto;grid-column:auto;aspect-ratio:1/1}
+  .v6-footer{align-items:flex-start;text-align:left}
+}
+</style>
+</head>
+<body class="events-only">
+<nav class="v6-nav">
+  <a class="v6-logo" href="index.html" aria-label="WiCS home">
+    <img src="images/branding/wics-logo.png" alt="WiCS Logo">
+  </a>
+  <input class="mobile-nav-toggle" type="checkbox" id="mobile-nav-events" aria-label="Open navigation">
+  <label class="mobile-menu-btn" for="mobile-nav-events" aria-label="Open navigation"><span></span></label>
+  <label class="mobile-backdrop" for="mobile-nav-events" aria-label="Close navigation"></label>
+  <aside class="mobile-drawer" aria-label="Mobile navigation">
+    <div class="mobile-drawer-top">
+      <div class="mobile-drawer-title">WiCS Menu</div>
+      <label class="mobile-close" for="mobile-nav-events" aria-label="Close navigation">×</label>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a class="active" href="events.html">Events</a>
+      <a href="team.html">Team</a>
+      <a href="sponsors.html">Sponsors</a>
+    </nav>
+    <a class="join-btn" href="https://sundevilcentral.eoss.asu.edu/wics/" target="_blank">Join Now →</a>
+    <div class="mobile-socials">
+      <a href="https://www.instagram.com/wics.asu/" target="_blank">IG</a>
+      <a href="mailto:wics.asu@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/company/wics-asu/posts/?feedView=all" target="_blank">IN</a>
+      <a href="https://www.facebook.com/wics.asu" target="_blank">FB</a>
+    </div>
+  </aside>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a class="active" href="events.html">Events</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="sponsors.html">Sponsors</a></li>
+  </ul>
+  <div class="nav-socials">
+    <a class="social" href="https://www.instagram.com/wics.asu/" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+    </a>
+    <a class="social" href="mailto:wics.asu@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg>
+    </a>
+    <a class="social fill" href="https://www.linkedin.com/company/wics-asu/posts/?feedView=all" target="_blank" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.38 8.1h4.24V23H.38V8.1Zm7.32 0h4.06v2.04h.06c.56-1.06 1.94-2.18 4-2.18 4.28 0 5.07 2.82 5.07 6.48V23h-4.23v-7.62c0-1.82-.03-4.16-2.54-4.16-2.54 0-2.93 1.98-2.93 4.03V23H7.7V8.1Z" transform="translate(1.5 0) scale(.92)"></path></svg>
+    </a>
+    <a class="social fill" href="https://www.facebook.com/wics.asu" target="_blank" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 8.1V6.2c0-.9.3-1.5 1.6-1.5h1.8V1.2C16.7 1.1 15.6 1 14.4 1c-2.8 0-4.7 1.7-4.7 4.8v2.3H6.6v3.9h3.1V23h4.2V12h3.5l.5-3.9h-3.7Z"></path></svg>
+    </a>
+    <a class="join-btn" href="https://sundevilcentral.eoss.asu.edu/wics/" target="_blank">Join Now →</a>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="side-code"><span>WiCS</span><i></i><b></b><i></i><span>EST. 2003</span></div>
+    <div class="micro-tag">+WiCS+</div>
+    <div class="corner-copy">Building the future through community, code, and curiosity.</div>
+    <div class="spark"><span></span></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">We help</div>
+        <h1 class="hero-title">
+          <span>builders</span>
+          <span class="purple">go big</span>
+          <span class="mono"><em>or</em><strong>get hired</strong></span>
+        </h1>
+        <p class="hero-sub"><span>Building the future of tech with women</span><span>who lead, create, and belong.</span></p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://sundevilcentral.eoss.asu.edu/wics/" target="_blank">Join Now →</a>
+        </div>
+      </div>
+
+      <div class="butterfly-wrap" aria-hidden="true">
+        <div class="moth-bg"></div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="16" cy="16" r="5"></circle><circle cx="32" cy="16" r="5"></circle><path d="M7 37c1.2-7 5-11 9-11s7.8 4 9 11"></path><path d="M23 37c1.2-7 5-11 9-11s7.8 4 9 11"></path></svg></div>
+        <div><b>500+</b><span>Builders</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 35 21 23l8 8 12-18"></path><path d="M32 13h9v9"></path><path d="M9 39c7-1 13-1 20 1"></path></svg></div>
+        <div><b>9</b><span>Sponsors</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5v38"></path><path d="M5 24h38"></path><path d="M10.5 10.5 37.5 37.5"></path><path d="M37.5 10.5 10.5 37.5"></path></svg></div>
+        <div><b>10+</b><span>Events</span></div>
+      </div>
+    </div>
+    <div class="code-note">if (she.belongs())<br>{ the.future = hers; }</div>
+  </section>
+
+  <section id="gallery" class="gallery-section">
+    <div class="gallery-inner">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Life at WiCS</div>
+          <h2 class="section-title">Community, right underneath.</h2>
+        </div>
+      </div>
+      <div class="mosaic">
+        <div class="tile tall"><img class="is-active" src="images/home-page-images/hero-photos/DSC06226.jpeg" alt="WiCS event"><img src="images/home-page-images/hero-photos/Pumpkin Painting Social.png" alt=""></div>
+        <div class="tile wide"><img class="is-active" src="images/home-page-images/hero-photos/Cookie Decorating Social.png" alt="WiCS social"><img src="images/home-page-images/hero-photos/IMG_7993.jpeg" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/MentorshipMeet1.png" alt="WiCS mentorship"><img src="images/home-page-images/hero-photos/General Body Meeting Pizza.png" alt=""></div>
+        <div class="tile medium"><img class="is-active" src="images/home-page-images/hero-photos/IMG_3252.jpg" alt="WiCS hackathon"><img src="images/home-page-images/hero-photos/Game Social.png" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/General Body Meeting Pizza.png" alt="WiCS general body meeting"><img src="images/home-page-images/hero-photos/IMG_7988.jpeg" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/Goldman Sachs Tech Talk.jpeg" alt="WiCS tech talk"><img src="images/home-page-images/hero-photos/Cybersecurity Tech Talk.jpeg" alt=""></div>
+        <div class="tile wide"><img class="is-active" src="images/home-page-images/hero-photos/IMG_9321.jpeg" alt="WiCS event"><img src="images/home-page-images/hero-photos/Jeapordy Night Social.png" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/Tote Bag Social.png" alt="WiCS social"><img src="images/home-page-images/hero-photos/MentorshipMeet3.png" alt=""></div>
+        <div class="tile medium"><img class="is-active" src="images/home-page-images/hero-photos/WiCS Prog Competition.JPG" alt="WiCS programming competition"><img src="images/home-page-images/hero-photos/20220319_140520.jpg" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/MentorshipMeet2.png" alt="WiCS mentorship"><img src="images/home-page-images/hero-photos/General Body Meeting Pizza.png" alt=""></div>
+        <div class="tile"><img class="is-active" src="images/home-page-images/hero-photos/IMG_8310.jpeg" alt="WiCS community"><img src="images/home-page-images/hero-photos/Goldman Sachs Tech Talk.jpeg" alt=""></div>
+        <div class="tile wide"><img class="is-active" src="images/home-page-images/hero-photos/Painting Social.png" alt="WiCS painting social"><img src="images/home-page-images/hero-photos/image-from-ios.jpg" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pillars" class="pillars-section">
+    <div class="pillars-inner">
+      <div class="section-head">
+        <div>
+          <div class="section-label">What We Do</div>
+          <h2 class="section-title">Three pillars of<br>everything WiCS.</h2>
+        </div>
+        <p class="section-copy">From mentorship to programming competitions to career panels, WiCS creates spaces where students can belong, build confidence, and grow together.</p>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar">
+          <div class="pillar-num">01 / Mentorship</div>
+          <div class="pillar-mark">01</div>
+          <h3>Mentorship Program</h3>
+          <p>Get matched with a WiCS alumna or industry mentor for guidance, interview prep, and navigating CS as a woman in tech.</p>
+          <a href="#" class="pillar-cta">Apply this semester →</a>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">02 / Competition</div>
+          <div class="pillar-mark">02</div>
+          <h3>WiCS Annual Programming Competition</h3>
+          <p>We host an annual programming competition with industry to build a community of hands-on problem solvers tackling technical challenges.</p>
+          <a href="#past-events" class="pillar-cta">Learn more →</a>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">03 / Events</div>
+          <div class="pillar-mark">03</div>
+          <h3>Year-Round Events</h3>
+          <p>Industry panels, resume workshops, tech talks, socials, and community nights across career, academic, and social tracks.</p>
+          <a href="events.html" class="pillar-cta">See the calendar →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="events-page" class="events-page">
+    <div class="events-inner">
+      <div class="events-hero">
+        <div class="events-aside">
+          <div class="section-label">Calendar</div>
+          <h2><span>Events</span><small>at WiCS</small></h2>
+        </div>
+        <div class="calendar-shell">
+          <div class="month-strip" id="monthStrip" aria-label="Scrollable monthly event calendar"></div>
+          <aside class="event-detail" id="eventDetail" aria-live="polite">
+            <img id="eventPoster" src="images/home-page-images/hero-photos/Goldman Sachs Tech Talk.jpeg" alt="Event poster">
+            <div class="event-detail-body">
+              <div class="event-detail-kicker" id="eventKicker">Featured Event</div>
+              <h3 id="eventTitle">Goldman Sachs Tech Talk</h3>
+              <p id="eventDescription">Meet engineers and recruiters, hear about career pathways, and learn how to prepare for technical roles.</p>
+              <div class="event-meta-line">
+                <span id="eventDate">March 12, 2026</span>
+                <span id="eventTime">6:00 PM</span>
+                <span id="eventPlace">Tempe Campus</span>
+              </div>
+              <div class="event-actions">
+                <a class="event-register" id="eventRegister" href="https://sundevilcentral.eoss.asu.edu/wics/" target="_blank">Register →</a>
+                <a class="event-calendar" id="eventCalendar" href="https://calendar.google.com/calendar/render?action=TEMPLATE" target="_blank">Add to Calendar</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <a class="past-events-cue" href="#past-events">Scroll to see recurring events <span>↓</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="past-events" id="past-events">
+    <div class="past-events-inner">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Recurring Events</div>
+          <h2 class="section-title">What WiCS hosts.</h2>
+        </div>
+      </div>
+      <div class="past-event-grid">
+        <article class="past-event-card">
+          <img src="images/events/General_Body_Meetings.jpeg" alt="WiCS general body meeting">
+          <div class="past-event-body">
+            <span>Community</span>
+            <h3>General Body Meetings</h3>
+            <p>Regular member gatherings with club updates, activities, networking, and ways to get involved in WiCS.</p>
+          </div>
+        </article>
+        <article class="past-event-card">
+          <img src="images/events/Tech_Talks.jpeg" alt="WiCS tech talk">
+          <div class="past-event-body">
+            <span>Industry</span>
+            <h3>Tech Talks</h3>
+            <p>Sessions with engineers, researchers, and industry guests sharing technical topics and career insights.</p>
+          </div>
+        </article>
+        <article class="past-event-card">
+          <img src="images/events/Socials.jpeg" alt="WiCS social event">
+          <div class="past-event-body">
+            <span>Connection</span>
+            <h3>Socials</h3>
+            <p>Low-pressure events where members can relax, meet friends, and build community beyond classes.</p>
+          </div>
+        </article>
+        <article class="past-event-card">
+          <img src="images/events/TIPS.jpeg" alt="WiCS technical interview prep session">
+          <div class="past-event-body">
+            <span>Career Prep</span>
+            <h3>Technical Interview Prep Sessions (TIPS)</h3>
+            <p>Practice-focused sessions for coding interviews, problem solving, resumes, and recruiting readiness.</p>
+          </div>
+        </article>
+        <article class="past-event-card">
+          <img src="images/events/Programming.jpeg" alt="WiCS annual programming competition">
+          <div class="past-event-body">
+            <span>Competition</span>
+            <h3>WiCS Annual Programming Competition</h3>
+            <p>An annual programming competition with industry that builds a community of hands-on problem solvers tackling technical challenges.</p>
+          </div>
+        </article>
+        <article class="past-event-card">
+          <img src="images/events/K-12.jpeg" alt="WiCS K-12 outreach">
+          <div class="past-event-body">
+            <span>Outreach</span>
+            <h3>K-12 Outreach</h3>
+            <p>Programs that introduce younger students to computing through accessible, encouraging activities.</p>
+          </div>
+        </article>
+        <article class="past-event-card">
+          <img src="images/events/Tabling.jpeg" alt="WiCS tabling">
+          <div class="past-event-body">
+            <span>Visibility</span>
+            <h3>Tablings</h3>
+            <p>Campus outreach moments where students can meet WiCS, ask questions, and learn about upcoming opportunities.</p>
+          </div>
+        </article>
+        <article class="past-event-card">
+          <img src="images/events/Banquet.jpeg" alt="WiCS end-of-semester banquet">
+          <div class="past-event-body">
+            <span>Celebration</span>
+            <h3>End-of-Semester Banquet</h3>
+            <p>A closing celebration to recognize the semester, thank contributors, and spend time together as a community.</p>
+          </div>
+        </article>
+        <article class="past-event-card">
+          <img src="images/events/CodeSprouts.jpeg" alt="Desert CodeSprouts event supported by WiCS">
+          <div class="past-event-body">
+            <span>Support</span>
+            <h3>Desert CodeSprouts</h3>
+            <p>A hands-on computing workshop for middle-school students exploring programming, cybersecurity, machine learning, and more, supported by WiCS volunteers.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div id="sponsors" class="sponsor-section">
+    <div class="sponsor-label">Our Sponsors &amp; Partners</div>
+    <div class="sponsor-track-wrap">
+      <div class="sponsor-track">
+        <div class="sponsor-set">
+          <div class="sponsor-item"><img src="images/sponsors/hexagon.jpg" alt="Hexagon"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/workiva.jpg" alt="Workiva"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/general-dynamics.png" alt="General Dynamics"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/microchip.png" alt="Microchip"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/statefarm.jpg" alt="State Farm"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/nationwide.jpg" alt="Nationwide"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/aveva.png" alt="AVEVA"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/mufg.png" alt="MUFG"></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/service-now.png" alt="ServiceNow"></div>
+          <span class="sponsor-sep">+</span>
+        </div>
+        <div class="sponsor-set" aria-hidden="true">
+          <div class="sponsor-item"><img src="images/sponsors/hexagon.jpg" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/workiva.jpg" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/general-dynamics.png" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/microchip.png" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/statefarm.jpg" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/nationwide.jpg" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/aveva.png" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/mufg.png" alt=""></div>
+          <span class="sponsor-sep">+</span>
+          <div class="sponsor-item"><img src="images/sponsors/service-now.png" alt=""></div>
+          <span class="sponsor-sep">+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="v6-footer">
+  <p>2026 WiCS at ASU / 1151 S Forest Ave, Tempe AZ 85281</p>
+  <p>made by the WiCS web team</p>
+</footer>
+<script>
+const GALLERY_PHOTOS = [
+  'images/home-page-images/hero-photos/DSC06226.jpeg',
+  'images/home-page-images/hero-photos/IMG_7993.jpeg',
+  'images/home-page-images/hero-photos/IMG_3252.jpg',
+  'images/home-page-images/hero-photos/IMG_9321.jpeg',
+  'images/home-page-images/hero-photos/IMG_7988.jpeg',
+  'images/home-page-images/hero-photos/20220319_140520.jpg',
+  'images/home-page-images/hero-photos/IMG_8310.jpeg',
+  'images/home-page-images/hero-photos/image-from-ios.jpg',
+  'images/home-page-images/hero-photos/Cookie Decorating Social.png',
+  'images/home-page-images/hero-photos/Pumpkin Painting Social.png',
+  'images/home-page-images/hero-photos/Jeapordy Night Social.png',
+  'images/home-page-images/hero-photos/Tote Bag Social.png',
+  'images/home-page-images/hero-photos/Painting Social.png',
+  'images/home-page-images/hero-photos/MentorshipMeet1.png',
+  'images/home-page-images/hero-photos/MentorshipMeet2.png',
+  'images/home-page-images/hero-photos/MentorshipMeet3.png',
+  'images/home-page-images/hero-photos/General Body Meeting Pizza.png',
+  'images/home-page-images/hero-photos/General Body Meeting Pizza.png',
+  'images/home-page-images/hero-photos/Goldman Sachs Tech Talk.jpeg',
+  'images/home-page-images/hero-photos/Cybersecurity Tech Talk.jpeg',
+  'images/home-page-images/hero-photos/Goldman Sachs Tech Talk.jpeg',
+  'images/home-page-images/hero-photos/WiCS Prog Competition.JPG'
+];
+
+const galleryTiles = [...document.querySelectorAll('.mosaic .tile')];
+const tilePhoto = galleryTiles.map(tile => tile.querySelector('.is-active')?.getAttribute('src') || '');
+const galleryShuffle = arr => {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+};
+const pickGalleryPhoto = current => {
+  const pool = GALLERY_PHOTOS.filter(photo => photo !== current);
+  return pool[Math.floor(Math.random() * pool.length)];
+};
+function swapGalleryTile(index) {
+  const tile = galleryTiles[index];
+  if (!tile) return;
+  const active = tile.querySelector('img.is-active');
+  const next = [...tile.querySelectorAll('img')].find(img => img !== active);
+  if (!active || !next) return;
+  const chosen = pickGalleryPhoto(tilePhoto[index]);
+  tilePhoto[index] = chosen;
+  next.src = chosen;
+  requestAnimationFrame(() => {
+    next.classList.add('is-active');
+    active.classList.remove('is-active');
+  });
+}
+
+function runGalleryWave() {
+  const wave = galleryShuffle([...galleryTiles.keys()]);
+  wave.forEach((index, step) => {
+    setTimeout(() => swapGalleryTile(index), step * 360);
+  });
+}
+
+if (galleryTiles.length) {
+  setTimeout(runGalleryWave, 1200);
+  setInterval(runGalleryWave, 9200);
+}
+
+const FALLBACK_EVENTS = [
+  {
+    title: 'Goldman Sachs Tech Talk',
+    date: '2026-03-12',
+    time: '6:00 PM',
+    place: 'Tempe Campus',
+    poster: 'images/home-page-images/hero-photos/Goldman Sachs Tech Talk.jpeg',
+    description: 'Meet engineers and recruiters, hear about career pathways, and learn how to prepare for technical roles.',
+    link: 'https://sundevilcentral.eoss.asu.edu/wics/'
+  },
+  {
+    title: 'Mentorship Mixer',
+    date: '2026-03-25',
+    time: '5:30 PM',
+    place: 'BYENG Courtyard',
+    poster: 'images/home-page-images/hero-photos/MentorshipMeet1.png',
+    description: 'Connect with mentors, ask questions about internships and classes, and find your people in the WiCS community.',
+    link: 'https://sundevilcentral.eoss.asu.edu/wics/'
+  },
+  {
+    title: 'Cookie Decorating Social',
+    date: '2026-04-08',
+    time: '6:00 PM',
+    place: 'Memorial Union',
+    poster: 'images/home-page-images/hero-photos/Cookie Decorating Social.png',
+    description: 'A low-pressure social night with snacks, decorating, and time to meet other students across the CS community.',
+    link: 'https://sundevilcentral.eoss.asu.edu/wics/'
+  },
+  {
+    title: 'State Farm Tech Talk',
+    date: '2026-04-21',
+    time: '5:00 PM',
+    place: 'Engineering Center',
+    poster: 'images/home-page-images/hero-photos/Cybersecurity Tech Talk.jpeg',
+    description: 'Learn about software engineering teams, interview preparation, and early career opportunities with State Farm.',
+    link: 'https://sundevilcentral.eoss.asu.edu/wics/'
+  },
+  {
+    title: 'WiCS Annual Programming Competition',
+    date: '2026-05-02',
+    time: '9:00 AM',
+    place: 'ASU Tempe',
+    poster: 'images/home-page-images/hero-photos/WiCS Prog Competition.JPG',
+    description: 'An annual programming competition with industry where students build community as hands-on problem solvers tackling technical challenges.',
+    link: 'https://wics-ohack-sp26-hackathon.devpost.com/'
+  },
+  {
+    title: 'Cybersecurity Tech Talk',
+    date: '2026-05-14',
+    time: '6:00 PM',
+    place: 'BYENG 210',
+    poster: 'images/home-page-images/hero-photos/Cybersecurity Tech Talk.jpeg',
+    description: 'Explore cybersecurity careers, common security problems, and practical ways to get started in the field.',
+    link: 'https://sundevilcentral.eoss.asu.edu/wics/'
+  }
+];
+
+const GOOGLE_CALENDAR_CONFIG = {
+  calendarId: '',
+  apiKey: ''
+};
+
+const EVENT_OVERRIDES = {
+  'Goldman Sachs Tech Talk': {
+    poster: 'images/home-page-images/hero-photos/Goldman Sachs Tech Talk.jpeg',
+    description: 'Meet engineers and recruiters, hear about career pathways, and learn how to prepare for technical roles.',
+    link: 'https://sundevilcentral.eoss.asu.edu/wics/'
+  },
+  'Mentorship Mixer': {
+    poster: 'images/home-page-images/hero-photos/MentorshipMeet1.png',
+    description: 'Connect with mentors, ask questions about internships and classes, and find your people in the WiCS community.',
+    link: 'https://sundevilcentral.eoss.asu.edu/wics/'
+  },
+  'Cookie Decorating Social': {
+    poster: 'images/home-page-images/hero-photos/Cookie Decorating Social.png',
+    description: 'A low-pressure social night with snacks, decorating, and time to meet other students across the CS community.',
+    link: 'https://sundevilcentral.eoss.asu.edu/wics/'
+  },
+  'State Farm Tech Talk': {
+    poster: 'images/home-page-images/hero-photos/Cybersecurity Tech Talk.jpeg',
+    description: 'Learn about software engineering teams, interview preparation, and early career opportunities with State Farm.',
+    link: 'https://sundevilcentral.eoss.asu.edu/wics/'
+  },
+  'WiCS Annual Programming Competition': {
+    poster: 'images/home-page-images/hero-photos/WiCS Prog Competition.JPG',
+    description: 'An annual programming competition with industry where students build community as hands-on problem solvers tackling technical challenges.',
+    link: 'https://wics-ohack-sp26-hackathon.devpost.com/'
+  },
+  'Cybersecurity Tech Talk': {
+    poster: 'images/home-page-images/hero-photos/Cybersecurity Tech Talk.jpeg',
+    description: 'Explore cybersecurity careers, common security problems, and practical ways to get started in the field.',
+    link: 'https://sundevilcentral.eoss.asu.edu/wics/'
+  }
+};
+
+const monthStrip = document.getElementById('monthStrip');
+const eventEls = {
+  poster: document.getElementById('eventPoster'),
+  kicker: document.getElementById('eventKicker'),
+  title: document.getElementById('eventTitle'),
+  description: document.getElementById('eventDescription'),
+  date: document.getElementById('eventDate'),
+  time: document.getElementById('eventTime'),
+  place: document.getElementById('eventPlace'),
+  register: document.getElementById('eventRegister'),
+  calendar: document.getElementById('eventCalendar')
+};
+const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const today = new Date();
+let visibleYear = today.getFullYear();
+let visibleMonth = today.getMonth();
+let activeEvents = [...FALLBACK_EVENTS];
+let byDate = groupEventsByDate(activeEvents);
+
+function groupEventsByDate(events) {
+  return events.reduce((map, event) => {
+    (map[event.date] ||= []).push(event);
+    return map;
+  }, {});
+}
+
+function dateKeyFromDate(date) {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+}
+
+function normalizeCalendarEvent(item) {
+  const rawStart = item.start?.dateTime || item.start?.date;
+  if (!rawStart) return null;
+  const start = new Date(rawStart);
+  const date = item.start?.date || dateKeyFromDate(start);
+  const title = item.summary || 'WiCS Event';
+  const override = EVENT_OVERRIDES[title] || {};
+  return {
+    title,
+    date,
+    time: item.start?.date ? 'All day' : start.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }),
+    place: item.location || 'ASU',
+    poster: override.poster || 'images/home-page-images/hero-photos/Goldman Sachs Tech Talk.jpeg',
+    description: override.description || item.description || 'Event details will be added soon.',
+    link: override.link || item.htmlLink || 'https://sundevilcentral.eoss.asu.edu/wics/'
+  };
+}
+
+async function loadGoogleCalendarEvents() {
+  if (!GOOGLE_CALENDAR_CONFIG.calendarId || !GOOGLE_CALENDAR_CONFIG.apiKey) return false;
+  const timeMin = new Date(today.getFullYear() - 1, 0, 1).toISOString();
+  const timeMax = new Date(today.getFullYear() + 1, 11, 31).toISOString();
+  const params = new URLSearchParams({
+    key: GOOGLE_CALENDAR_CONFIG.apiKey,
+    singleEvents: 'true',
+    orderBy: 'startTime',
+    timeMin,
+    timeMax
+  });
+  const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(GOOGLE_CALENDAR_CONFIG.calendarId)}/events?${params}`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Calendar request failed: ${response.status}`);
+    const data = await response.json();
+    const googleEvents = (data.items || []).map(normalizeCalendarEvent).filter(Boolean);
+    if (!googleEvents.length) return false;
+    activeEvents = googleEvents;
+    byDate = groupEventsByDate(activeEvents);
+    return true;
+  } catch (error) {
+    console.warn('Using fallback WiCS events until Google Calendar is configured or reachable.', error);
+    return false;
+  }
+}
+
+function formatEventDate(dateValue) {
+  const [year, month, day] = dateValue.split('-').map(Number);
+  return `${monthNames[month - 1]} ${day}, ${year}`;
+}
+
+function isPastEvent(event) {
+  const [year, month, day] = event.date.split('-').map(Number);
+  const eventDay = new Date(year, month - 1, day);
+  const currentDay = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  return eventDay < currentDay;
+}
+
+function calendarTimeRange(event) {
+  const [year, month, day] = event.date.split('-').map(Number);
+  const match = event.time.match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i);
+  let hour = match ? Number(match[1]) : 18;
+  const minute = match && match[2] ? Number(match[2]) : 0;
+  const period = match ? match[3].toUpperCase() : 'PM';
+  if (period === 'PM' && hour !== 12) hour += 12;
+  if (period === 'AM' && hour === 12) hour = 0;
+  const start = new Date(year, month - 1, day, hour, minute);
+  const end = new Date(start.getTime() + 90 * 60 * 1000);
+  const stamp = date => {
+    const pad = value => String(value).padStart(2, '0');
+    return `${date.getFullYear()}${pad(date.getMonth() + 1)}${pad(date.getDate())}T${pad(date.getHours())}${pad(date.getMinutes())}00`;
+  };
+  return `${stamp(start)}/${stamp(end)}`;
+}
+
+function calendarUrl(event) {
+  const params = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: `WiCS: ${event.title}`,
+    dates: calendarTimeRange(event),
+    details: `${event.description}\n\nRegister: ${event.link}`,
+    location: event.place
+  });
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
+function showEvent(event, button) {
+  const hasPassed = isPastEvent(event);
+  document.querySelectorAll('.event-dot.active').forEach(el => el.classList.remove('active'));
+  if (button) button.classList.add('active');
+  eventEls.poster.src = event.poster;
+  eventEls.poster.alt = `${event.title} poster`;
+  eventEls.kicker.textContent = hasPassed ? 'Completed Event' : 'Event Details';
+  eventEls.title.textContent = event.title;
+  eventEls.description.textContent = event.description;
+  eventEls.date.textContent = formatEventDate(event.date);
+  eventEls.time.textContent = event.time;
+  eventEls.place.textContent = event.place;
+  if (hasPassed) {
+    eventEls.register.removeAttribute('href');
+    eventEls.register.removeAttribute('target');
+    eventEls.register.textContent = 'Registration Closed';
+    eventEls.register.classList.add('is-disabled');
+    eventEls.register.setAttribute('aria-disabled', 'true');
+    eventEls.calendar.removeAttribute('href');
+    eventEls.calendar.removeAttribute('target');
+    eventEls.calendar.textContent = 'Calendar Closed';
+    eventEls.calendar.classList.add('is-disabled');
+    eventEls.calendar.setAttribute('aria-disabled', 'true');
+  } else {
+    eventEls.register.href = event.link;
+    eventEls.register.target = '_blank';
+    eventEls.register.textContent = 'Register →';
+    eventEls.register.classList.remove('is-disabled');
+    eventEls.register.removeAttribute('aria-disabled');
+    eventEls.calendar.href = calendarUrl(event);
+    eventEls.calendar.target = '_blank';
+    eventEls.calendar.textContent = 'Add to Calendar';
+    eventEls.calendar.classList.remove('is-disabled');
+    eventEls.calendar.removeAttribute('aria-disabled');
+  }
+}
+
+function renderMonth(year, month) {
+  const card = document.createElement('article');
+  card.className = 'month-card';
+  const top = document.createElement('div');
+  top.className = 'month-top';
+  top.innerHTML = `<button class="month-action month-arrow" type="button" data-month-shift="-1" aria-label="Previous month">‹</button><h3>${monthNames[month]} ${year}</h3><button class="month-action month-arrow" type="button" data-month-shift="1" aria-label="Next month">›</button>`;
+  const grid = document.createElement('div');
+  grid.className = 'calendar-grid';
+  dayNames.forEach(day => {
+    const label = document.createElement('div');
+    label.className = 'day-name';
+    label.textContent = day;
+    grid.appendChild(label);
+  });
+
+  const first = new Date(year, month, 1);
+  const days = new Date(year, month + 1, 0).getDate();
+  for (let i = 0; i < first.getDay(); i++) {
+    const empty = document.createElement('div');
+    empty.className = 'day-cell empty';
+    grid.appendChild(empty);
+  }
+  for (let day = 1; day <= days; day++) {
+    const cell = document.createElement('div');
+    cell.className = 'day-cell';
+    cell.style.setProperty('--cell-index', grid.children.length);
+    const dateKey = `${year}-${String(month + 1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+    if (dateKey === dateKeyFromDate(today)) cell.classList.add('today');
+    cell.innerHTML = `<div class="day-num">${day}</div>`;
+    (byDate[dateKey] || []).forEach(event => {
+      const button = document.createElement('button');
+      button.className = 'event-dot';
+      button.type = 'button';
+      button.textContent = event.title;
+      button.addEventListener('click', () => showEvent(event, button));
+      cell.appendChild(button);
+    });
+    grid.appendChild(cell);
+  }
+  card.append(top, grid);
+  return card;
+}
+
+function changeMonth(shift) {
+  visibleMonth += shift;
+  if (visibleMonth < 0) {
+    visibleMonth = 11;
+    visibleYear -= 1;
+  }
+  if (visibleMonth > 11) {
+    visibleMonth = 0;
+    visibleYear += 1;
+  }
+  renderVisibleMonth();
+}
+
+function renderVisibleMonth() {
+  monthStrip.innerHTML = '';
+  monthStrip.appendChild(renderMonth(visibleYear, visibleMonth));
+  monthStrip.querySelectorAll('[data-month-shift]').forEach(button => {
+    button.addEventListener('click', () => changeMonth(Number(button.dataset.monthShift)));
+  });
+}
+
+async function initCalendar() {
+  await loadGoogleCalendarEvents();
+  renderVisibleMonth();
+  const todayKey = dateKeyFromDate(today);
+  const selectedEvent = activeEvents.find(event => event.date >= todayKey) || [...activeEvents].reverse()[0];
+  showEvent(selectedEvent, document.querySelector('.event-dot'));
+}
+
+if (monthStrip) initCalendar();
+
+const pastEventsCue = document.querySelector('.past-events-cue');
+const pastEventsSection = document.querySelector('#past-events');
+
+if (pastEventsCue && pastEventsSection) {
+  const cueObserver = new IntersectionObserver(entries => {
+    pastEventsCue.classList.toggle('is-hidden', entries[0].isIntersecting);
+  }, { threshold: 0.08 });
+  cueObserver.observe(pastEventsSection);
+}
+</script>
+</body>
+</html>

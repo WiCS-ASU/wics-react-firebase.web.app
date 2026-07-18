@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WiCS @ ASU - Sponsors</title>
+<link rel="icon" href="faviconwics.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050407;
+  --ink:#f7f2ff;
+  --purple:#7b22e6;
+  --purple-2:#47108f;
+  --purple-3:#a66cff;
+  --mono:'Geist Mono',monospace;
+  --serif:'DM Serif Display',serif;
+  --sans:'Instrument Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);overflow-x:hidden;animation:pageFade .7s ease both}
+a{color:inherit}
+body::before{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E")}
+.v6-nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;background:rgba(5,4,7,.78);border-bottom:1px solid rgba(183,148,255,.12);backdrop-filter:blur(18px)}
+.v6-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.v6-logo img{height:46px;width:auto;filter:brightness(0) saturate(100%) invert(95%) sepia(8%) saturate(445%) hue-rotate(218deg) brightness(102%) contrast(96%);opacity:.94}
+.nav-links{display:flex;align-items:center;gap:40px;list-style:none}
+.nav-links a{position:relative;text-decoration:none;font-family:var(--mono);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(247,242,255,.82)}
+.nav-links a.active{color:var(--purple)}
+.nav-links a.active::after{content:'';position:absolute;left:50%;bottom:-15px;width:7px;height:7px;border-radius:50%;background:var(--purple);transform:translateX(-50%)}
+.nav-socials{display:flex;align-items:center;gap:18px}
+.social{width:22px;height:22px;display:grid;place-items:center;color:#fff;text-decoration:none;opacity:.84;transition:opacity .2s,color .2s,transform .2s}
+.social svg{width:20px;height:20px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.social.fill svg{fill:currentColor;stroke:none}
+.social:hover{opacity:1;color:var(--purple-3);transform:translateY(-1px)}
+.join-btn{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 22px;border:1px solid rgba(138,53,255,.7);border-radius:6px;color:#fff;text-decoration:none;font-family:var(--mono);font-size:.86rem;text-transform:uppercase;letter-spacing:.05em;background:rgba(138,53,255,.08)}
+.join-btn:hover{background:rgba(138,53,255,.18)}
+.mobile-nav-toggle{display:none}
+.mobile-menu-btn,.mobile-backdrop,.mobile-drawer{display:none}
+.mobile-menu-btn{width:46px;height:46px;border:1px solid rgba(166,108,255,.48);border-radius:6px;background:rgba(123,34,230,.1);place-items:center;cursor:pointer}
+.mobile-menu-btn span{display:block;width:20px;height:2px;border-radius:999px;background:#f7f2ff;box-shadow:0 7px 0 #f7f2ff,0 -7px 0 #f7f2ff}
+.mobile-backdrop{position:fixed;inset:0;z-index:1001;background:#050407}
+.mobile-drawer{position:fixed;inset:0;z-index:1002;width:100vw;min-height:100vh;padding:28px 26px;background:#050407;transform:translateY(-100%);transition:transform .28s ease;overflow:auto}
+.mobile-drawer-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:48px}
+.mobile-drawer-title{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-3)}
+.mobile-close{width:40px;height:40px;display:grid;place-items:center;border:1px solid rgba(247,242,255,.16);border-radius:50%;color:#fff;font-family:var(--mono);font-size:1.35rem;cursor:pointer}
+.mobile-drawer nav{display:grid;gap:16px}
+.mobile-drawer nav a{display:flex;align-items:center;justify-content:space-between;min-height:58px;padding:0 4px;border-bottom:1px solid rgba(247,242,255,.12);text-decoration:none;font-family:var(--mono);font-size:1rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,242,255,.9)}
+.mobile-drawer nav a.active{color:var(--purple-3)}
+.mobile-drawer nav a::after{content:'→';color:rgba(166,108,255,.74)}
+.mobile-drawer .join-btn{width:100%;justify-content:center;margin-top:26px;background:linear-gradient(135deg,var(--purple),var(--purple-2));border-color:transparent;border-radius:999px}
+.mobile-socials{display:flex;gap:12px;margin-top:26px}
+.mobile-socials a{flex:1;min-height:40px;display:grid;place-items:center;border:1px solid rgba(166,108,255,.28);border-radius:999px;text-decoration:none;font-family:var(--mono);font-size:.66rem;text-transform:uppercase;color:rgba(247,242,255,.78)}
+.mobile-nav-toggle:checked ~ .mobile-backdrop{display:block}
+.mobile-nav-toggle:checked ~ .mobile-drawer{display:block;transform:translateY(0)}
+.sponsors-page{position:relative;min-height:100vh;padding:136px 52px 108px;background:#080909;overflow:hidden}
+.sponsors-page::before{content:'';position:absolute;inset:88px 0 0;background-image:linear-gradient(rgba(183,148,255,.052) 1px,transparent 1px),linear-gradient(90deg,rgba(183,148,255,.052) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,black,transparent 86%);pointer-events:none}
+.sponsors-page::after{content:'                      +                  .                  +                      .\\A       .                  +                              .                 +\\A              +                 .                  +                   .';white-space:pre;position:absolute;inset:116px 36px auto;color:rgba(166,108,255,.3);font-family:var(--mono);font-size:.82rem;line-height:3.9;letter-spacing:.12em;pointer-events:none}
+.sponsors-inner{position:relative;z-index:2;width:min(1280px,100%);margin:0 auto}
+.sponsors-hero{display:grid;grid-template-columns:minmax(300px,.78fr) minmax(380px,1fr);gap:32px;align-items:end;margin-bottom:54px;padding-bottom:34px;border-bottom:1px solid rgba(247,242,255,.13)}
+.section-label{font-family:var(--mono);font-size:.72rem;color:var(--purple-3);letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}
+.sponsors-title{font-family:var(--serif);font-size:clamp(2.6rem,4.8vw,4.4rem);line-height:.96;letter-spacing:-.035em;margin-top:8px;font-weight:400}
+.sponsors-title span{display:block;color:#fff}
+.sponsors-title small{display:block;margin-top:4px;font:inherit;color:var(--purple)}
+.sponsors-copy{max-width:600px;color:rgba(247,242,255,.66);font-family:var(--mono);font-size:.9rem;line-height:1.75}
+.sponsor-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.sponsor-card{position:relative;min-height:210px;border:1px solid rgba(183,148,255,.2);border-radius:6px;background:linear-gradient(145deg,rgba(17,14,22,.92),rgba(8,7,11,.96));display:grid;place-items:center;padding:34px;overflow:hidden;box-shadow:0 18px 52px rgba(0,0,0,.24);transition:transform .25s ease,border-color .25s ease,background .25s ease,box-shadow .25s ease;animation:softEnter .52s ease both;animation-delay:calc(var(--i) * 45ms)}
+.sponsor-card::before{content:'';position:absolute;inset:0;background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(166,108,255,.07));pointer-events:none;transition:opacity .25s ease,background .25s ease}
+.sponsor-card::after{content:'';position:absolute;inset:1px;border-radius:5px;background:radial-gradient(circle at 28% 18%,rgba(255,255,255,.08),transparent 42%);pointer-events:none;transition:background .25s ease}
+.sponsor-card:hover{transform:translateY(-4px);border-color:rgba(166,108,255,.42);background:#b8adbf;box-shadow:0 22px 64px rgba(0,0,0,.3)}
+.sponsor-card:hover::before{background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(0,0,0,.3))}
+.sponsor-card:hover::after{background:radial-gradient(circle at 28% 18%,rgba(255,255,255,.1),transparent 40%)}
+.sponsor-card img{position:relative;z-index:2;max-width:min(282px,82%);max-height:108px;width:auto;height:auto;object-fit:contain;filter:grayscale(1) invert(1) brightness(2.4) contrast(.9) drop-shadow(0 8px 14px rgba(5,4,7,.14));opacity:.98;mix-blend-mode:normal;transition:filter .25s ease,opacity .25s ease,transform .25s ease}
+.sponsor-card:hover img{filter:saturate(1.04) brightness(1.02) drop-shadow(0 10px 18px rgba(5,4,7,.16));transform:scale(1.018)}
+.sponsor-card:hover img{opacity:1}
+.sponsor-name{position:absolute;left:22px;bottom:18px;z-index:2;font-family:var(--mono);font-size:.7rem;color:rgba(247,242,255,.58);letter-spacing:.11em;text-transform:uppercase;transition:color .25s ease}
+.sponsor-card:hover .sponsor-name{color:rgba(15,11,20,.64)}
+.v6-footer{background:#050407;border-top:1px solid rgba(183,148,255,.12);padding:40px 52px;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.v6-footer p{color:rgba(247,242,255,.52);font-size:.75rem;font-family:var(--mono)}
+@keyframes pageFade{0%{opacity:0;background:#020104}100%{opacity:1;background:var(--bg)}}
+@keyframes softEnter{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media(max-width:1100px){.sponsor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sponsors-hero{grid-template-columns:1fr}}
+@media(max-width:760px){.v6-nav{height:76px;padding:0 22px}.v6-logo img{height:38px}.nav-links,.nav-socials{display:none}.mobile-menu-btn{display:grid;width:42px;height:42px}.mobile-drawer{padding:26px 22px 34px}.mobile-drawer nav a{min-height:56px;font-size:.92rem}.mobile-socials{display:grid;grid-template-columns:repeat(2,1fr)}.sponsors-page{padding:104px 20px 72px}.sponsors-page::after{display:none}.sponsors-hero{gap:18px;margin-bottom:34px;padding-bottom:26px}.sponsors-title{font-size:clamp(2.35rem,13vw,3.3rem)}.sponsors-copy{font-size:.8rem;line-height:1.65}.sponsor-grid{grid-template-columns:1fr;gap:14px}.sponsor-card{min-height:180px;padding:28px 22px}.sponsor-card img{max-width:min(250px,82%);max-height:92px}.sponsor-name{left:18px;bottom:15px;font-size:.62rem}.v6-footer{padding:32px 22px;flex-direction:column;align-items:flex-start;text-align:left}}
+</style>
+</head>
+<body>
+<nav class="v6-nav">
+  <a class="v6-logo" href="index.html" aria-label="WiCS home">
+    <img src="images/branding/wics-logo.png" alt="WiCS Logo">
+  </a>
+  <input class="mobile-nav-toggle" type="checkbox" id="mobile-nav-sponsors" aria-label="Open navigation">
+  <label class="mobile-menu-btn" for="mobile-nav-sponsors" aria-label="Open navigation"><span></span></label>
+  <label class="mobile-backdrop" for="mobile-nav-sponsors" aria-label="Close navigation"></label>
+  <aside class="mobile-drawer" aria-label="Mobile navigation">
+    <div class="mobile-drawer-top">
+      <div class="mobile-drawer-title">WiCS Menu</div>
+      <label class="mobile-close" for="mobile-nav-sponsors" aria-label="Close navigation">×</label>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="team.html">Team</a>
+      <a class="active" href="sponsors.html">Sponsors</a>
+    </nav>
+    <a class="join-btn" href="https://sundevilcentral.eoss.asu.edu/wics/" target="_blank">Join Now →</a>
+    <div class="mobile-socials">
+      <a href="https://www.instagram.com/wics.asu/" target="_blank">IG</a>
+      <a href="mailto:wics.asu@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/company/wics-asu/" target="_blank">IN</a>
+      <a href="https://www.facebook.com/wics.asu" target="_blank">FB</a>
+    </div>
+  </aside>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a class="active" href="sponsors.html">Sponsors</a></li>
+  </ul>
+  <div class="nav-socials">
+    <a class="social" href="https://www.instagram.com/wics.asu/" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+    </a>
+    <a class="social" href="mailto:wics.asu@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"></path><path d="m4 7 8 6 8-6"></path></svg>
+    </a>
+    <a class="social" href="https://www.linkedin.com/company/wics-asu/" target="_blank" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><path d="M2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
+    </a>
+    <a class="social fill" href="https://www.facebook.com/wics.asu" target="_blank" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 8.1V6.2c0-.9.3-1.5 1.6-1.5h1.8V1.2C16.7 1.1 15.6 1 14.4 1c-2.8 0-4.7 1.7-4.7 4.8v2.3H6.6v3.9h3.1V23h4.2V12h3.5l.5-3.9h-3.7Z"></path></svg>
+    </a>
+    <a class="join-btn" href="https://sundevilcentral.eoss.asu.edu/wics/" target="_blank">Join Now →</a>
+  </div>
+</nav>
+<main>
+  <section class="sponsors-page">
+    <div class="sponsors-inner">
+      <div class="sponsors-hero">
+        <div>
+          <div class="section-label">Partners</div>
+          <h1 class="sponsors-title"><span>Our</span><small>sponsors</small></h1>
+        </div>
+        <p class="sponsors-copy">Companies and teams supporting WiCS through mentorship, workshops, recruiting, and community opportunities.</p>
+      </div>
+      <div class="sponsor-grid">
+        <article class="sponsor-card" style="--i:0">
+          <img src="images/sponsors/general-dynamics.png" alt="General Dynamics">
+          <div class="sponsor-name">General Dynamics / Silver</div>
+        </article>
+        <article class="sponsor-card" style="--i:1">
+          <img src="images/sponsors/wl-gore.svg" alt="W. L. Gore">
+          <div class="sponsor-name">W. L. Gore / Silver</div>
+        </article>
+        <article class="sponsor-card" style="--i:2">
+          <img src="images/sponsors/garmin.svg" alt="Garmin">
+          <div class="sponsor-name">Garmin / Silver</div>
+        </article>
+        <article class="sponsor-card" style="--i:3">
+          <img src="images/sponsors/godaddy-transparent.png" alt="GoDaddy">
+          <div class="sponsor-name">GoDaddy / Silver</div>
+        </article>
+        <article class="sponsor-card" style="--i:4">
+          <img src="images/sponsors/freeport-mcmoran.svg" alt="Freeport McMoRan">
+          <div class="sponsor-name">Freeport McMoRan / Silver</div>
+        </article>
+        <article class="sponsor-card" style="--i:5">
+          <img src="images/sponsors/statefarm-transparent.png" alt="State Farm">
+          <div class="sponsor-name">State Farm / Bronze</div>
+        </article>
+        <article class="sponsor-card" style="--i:6">
+          <img src="images/sponsors/dell-transparent.png" alt="Dell">
+          <div class="sponsor-name">Dell / Bronze</div>
+        </article>
+        <article class="sponsor-card" style="--i:7">
+          <img src="images/sponsors/wells-fargo-transparent.png" alt="Wells Fargo">
+          <div class="sponsor-name">Wells Fargo / Tech Talk</div>
+        </article>
+        <article class="sponsor-card" style="--i:8">
+          <img src="images/sponsors/hexagon.jpg" alt="Hexagon">
+          <div class="sponsor-name">Hexagon / Involved</div>
+        </article>
+        <article class="sponsor-card" style="--i:9">
+          <img src="images/sponsors/workiva.jpg" alt="Workiva">
+          <div class="sponsor-name">Workiva / Involved</div>
+        </article>
+        <article class="sponsor-card" style="--i:10">
+          <img src="images/sponsors/microchip.png" alt="Microchip">
+          <div class="sponsor-name">Microchip / Involved</div>
+        </article>
+        <article class="sponsor-card" style="--i:11">
+          <img src="images/sponsors/nationwide.jpg" alt="Nationwide">
+          <div class="sponsor-name">Nationwide / Involved</div>
+        </article>
+        <article class="sponsor-card" style="--i:12">
+          <img src="images/sponsors/aveva.png" alt="AVEVA">
+          <div class="sponsor-name">AVEVA / Involved</div>
+        </article>
+        <article class="sponsor-card" style="--i:13">
+          <img src="images/sponsors/mufg.png" alt="MUFG">
+          <div class="sponsor-name">MUFG / Involved</div>
+        </article>
+        <article class="sponsor-card" style="--i:14">
+          <img src="images/sponsors/service-now.png" alt="ServiceNow">
+          <div class="sponsor-name">ServiceNow / Involved</div>
+        </article>
+        <article class="sponsor-card" style="--i:15">
+          <img src="images/sponsors/drivetime-transparent.png" alt="DriveTime">
+          <div class="sponsor-name">DriveTime / Involved</div>
+        </article>
+        <article class="sponsor-card" style="--i:16">
+          <img src="images/sponsors/intel.svg" alt="Intel">
+          <div class="sponsor-name">Intel / Involved</div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="v6-footer">
+  <p>2026 WiCS at ASU / 1151 S Forest Ave, Tempe AZ 85281</p>
+  <p>made by the WiCS web team</p>
+</footer>
+</body>
+</html>
